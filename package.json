@@ -1,0 +1,15 @@
+{
+  "name": "prichey-gatsby",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.79",
+    "gatsby-link": "^1.6.23"
+  }
+}
