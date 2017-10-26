@@ -9,7 +9,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve -p 5000"
+    "serve": "gatsby serve --port 5000 --verbose"
   },
   "dependencies": {
     "gatsby": "^1.9.79",
