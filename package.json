@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "8.4.0"
+  },
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
