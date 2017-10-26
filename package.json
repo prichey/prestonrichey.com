@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "engines": {
-    "node": "8.4.0"
-  },
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build --verbose",
-    "serve": "gatsby serve --port 5000 --verbose"
+    "serve": "gatsby serve --verbose",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^1.9.79",
     "gatsby-link": "^1.6.23",
     "gatsby-plugin-styled-components": "^1.0.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
   }
 }
