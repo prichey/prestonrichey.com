@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dokku": {
+      "predeploy": "npm run build",
+      "postdeploy": "echo 'donezo'"
+    }
+  }
+}
