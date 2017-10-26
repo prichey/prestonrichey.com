@@ -1,3 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 
-export default () => <div>Hello world!</div>;
+const Index = styled.div`
+  color: pink;
+  font-size: 240px;
+`;
+
+export default () => (
+  <Index>
+    <div>Hello world!</div>
+  </Index>
+);
