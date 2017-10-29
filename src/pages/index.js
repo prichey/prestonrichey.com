@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Index = styled.div`
-  color: pink;
-  font-size: 240px;
-`;
+const Index = styled.div`color: pink;`;
 
-export default () => (
-  <Index>
-    <div>Hello world!</div>
-  </Index>
-);
+class IndexPage extends React.Component {
+  render() {
+    return (
+      <Index>
+        <h1>Index</h1>
+      </Index>
+    );
+  }
+}
+
+export default IndexPage;
