@@ -43,11 +43,6 @@ class Nav extends React.Component {
       <StyledNav>
         <StyledList>
           <ListElement>
-            <NavItem to="/" activeClassName={activeClassName} exact={true}>
-              /
-            </NavItem>
-          </ListElement>
-          <ListElement>
             <NavItem to="/blog/" activeClassName={activeClassName}>
               /blog
             </NavItem>

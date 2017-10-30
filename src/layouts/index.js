@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'gatsby-link';
 
 import 'prismjs/themes/prism-solarizedlight.css';
 
@@ -15,7 +16,16 @@ const Main = styled.main`
   margin: 0 auto;
 `;
 
-const Title = styled.h1`text-transform: lowercase;`;
+const TitleLink = styled(Link)`
+  text-transform: lowercase;
+  color: #000;
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    color: #0000ff;
+  }
+`;
 
 export default class Template extends React.Component {
   render() {
@@ -31,7 +41,9 @@ export default class Template extends React.Component {
           <title>prichey.net</title>
         </Helmet>
 
-        <Title>Preston Richey</Title>
+        <h1>
+          <TitleLink to="/">Preston Richey</TitleLink>
+        </h1>
         <Nav />
 
         {this.props.children()}
