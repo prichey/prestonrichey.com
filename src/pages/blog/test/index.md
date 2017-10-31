@@ -7,6 +7,8 @@ hi from test blog post
 
 This is some beautiful code:
 
+"hello there"
+
 ```javascript
 // In your gatsby-config.js
 plugins: [
