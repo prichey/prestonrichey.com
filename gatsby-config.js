@@ -30,20 +30,6 @@ module.exports = {
         name: 'pages',
         path: `${__dirname}/src/pages/`
       }
-    },
-    {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: true,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
     }
   ],
   pathPrefix: '/prichey-gatsby'
