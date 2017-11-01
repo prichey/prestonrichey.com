@@ -33,8 +33,9 @@ export default class Template extends React.Component {
 
     return (
       <Main>
+        <Favicon />
+
         <Helmet>
-          <Favicon />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:700"
             rel="stylesheet"
