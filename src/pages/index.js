@@ -5,7 +5,6 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div>
-        <h2>Index</h2>
         <p>
           Lorem ipsum dolor sit amet, <em>consectetur</em> adipiscing elit, sed
           do eiusmod <a href="https://google.com">tempor</a> incididunt ut

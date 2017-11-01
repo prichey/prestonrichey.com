@@ -1,6 +1,6 @@
 ---
 title: "Test Project"
-date: "2017-10-31"
+date: "2017"
 ---
 
 hi from test project

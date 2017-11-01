@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 import 'prismjs/themes/prism-solarizedlight.css';
 
-import { Helmet } from 'react-helmet';
-
 import Nav from './../components/Nav';
+import Favicon from './../components/Favicon';
 
 import baseStyles from './../utils/base-styles';
 
@@ -34,6 +34,7 @@ export default class Template extends React.Component {
     return (
       <Main>
         <Helmet>
+          <Favicon />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:700"
             rel="stylesheet"
@@ -44,6 +45,7 @@ export default class Template extends React.Component {
         <h1>
           <TitleLink to="/">Preston Richey</TitleLink>
         </h1>
+
         <Nav />
 
         {this.props.children()}

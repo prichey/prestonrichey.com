@@ -7,7 +7,7 @@ const activeClassName = 'active';
 
 const StyledNav = styled.nav`margin-bottom: 2em;`;
 
-const StyledList = styled.ul``;
+const StyledList = styled.ul`padding: 0;`;
 
 const ListElement = styled.li`
   font-size: 2.4rem;
