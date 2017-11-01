@@ -6,7 +6,6 @@ import Helmet from 'react-helmet';
 import 'prismjs/themes/prism-solarizedlight.css';
 
 import Nav from './../components/Nav';
-import Favicon from './../components/Favicon';
 
 import baseStyles from './../utils/base-styles';
 
@@ -33,8 +32,6 @@ export default class Template extends React.Component {
 
     return (
       <Main>
-        <Favicon />
-
         <Helmet>
           <link
             href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:700"

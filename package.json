@@ -12,6 +12,7 @@
   "dependencies": {
     "gatsby": "^1.9.79",
     "gatsby-link": "^1.6.23",
+    "gatsby-plugin-favicon": "^1.0.0",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^1.0.5",
     "gatsby-remark-images": "^1.5.24",
