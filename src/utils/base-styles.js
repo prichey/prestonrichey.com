@@ -42,7 +42,7 @@ export default () => {
     }
 
     p {
-      line-height: 1.5em;
+      // line-height: 1.5em;
     }
 
     .gatsby-highlight-code-line {
