@@ -15,6 +15,7 @@ export default () => {
       font-size: 1.6rem;
       font-family: 'Roboto Mono', monospace;
       word-break: break-word;
+      // white-space: pre-line;
     }
 
     h1, h2, h3, h4, h5, h6 {

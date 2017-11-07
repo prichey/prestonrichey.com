@@ -7,12 +7,30 @@ const activeClassName = 'active';
 
 const StyledNav = styled.nav`margin-bottom: 2em;`;
 
-const StyledList = styled.ul`padding: 0;`;
+const StyledList = styled.ul`
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap:
+  justify-content: space-between;
+
+  @media (min-width: 520px) {
+    display: block;
+  }
+`;
 
 const ListElement = styled.li`
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   display: inline-block;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
+
+  @media (min-width: 520px) {
+    font-size: 1.8rem;
+    margin-right: 2rem;
+  }
+
+  @media (min-width: 520px) {
+    font-size: 2.4rem;
+  }
 
   &:after {
     content: ' ';
