@@ -30,6 +30,18 @@ module.exports = {
         name: 'pages',
         path: `${__dirname}/src/pages/`
       }
+    },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#0000ff'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-70108869-1'
+      }
     }
   ],
   pathPrefix: '/prichey-gatsby'

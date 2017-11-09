@@ -12,6 +12,8 @@
   "dependencies": {
     "gatsby": "^1.9.79",
     "gatsby-link": "^1.6.23",
+    "gatsby-plugin-google-analytics": "^1.0.12",
+    "gatsby-plugin-nprogress": "^1.0.7",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^1.0.5",
     "gatsby-remark-images": "^1.5.24",
