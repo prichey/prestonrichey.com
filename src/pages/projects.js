@@ -1,12 +1,32 @@
 import React from 'react';
 
-import ProjectListing from './../components/ProjectListing';
+import ProjectListingSection from './../components/ProjectListingSection';
 
 class ProjectsPage extends React.Component {
   render() {
-    const projects = this.props.data.allMarkdownRemark.edges;
+    const allProjects = this.props.data.allMarkdownRemark.edges;
 
-    return <ProjectListing projects={projects} />;
+    const personalProjects = allProjects.filter(
+      project => project.node.fields.projectType === 'personal'
+    );
+
+    const professionalProjects = allProjects.filter(
+      project => project.node.fields.projectType === 'professional'
+    );
+
+    return (
+      <div>
+        <ProjectListingSection
+          projects={personalProjects}
+          sectionTitle="Personal"
+        />
+
+        <ProjectListingSection
+          projects={professionalProjects}
+          sectionTitle="Professional"
+        />
+      </div>
+    );
   }
 }
 
@@ -26,6 +46,7 @@ export const query = graphql`
           }
           fields {
             slug
+            projectType
           }
         }
       }

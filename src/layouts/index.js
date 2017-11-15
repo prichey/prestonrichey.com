@@ -16,6 +16,8 @@ const Main = styled.main`
   margin: 0 auto;
 `;
 
+const StyledTitle = styled.h1`// margin-bottom: 2rem;`;
+
 const TitleLink = styled(Link)`
   text-transform: lowercase;
   color: #000;
@@ -43,9 +45,9 @@ export default class Template extends React.Component {
           <title>prichey.net</title>
         </Helmet>
 
-        <h1>
+        <StyledTitle>
           <TitleLink to="/">Preston Richey</TitleLink>
-        </h1>
+        </StyledTitle>
 
         <Nav />
 

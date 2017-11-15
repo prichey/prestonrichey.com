@@ -11,12 +11,23 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       value: slug
     });
 
-    const type = path.parse(slug).dir === '/projects' ? 'project' : 'post';
+    const type = path.parse(slug).dir === '/blog' ? 'post' : 'project';
     createNodeField({
       node,
       name: 'type',
       value: type
     });
+
+    if (type === 'project') {
+      const pathArray = path.parse(slug).dir.split(path.sep);
+      const projectType = pathArray[pathArray.length - 1];
+
+      createNodeField({
+        node,
+        name: 'projectType',
+        value: projectType
+      });
+    }
   }
 };
 

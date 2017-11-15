@@ -7,7 +7,10 @@ const DateSpan = styled.span`
   margin-left: 0.5em;
 `;
 
-const StyledProjectListing = styled.ul`list-style: none;`;
+const StyledProjectListing = styled.ul`
+  list-style: none;
+  margin-top: 0.5em;
+`;
 const StyledProjectItem = styled.li`
   font-size: 1.8rem;
   // text-decoration: none;
