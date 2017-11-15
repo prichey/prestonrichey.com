@@ -1,5 +1,5 @@
 ---
-title: "Test Project"
+title: "Mapkins Machine"
 date: "2017"
 ---
 
