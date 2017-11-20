@@ -5,7 +5,9 @@ import styled from 'styled-components';
 
 const activeClassName = 'active';
 
-const StyledNav = styled.nav`margin-bottom: 2em;`;
+const StyledNav = styled.nav`
+  margin-bottom: 2em;
+`;
 
 const StyledList = styled.ul`
   padding: 0;
@@ -42,7 +44,6 @@ const ListElement = styled.li`
 const NavItem = styled(Link).attrs({
   activeClassName
 })`
-
   color: black;
   border: none;
 
@@ -60,11 +61,6 @@ class Nav extends React.Component {
     return (
       <StyledNav>
         <StyledList>
-          <ListElement>
-            <NavItem to="/blog/" activeClassName={activeClassName}>
-              /blog
-            </NavItem>
-          </ListElement>
           <ListElement>
             <NavItem to="/projects/" activeClassName={activeClassName}>
               /projects

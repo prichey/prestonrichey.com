@@ -43,7 +43,12 @@ export default () => {
     }
 
     p {
-      // line-height: 1.5em;
+      line-height: 1.5em;
+      font-size: 1.8rem;
+    }
+
+    twitterwidget {
+      margin: 0 auto;
     }
 
     .gatsby-highlight-code-line {

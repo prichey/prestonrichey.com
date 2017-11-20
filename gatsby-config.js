@@ -42,7 +42,8 @@ module.exports = {
       options: {
         trackingId: 'UA-70108869-1'
       }
-    }
+    },
+    'gatsby-plugin-twitter'
   ],
   pathPrefix: '/prichey-gatsby'
 };

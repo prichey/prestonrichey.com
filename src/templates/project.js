@@ -1,5 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import TextPostBody from './../components/TextPostBody';
+import ProjectLinks from './../components/ProjectLinks';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
@@ -7,6 +10,7 @@ export default ({ data }) => {
   return (
     <div>
       <h1>{post.frontmatter.title}</h1>
+      <ProjectLinks link={post.frontmatter.link} repo={post.frontmatter.repo} />
       <TextPostBody html={post.html} />
     </div>
   );
@@ -18,6 +22,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        link
+        repo
       }
     }
   }

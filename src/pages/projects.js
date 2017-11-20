@@ -36,13 +36,14 @@ export const query = graphql`
   query ProjectsPageQuery {
     allMarkdownRemark(
       filter: { fields: { type: { eq: "project" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
         node {
           frontmatter {
             title
             date
+            lede
           }
           fields {
             slug

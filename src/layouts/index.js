@@ -12,11 +12,13 @@ import baseStyles from './../utils/base-styles';
 
 const Main = styled.main`
   max-width: 80rem;
-  padding: 2rem;
+  padding: 2rem 2rem 6rem;
   margin: 0 auto;
 `;
 
-const StyledTitle = styled.h1`// margin-bottom: 2rem;`;
+const StyledTitle = styled.h1`
+  // margin-bottom: 2rem;
+`;
 
 const TitleLink = styled(Link)`
   text-transform: lowercase;
