@@ -48,10 +48,13 @@ a link</a> to a Meerkat stream of a Q&A with Shawn Mendes which was retweeted
 over 1,300 times and received nearly 300 replies. Due to some faulty logic in my
 script, the bot saw replies to a dead Meerkat link as individual tweets that
 themselves contained dead links, so it replied to lots of tweets mistakenly.
-Lots of users were also either perturbed by the bot, or just confused. I added a
-default response to any users who tweeted back at the bot, informing users that
-it was an automated service and that they could yell at @prestonrichey (me) if
-they wanted to.
+Lots of users were also either
+<a href="https://twitter.com/ryamidon/status/579801414060257280" target="_blank">perturbed</a>
+by the bot, or just
+<a href="https://twitter.com/GhostRhino23/status/579793803269283840" target="_blank">confused</a>.
+I added a default response to any users who tweeted back at the bot, informing
+users that it was an automated service and that they could yell at
+@prestonrichey (me) if they wanted to.
 
 I disabled the service because I started to question the ethics of such an
 automated, naggy (and somewhat passive-agressive) service. Building the bot was
