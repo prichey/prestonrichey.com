@@ -1,5 +1,5 @@
 ---
-title: "Fredthoughts Bot"
+title: "Fred-thoughts Bot"
 date: "2016"
 lede: "A Slackbot to automate a Twitter account."
 link: ""
@@ -34,7 +34,9 @@ automatically be prevented from being posted. That way, either Fred himself or
 anyone else concerned about the thought being tweeted out publicly would be able
 to veto it.
 
-The bot was a success and ran for over 6 months until Fred moved on to another
+The bot ran successfully for over 6 months until Fred moved on to another
 job, leaving the rest of us devoid of his precious nuggets of inspiration.
-Still, we had a semi-permanent record of past thoughts, which was certainly
+Still, we had a permanent record of past thoughts, which was certainly
 better than nothing.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Amy: &quot;What kind of cat is it?&quot;<br>Fred: &quot;Normal.&quot;</p>&mdash; Fred Thoughts (@FromFredsMouth) <a href="https://twitter.com/FromFredsMouth/status/604444640335429633?ref_src=twsrc%5Etfw">May 30, 2015</a></blockquote>
