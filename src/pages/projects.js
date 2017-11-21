@@ -9,22 +9,28 @@ class ProjectsPage extends React.Component {
     const personalProjects = allProjects.filter(
       project => project.node.fields.projectType === 'personal'
     );
+    console.log(personalProjects);
 
     const professionalProjects = allProjects.filter(
       project => project.node.fields.projectType === 'professional'
     );
+    console.log(professionalProjects);
 
     return (
       <div>
-        <ProjectListingSection
-          projects={personalProjects}
-          sectionTitle="Personal"
-        />
+        {personalProjects.length > 0 && (
+          <ProjectListingSection
+            projects={personalProjects}
+            sectionTitle="Personal"
+          />
+        )}
 
-        <ProjectListingSection
-          projects={professionalProjects}
-          sectionTitle="Professional"
-        />
+        {professionalProjects.length > 0 && (
+          <ProjectListingSection
+            projects={professionalProjects}
+            sectionTitle="Professional"
+          />
+        )}
       </div>
     );
   }
@@ -35,7 +41,10 @@ export default ProjectsPage;
 export const query = graphql`
   query ProjectsPageQuery {
     allMarkdownRemark(
-      filter: { fields: { type: { eq: "project" } } }
+      filter: {
+        frontmatter: { publish: { eq: true } }
+        fields: { type: { eq: "project" } }
+      }
       sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {

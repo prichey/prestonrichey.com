@@ -5,7 +5,7 @@ lede: "🍕.⛪️"
 link: "http://pizza.church/"
 repo: "https://github.com/prichey/pizza-church"
 order: 5
-publish: false
+publish: true
 ---
 
 It's a spinning pizza emoji with Gregorian chanting in the background.
