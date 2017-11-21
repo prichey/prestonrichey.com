@@ -24,12 +24,6 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
       createNodeField({
         node,
-        name: 'publish',
-        value: node.frontmatter.publish || false
-      });
-
-      createNodeField({
-        node,
         name: 'projectType',
         value: projectType
       });
