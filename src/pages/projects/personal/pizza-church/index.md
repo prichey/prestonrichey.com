@@ -2,10 +2,10 @@
 title: "pizza.church"
 date: "2017"
 lede: "🍕.⛪️"
-link: ""
-repo: ""
+link: "http://pizza.church/"
+repo: "https://github.com/prichey/pizza-church"
 order: 5
 publish: false
 ---
 
-hi from test project
+It's a spinning pizza emoji with Gregorian chanting in the background.
