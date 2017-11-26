@@ -2,8 +2,8 @@
 title: "They LinkedIn"
 date: "2017"
 lede: "A Chrome extension that lets you see through the LinkedIn jargon."
-link: ""
-repo: ""
+link: "https://chrome.google.com/webstore/detail/they-linkedin/cmjockpmecfhkaeadcgneakffkioombe"
+repo: "https://github.com/prichey/they-linkedin"
 order: 9
 publish: false
 ---

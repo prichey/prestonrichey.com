@@ -5,7 +5,7 @@ lede: "A Slackbot to automate a Twitter account."
 link: ""
 repo: "https://github.com/prichey/fredthoughts-bot"
 order: 4
-publish: true
+publish: false
 ---
 
 One of the things I enjoyed about working at

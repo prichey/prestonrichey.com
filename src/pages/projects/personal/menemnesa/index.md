@@ -2,10 +2,10 @@
 title: "@menemnesa"
 date: "2017"
 lede: 'A Twitterbot that responds, "It is known..."'
-link: ""
-repo: ""
+link: "https://twitter.com/menemnesa"
+repo: "https://github.com/prichey/itisknown"
 order: 8
-publish: false
+publish: true
 ---
 
-hi from test project
+Let it be known that I was a latecomer to Game of Thrones. 
