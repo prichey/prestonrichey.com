@@ -60,5 +60,13 @@ export default () => {
       padding-left: 0.75em;
       border-left: 0.25em solid #f99;
     }
+
+    .gatsby-resp-image-wrapper {
+      @media (min-width: 520px) {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        width: 80%;
+      }
+    }
   `;
 };
