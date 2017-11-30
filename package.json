@@ -21,6 +21,7 @@
     "gatsby-remark-prismjs": "^1.2.8",
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.18",
+    "gatsby-transformer-sharp": "^1.6.15",
     "styled-normalize": "^2.2.1"
   },
   "devDependencies": {
