@@ -27,7 +27,7 @@ couldn't stop them from posting, I could automate a response that would be
 carried along and seen by thousands.
 
 I set up a login,
-<a href="https://twitter.com/E29DA4/" target="_blank">@E29DA4</a> (#E29DA4 is
+<a href="https://twitter.com/E29DA4/" target="_blank">@E29DA4</a> (#E29DA4 being
 the hex representation of Unicode code point U+2764, ❤), then wrote this script,
 which finds the most recent WBC Vine and comments "❤️💛💚💙💜". The Vine API
 didn't allow you to comment the same thing twice on the same Vine, so I was

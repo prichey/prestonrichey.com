@@ -35,4 +35,4 @@ I learned a lot working on this project. I combined several disparate API's (at 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">I&#39;ve spent the last few weekends working on a thing and I&#39;m ready to be done with it, so here you go: <a href="https://t.co/XiRh1HsdaU">https://t.co/XiRh1HsdaU</a> 🎈</p>&mdash; Preston Richey (@prestonrichey) <a href="https://twitter.com/prestonrichey/status/912454228622397440?ref_src=twsrc%5Etfw">September 25, 2017</a></blockquote>
 
 
-All interaction design / art direction was done by <a href="http://www.tanyakarpitskiy.com/" target="_blank">Tanya Karpitskiy</a>.
+All interaction design / art direction for Rotten Trumpatoes was done by <a href="http://www.tanyakarpitskiy.com/" target="_blank">Tanya Karpitskiy</a>.
