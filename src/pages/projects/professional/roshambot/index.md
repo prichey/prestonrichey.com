@@ -4,7 +4,7 @@ date: "2016"
 lede: "An artificially intelligent disembodied hand that plays rock-paper-scissors"
 link: ""
 repo: ""
-order: 13
+order: 3
 publish: false
 ---
 

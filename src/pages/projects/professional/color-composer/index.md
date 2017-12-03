@@ -4,7 +4,7 @@ date: "2017"
 lede: "An interactive installation for the Nelson Atkins Museum of Art."
 link: ""
 repo: ""
-order: 10
+order: 5
 publish: false
 ---
 
