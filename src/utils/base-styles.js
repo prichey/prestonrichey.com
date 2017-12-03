@@ -26,6 +26,11 @@ export default () => {
       box-sizing: inherit;
     }
 
+    iframe {
+      margin: 0 auto;
+      display: block;
+    }
+
     ul {
       // list-style: none;
       padding: 0;
