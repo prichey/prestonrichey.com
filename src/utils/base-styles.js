@@ -56,6 +56,22 @@ export default () => {
       margin: 0 auto;
     }
 
+    .blog-inset {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+
+      @media (min-width: 520px) {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        width: 80%;
+      }
+    }
+
     .gatsby-highlight-code-line {
       background-color: #feb;
       display: block;
