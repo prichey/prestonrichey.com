@@ -1,18 +1,18 @@
 ---
 title: "Roshambot"
 date: "2016"
-lede: "An artificially intelligent disembodied hand that plays rock-paper-scissors"
+lede: "An artificially intelligent disembodied hand that plays rock-paper-scissors."
 link: ""
 repo: "https://github.com/MoonshotLab/RoShamBot"
 order: 3
 publish: true
 ---
 
-Roshambot (more annoyingly styled RoShamBot) was my first project working with <a href="https://www.barkleyus.com/" target="_blank">Barkley</a>'s innovation lab, <a href="http://moonshot.barkleyus.com" target="_blank">Moonshot</a>. The idea for the project was to make artificial intelligence more easily understandable. We wanted to make the experience accessible to anyone, regardless of technical experience, so we decided to try and train an artificial intelligence to play a common, universal game. As luck would have it, a local bank just a few blocks away from Barkley holds an annual Rock-Paper-Scissors competition, et voilà, we decided to create a player to enter the competition.
+Roshambot (more annoyingly styled RoShamBot) was my first project working with <a href="https://www.barkleyus.com/" target="_blank">Barkley</a>'s innovation lab, <a href="http://moonshot.barkleyus.com" target="_blank">Moonshot</a>. The idea for the project was to make artificial intelligence more easily understandable. We wanted to make the experience accessible to anyone, regardless of technical experience, so we decided to try and train an artificial intelligence to play a common, universal game. As luck would have it, a local bank just a few blocks away from Barkley holds an annual Rock-Paper-Scissors competition, et voilà, we decided to create an artificially intelligent RPS player.
 
 ![Roshambot Hand](hand.jpeg "Roshambot Hand")
 
-The bot is comprised of an animatronic, 3D-printed hand rising out of a pedestal, which houses both the laptop running the main logic program, a <a href="https://en.wikipedia.org/wiki/Leap_Motion#Technology" target="_blank">Leap Motion</a> controller as well as an Arduino Uno which communicates with the laptop and controls the lights and scoreboard. To play, a user walks up to the machine and holds their hand above the sensor for 5 seconds. Then, after a countdown, both the player and the bot play their hands, and the bot uses the Leap Motion controller to figure out what the human played, and if the throw was a win, loss, or tie.
+The bot is comprised of an animatronic, 3D-printed hand rising out of a pedestal which houses both the laptop running the main logic program, a <a href="https://en.wikipedia.org/wiki/Leap_Motion#Technology" target="_blank">Leap Motion</a> controller, as well as an Arduino Uno which communicates with the laptop and controls the lights and scoreboard. To play, a user walks up to the machine and holds their hand above the sensor for 5 seconds. Then, after a countdown, both the player and the bot play their hands, and the bot uses the Leap Motion controller to figure out what the human played, and if the throw was a win, loss, or tie.
 
 ![Roshambot Pedestal](pedestal.jpeg "Roshambot Pedestal")
 

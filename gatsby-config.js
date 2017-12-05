@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/prichey-gatsby',
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
@@ -45,6 +46,5 @@ module.exports = {
       }
     },
     'gatsby-plugin-twitter'
-  ],
-  pathPrefix: '/prichey-gatsby'
+  ]
 };
