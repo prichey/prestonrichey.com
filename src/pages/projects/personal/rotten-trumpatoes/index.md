@@ -6,6 +6,7 @@ link: "https://rottentrumpatoes.com/"
 repo: "https://github.com/prichey/rottentrumpatoes"
 order: 7
 publish: true
+zoom: true
 ---
 
 Like all great ideas, it started with a tweet.
@@ -20,19 +21,25 @@ Next, I tackled the problem of building up a database of movies with their corre
 
 While FiveThirtyEight gives a rating to the tenth (e.g. 38.7%), RT deals in integers, so I knew I'd have to gather enough movies to cover each possible rating, 0% - 100. (In reality, there's never going to be anywhere near total consensus, so it's unlikely that some movies will be used, but hey, with this President you never know.) I also wanted to have enough for each rating that the results were varied, and you could come back to the site and get different results each time. I ended up building a <a href="https://github.com/prichey/rottentrumpatoes/blob/master/movies.json" target="_blank">database</a> of over 1,800 movies, each with a title, year, RT rating, number of IMDB ratings, and poster image. I ignore movies from this year, since their rating may not be stable yet. Then, for each rating, I select the 20 movies with the most ratings on IMDB (even if a movie is 'bad', movies with the most reviews are more likely to be recognizable), and provide one at random that matches the president's current rating (which is updated every hour).
 
-<a href="https://rottentrumpatoes.com/" target="_blank">![Rotten Trumpatoes](index.png "Rotten Trumpatoes")</a>
+<div class="blog-inset">
+<img src="index.png" alt="Rotten Trumpatoes" title="Rotten Trumpatoes" data-action="zoom"/>
+</div>
 
 While not publicly accessible, I created a way to manage movies in the DB which allowed me to remove movies from consideration, as well as merely to examine the huge list of movies I created. I decided to remove some movies from the DB that were either unknown, in poor taste, or just weren't funny. Since my database was a huge JSON file, it was nearly impossible to view in a text editor, but viewing the top results via this interface turned out to be very useful.
 
-![Movies Interface](movies.png "Movies Interface")
+<div class="blog-inset">
+<img src="movies.png" alt="Movies Interface" title="Movies Interface" data-action="zoom"/>
+</div>
 
 I also made an interface for scraping, which allows you to specify the specific pages of the TMDb `/discover` endpoint to scrape (useful if the app crashes, which of course it never did). Using `socket.io` I streamed the server results in realtime to the client, so that you can follow along and see progress as the scraper runs, which is helpful as I let it run over the course of 10+ hours.
 
-![Scraping Interface](scrape.png "Scraping Interface")
+<div class="blog-inset">
+<img src="scrape.png" alt="Scraping Interface" title="Scraping Interface" data-action="zoom"/>
+</div>
 
 I learned a lot working on this project. I combined several disparate API's (at least 4, by my count), as well as brushed up my scraping skills (most of it done with Google's newish <a href="https://github.com/GoogleChrome/puppeteer" target="_blank">Puppeteer</a>, which turned out to be a blast to use). After more than a month of working evenings and weekends, I launched the site (via tweet, of course), which, to my surprise, was retweeted by PJ, the originator of the initial idea.
 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">I&#39;ve spent the last few weekends working on a thing and I&#39;m ready to be done with it, so here you go: <a href="https://t.co/XiRh1HsdaU">https://t.co/XiRh1HsdaU</a> 🎈</p>&mdash; Preston Richey (@prestonrichey) <a href="https://twitter.com/prestonrichey/status/912454228622397440?ref_src=twsrc%5Etfw">September 25, 2017</a></blockquote>
 
 
-All interaction design / art direction for Rotten Trumpatoes was done by <a href="http://www.tanyakarpitskiy.com/" target="_blank">Tanya Karpitskiy</a>.
+All art direction for Rotten Trumpatoes was done by <a href="http://www.tanyakarpitskiy.com/" target="_blank">Tanya Karpitskiy</a>.

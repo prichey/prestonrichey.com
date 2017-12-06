@@ -6,14 +6,13 @@ link: "https://twitter.com/canizen"
 repo: "https://github.com/MoonshotLab/state-of-zen"
 order: 4
 publish: true
+zoom: true
 ---
-
-Somehow, I got paid to make a Twitterbot (thanks <a href="http://moonshot.barkleyus.com" target="_blank"> Moonshot</a>!).
 
 In 2016, <a href="https://www.barkleyus.com/" target="_blank">Barkley</a> underwent major renovations on the 4th floor of the old <a href="https://en.wikipedia.org/wiki/TWA_Corporate_Headquarters_Building" target="_blank">TWA headquarters</a> it calls home. The space, formerly consisting mostly of client-specific 'war-rooms', was opened up as a collaboration space for all partners. It included an expanded company kitchen and lunch area, as well as two 'zen rooms', light- and sound-proof rooms no more than 6 feet on a side, for partners to use for work, sleep, or (ostensibly) meditation.
 
 <div class="blog-inset">
-<img src="/canizen-doors.gif" alt="Zen Room Doors" title="Zen Room Doors" />
+<img src="/canizen-doors.gif" alt="Zen Room Doors" title="Zen Room Doors" data-action="zoom"/>
 </div>
 
 The rooms were great in practice, but there was a glaring problem: there was no way to tell if a room was available without making the trek up from the 2nd or 3rd floor. As a developer, one of my most base instincts is to problem-solve my way out of (unnecessary) physical activity. So, that's just what I did.

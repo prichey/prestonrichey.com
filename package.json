@@ -17,11 +17,13 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^1.0.5",
     "gatsby-plugin-twitter": "^1.0.12",
+    "gatsby-remark-copy-linked-files": "^1.5.22",
     "gatsby-remark-images": "^1.5.24",
     "gatsby-remark-prismjs": "^1.2.8",
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.18",
     "gatsby-transformer-sharp": "^1.6.15",
+    "react-load-script": "^0.0.6",
     "styled-normalize": "^2.2.1"
   },
   "devDependencies": {

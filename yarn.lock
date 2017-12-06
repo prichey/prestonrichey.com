@@ -3567,6 +3567,19 @@ gatsby-react-router-scroll@^1.0.2:
     scroll-behavior "^0.9.1"
     warning "^3.0.0"
 
+gatsby-remark-copy-linked-files@^1.5.22:
+  version "1.5.22"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.5.22.tgz#00fcc9f9809441dc350201b66905f33a28fc3e8f"
+  dependencies:
+    babel-runtime "^6.26.0"
+    cheerio "^1.0.0-rc.2"
+    fs-extra "^4.0.1"
+    image-size "^0.6.1"
+    is-relative-url "^2.0.0"
+    lodash "^4.17.4"
+    path-is-inside "^1.0.2"
+    unist-util-visit "^1.1.1"
+
 gatsby-remark-images@^1.5.24:
   version "1.5.24"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.5.24.tgz#21f0d1c65b36ea8f3231f37b4cbaa134c38096dd"
@@ -4434,7 +4447,7 @@ image-size@^0.5.1:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
 
-image-size@^0.6.0:
+image-size@^0.6.0, image-size@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.1.tgz#98122a562d59dcc097ef1b2c8191866eb8f5d663"
 
@@ -6488,7 +6501,7 @@ path-is-absolute@^1.0.0, path-is-absolute@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
 
-path-is-inside@^1.0.1:
+path-is-inside@^1.0.1, path-is-inside@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
 
@@ -7390,6 +7403,10 @@ react-hot-loader@^3.0.0-beta.6:
     react-proxy "^3.0.0-alpha.0"
     redbox-react "^1.3.6"
     source-map "^0.6.1"
+
+react-load-script@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/react-load-script/-/react-load-script-0.0.6.tgz#db6851236aaa25bb622677a2eb51dad4f8d2c258"
 
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"

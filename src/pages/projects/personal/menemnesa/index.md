@@ -21,5 +21,3 @@ The bot tweeted just under 50 times before it was muzzled for violating Twitter'
 Totally understandable. You don't want automated bots spamming users like telemarketers. Even though all of the users @menemnesa replied to either ignored the tweet or were amused rather than disgruntled, I decided to retire the bot rather than trying to figure out some way around the TOS. I chalked this one up as a learning experience.
 
 Let it be known that you should always read the Terms of Service.
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">It is known.</p>&mdash; It is known. (@menemnesa) <a href="https://twitter.com/menemnesa/status/923447155137957888?ref_src=twsrc%5Etfw">October 26, 2017</a></blockquote>
