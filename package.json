@@ -1,5 +1,5 @@
 {
-  "name": "prichey-gatsby",
+  "name": "prichey.net",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,7 +7,7 @@
     "develop": "gatsby develop",
     "build": "gatsby build --verbose",
     "serve": "gatsby serve --verbose",
-    "deploy": "gatsby build --prefix-paths --verbose && gh-pages -d public"
+    "deploy": "gatsby build --verbose && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "^1.9.79",

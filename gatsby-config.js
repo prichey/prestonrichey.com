@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: '/prichey-gatsby',
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
