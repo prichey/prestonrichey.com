@@ -22,7 +22,9 @@ The bot is comprised of an animatronic, 3D-printed hand rising out of a pedestal
 
 Roshambot maintains a database of every throw played against it, as well as the 'context' for each of those throws. This allows the bot to make inferences into how the individual plays, as well as how people tend to play, in general. It might find that people who play Rock and then Scissors typically switch back to Rock for the third throw. Or, a particular individual might tend towards Paper. In a game as random as Rock-Paper-Scissors, any universal commonalities are difficult to find, but with individual players, the bot can find and exploit subconscious biases, something I found to be truly remarkable (a fact shown by this eerily good <a href="http://www.nytimes.com/interactive/science/rock-paper-scissors.html" target="_blank">simulation</a> made by the New York Times).
 
-<iframe width="608" height="342" src="https://www.youtube.com/embed/uS2KD28gLHM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<div class="blog-inset">
+  <iframe class="youtube" src="https://www.youtube.com/embed/uS2KD28gLHM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 While we weren't able to enter Roshambot into the RPS competition, we did bring it along to give competitors a chance to warm up. The crowd loved interacting with a device that was very clearly 'unhuman', yet possesses the capabilities to learn. Roshambot, at the end of the night, was bested by the winner of the RPS competition in a dramatic bout. But it was a close one, 2 to 3. The bot's been training, getting smarter and smarter, and we think it's only a matter of time before it returns to squash its puny human oppressors.
 

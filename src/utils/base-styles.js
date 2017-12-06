@@ -29,6 +29,17 @@ export default () => {
     iframe {
       margin: 0 auto;
       display: block;
+      max-width: 100%;
+      width: 100%;
+
+      &.youtube {
+        height: 20rem;
+
+        @media (min-width: 550px) {
+          height: 34rem;
+        }
+      }
+
     }
 
     ul {
