@@ -8,6 +8,16 @@ const StyledProjectLinksList = styled.ul`
 
 const StyledProjectLink = styled.li`
   display: inline;
+
+  &:after {
+    content: ' | ';
+  }
+
+  &:last-child {
+    &:after {
+      content: '';
+    }
+  }
 `;
 
 class ProjectLinks extends React.Component {
@@ -20,7 +30,6 @@ class ProjectLinks extends React.Component {
               <a href={this.props.link} target="_blank">
                 Link
               </a>
-              {this.props.repo && <span> | </span>}
             </StyledProjectLink>
           )}
 
