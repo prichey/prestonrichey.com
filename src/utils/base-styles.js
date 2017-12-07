@@ -83,6 +83,28 @@ export default () => {
       }
     }
 
+    .blog-section {
+      &:not(:first-child) {
+        margin-top: 2em;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0.5em;
+
+        & + p {
+          margin-top: 0.5em;
+        }
+      }
+
+      ${'' /* .section-anchor {
+        &:before {
+          content: '#';
+          position: absolute;
+          left: -2rem;
+        }
+      } */}
+    }
+
     .gatsby-highlight-code-line {
       background-color: #feb;
       display: block;

@@ -10,11 +10,18 @@ zoom: true
 lang: "Node.js"
 ---
 
+<section class="blog-section">
+
 Like all great ideas, it started with a tweet.
 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Every morning I wake up and check if Trump is polling higher or lower than the movie Suicide Squad. It’s getting close. <a href="https://t.co/f9O9NcuUPz">pic.twitter.com/f9O9NcuUPz</a></p>&mdash; PJ Vogt (@PJVogt) <a href="https://twitter.com/PJVogt/status/895824447113842689?ref_src=twsrc%5Etfw">August 11, 2017</a></blockquote>
 
 In an era where everything is rated, from movies to restaurants to <a href="https://thewirecutter.com/reviews/best-fidget-spinners/" target="_blank">fidget spinners</a>, there was something really amusing about comparing apples and oranges, as it were: this brunch spot is about as popular as that pair of headphones; this album is about as popular as that Airbnb host, etc. So, I set out to find a movie that is doing about as well as the president.
+</section>
+
+<section class="blog-section">
+
+## So many APIs
 
 First, I had to figure out how well the president is actually doing. Picking a single one from the tens (maybe hundreds) of different polls, indexes, and surveys turned out to be an impossible task, so I chose the calculations of <a href="http://fivethirtyeight.com/" target="_blank">FiveThirtyEight</a>, which seem to be <a href="http://fivethirtyeight.com/features/how-were-tracking-donald-trumps-approval-ratings/" target="_blank">well reasoned</a> and attempt to account for all other major polls, with each of those scores weighted based on <a href="https://projects.fivethirtyeight.com/pollster-ratings/" target="_blank">historical accuracy</a>. FiveThirtyEight also updates their rating multiple times a day, which allows for more varied results, which in turn make for a more interesting web experience (since if you check the page at multiple times of the day, the results might differ).
 
@@ -25,6 +32,11 @@ While FiveThirtyEight gives a rating to the tenth (e.g. 38.7%), RT deals in inte
 <div class="blog-inset">
 <img src="index.png" alt="Rotten Trumpatoes" title="Rotten Trumpatoes" data-action="zoom"/>
 </div>
+</section>
+
+<section class="blog-section">
+
+<h2 class="section-anchor">Dev niceties</h2>
 
 While not publicly accessible, I created a way to manage movies in the DB which allowed me to remove movies from consideration, as well as merely to examine the huge list of movies I created. I decided to remove some movies from the DB that were either unknown, in poor taste, or just weren't funny. Since my database was a huge JSON file, it was nearly impossible to view in a text editor, but viewing the top results via this interface turned out to be very useful.
 
@@ -44,3 +56,4 @@ I learned a lot working on this project. I combined several disparate API's (at 
 
 
 All art direction for Rotten Trumpatoes was done by <a href="http://www.tanyakarpitskiy.com/" target="_blank">Tanya Karpitskiy</a>.
+</section>
