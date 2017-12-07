@@ -7,6 +7,7 @@ repo: "https://github.com/prichey/rottentrumpatoes"
 order: 7
 publish: true
 zoom: true
+lang: "Node.js"
 ---
 
 Like all great ideas, it started with a tweet.

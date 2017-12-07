@@ -6,6 +6,7 @@ link: ""
 repo: "https://github.com/prichey/fredthoughts-bot"
 order: 4
 publish: false
+lang: "Node.js"
 ---
 
 One of the things I enjoyed about working at

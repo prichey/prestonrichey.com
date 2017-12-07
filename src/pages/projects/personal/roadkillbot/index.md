@@ -6,6 +6,7 @@ link: "https://twitter.com/roadkillbot"
 repo: "https://github.com/prichey/roadkillbot"
 order: 2
 publish: true
+lang: "Ruby"
 ---
 
 <a href="https://techcrunch.com/2015/03/01/meerkat/" target="_blank">Meerkat</a>,

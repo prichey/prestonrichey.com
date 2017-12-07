@@ -7,6 +7,7 @@ repo: "https://github.com/prichey/they-linkedin"
 order: 9
 publish: true
 zoom: true
+lang: "Node.js"
 ---
 
 LinkedIn can be a useful resource whenever you're looking for a job, or looking to fill a job, and is a total waste of time the other 93% of the time. (All opinions my own, obviously.) I maintain <a href="https://www.linkedin.com/in/preston-richey-40b35950/" target="_blank">a profile</a> out of sadistic compulsion, though I rarely 'do' anything on the site. Out of all the feeds to which I subject myself regularly, LinkedIn seems to have the highest noise to signal ratio. It is also, by far, the most jargon-y. The back-patting is endless and the paradigm-shifting synergy is streamlined.

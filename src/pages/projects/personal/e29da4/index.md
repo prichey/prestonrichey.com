@@ -6,6 +6,7 @@ link: ""
 repo: "https://gist.github.com/prichey/cb161f121301ef4f2f22"
 order: 1
 publish: true
+lang: "Python"
 ---
 
 Though I refuse to say anything the

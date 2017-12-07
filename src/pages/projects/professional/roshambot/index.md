@@ -6,6 +6,7 @@ link: ""
 repo: "https://github.com/MoonshotLab/RoShamBot"
 order: 3
 publish: true
+lang: "Python, Arduino"
 ---
 
 Roshambot (more annoyingly styled RoShamBot) was my first project working with <a href="https://www.barkleyus.com/" target="_blank">Barkley</a>'s innovation lab, <a href="http://moonshot.barkleyus.com" target="_blank">Moonshot</a>. The idea for the project was to make artificial intelligence more easily understandable. We wanted to make the experience accessible to anyone, regardless of technical experience, so we decided to try and train an artificial intelligence to play a common, universal game. As luck would have it, a local bank just a few blocks away from Barkley holds an annual Rock-Paper-Scissors competition, et voilà, we decided to create an artificially intelligent RPS player.

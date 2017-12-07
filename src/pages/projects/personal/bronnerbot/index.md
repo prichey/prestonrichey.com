@@ -6,6 +6,7 @@ link: "https://twitter.com/bronnerbot"
 repo: "https://github.com/prichey/bronnerbot"
 order: 3
 publish: true
+lang: "Ruby"
 ---
 
 <a href="" target="_blank">@bronnerbot</a> was my first ebooks-style

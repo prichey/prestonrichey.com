@@ -6,6 +6,7 @@ link: "https://twitter.com/menemnesa"
 repo: "https://github.com/prichey/itisknown"
 order: 8
 publish: true
+lang: "Node.js"
 ---
 
 Let it be known that I was a latecomer to Game of Thrones. One of my favorite recurring memes of the series is the <a href="http://gameofthrones.wikia.com/wiki/Dothraki" target="_blank">Dothraki</a> use of '<a href="https://www.youtube.com/watch?v=foqUPiwMiOM" target="_blank">it is known</a>' as an affirmation of common knowledge. While you don't hear the phrase used commonly today, you do often hear 'let it be known' (especially often on <a href="https://twitter.com/search?q=let+it+be+known" target="_blank">Twitter</a>, for some reason). After seeing one such tweet, I had the idea to make a Twitterbot that would affirm anyone (albeit passively) seeking just such affirmation.

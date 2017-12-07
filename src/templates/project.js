@@ -12,7 +12,12 @@ export default ({ data }) => {
   return (
     <div>
       <h1>{post.frontmatter.title}</h1>
-      <ProjectLinks link={post.frontmatter.link} repo={post.frontmatter.repo} />
+      <ProjectLinks
+        link={post.frontmatter.link}
+        repo={post.frontmatter.repo}
+        date={post.frontmatter.date}
+        lang={post.frontmatter.lang}
+      />
       <TextPostBody html={post.html} />
 
       {post.frontmatter.zoom === true && (
@@ -41,7 +46,9 @@ export const query = graphql`
         title
         link
         repo
+        date
         zoom
+        lang
       }
     }
   }

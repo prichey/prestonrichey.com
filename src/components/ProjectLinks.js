@@ -25,6 +25,10 @@ class ProjectLinks extends React.Component {
     if (!!this.props.link || !!this.props.repo) {
       return (
         <StyledProjectLinksList>
+          {this.props.date && (
+            <StyledProjectLink>{this.props.date}</StyledProjectLink>
+          )}
+
           {this.props.link && (
             <StyledProjectLink>
               <a href={this.props.link} target="_blank">
@@ -39,6 +43,10 @@ class ProjectLinks extends React.Component {
                 Repo
               </a>
             </StyledProjectLink>
+          )}
+
+          {this.props.lang && (
+            <StyledProjectLink>{this.props.lang}</StyledProjectLink>
           )}
         </StyledProjectLinksList>
       );
