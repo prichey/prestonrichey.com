@@ -25,16 +25,20 @@ class ProjectLinks extends React.Component {
     if (!!this.props.link || !!this.props.repo) {
       return (
         <StyledProjectLinksList>
+          {this.props.link && (
+            <StyledProjectLink>
+              <a href={this.props.link} target="_blank">
+                {this.props.link.length > 40 ? 'Link' : this.props.link}
+              </a>
+            </StyledProjectLink>
+          )}
+
           {this.props.date && (
             <StyledProjectLink>{this.props.date}</StyledProjectLink>
           )}
 
-          {this.props.link && (
-            <StyledProjectLink>
-              <a href={this.props.link} target="_blank">
-                Link
-              </a>
-            </StyledProjectLink>
+          {this.props.lang && (
+            <StyledProjectLink>{this.props.lang}</StyledProjectLink>
           )}
 
           {this.props.repo && (
@@ -43,10 +47,6 @@ class ProjectLinks extends React.Component {
                 Repo
               </a>
             </StyledProjectLink>
-          )}
-
-          {this.props.lang && (
-            <StyledProjectLink>{this.props.lang}</StyledProjectLink>
           )}
         </StyledProjectLinksList>
       );
