@@ -1,3 +1,9 @@
 import React from 'react';
 
-export default () => null;
+class Index extends React.Component {
+  render() {
+    return <img src="/under-construction.gif" alt="" />;
+  }
+}
+
+export default Index;

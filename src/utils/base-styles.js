@@ -45,6 +45,7 @@ export default () => {
     ul {
       // list-style: none;
       padding: 0;
+      ${'' /* list-style: square; */}
     }
 
     a {
@@ -84,6 +85,8 @@ export default () => {
     }
 
     .blog-section {
+      font-size: 1.8rem;
+
       &:not(:first-child) {
         margin-top: 2em;
       }
@@ -93,6 +96,19 @@ export default () => {
 
         & + p {
           margin-top: 0.5em;
+        }
+      }
+
+      ul {
+        margin-left: 2em;
+      }
+
+      li {
+        margin: 0.5em 0;
+        line-height: 1.5em;
+
+        p {
+          margin: 0;
         }
       }
 
