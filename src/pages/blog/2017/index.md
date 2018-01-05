@@ -28,7 +28,7 @@ Without further ado, here's a list, in no particular order, of a few of the thin
 * VR on the HTC Vive (Google Earth, SUPERHOT, <a href="http://store.steampowered.com/app/518580/Accounting/" target="_blank">Accounting</a>)
 * Ethel’s Creamy Lobster Roll at <a href="http://row34.com/" target="_blank">Row 34</a> in Boston
 * <a href="https://www.npr.org/sections/13.7/2017/03/10/519587414/the-power-of-40-speakers-in-a-room" target="_blank">40 Part Motet</a> at the Nelson-Atkins
-* Getting a <a href="https://www.leesa.com/" target="_blank">Leesa</a> mattress
+* <a href="https://www.youtube.com/watch?v=zNCz4mQzfEI" target="_blank">Coco</a>
 * Podcasts: <a href="https://stownpodcast.org/" target="_blank">S-Town</a>, <a href="https://gimletmedia.com/reply-all/" target="_blank">Reply All</a>, <a href="https://soundcloud.com/bodega-sushi" target="_blank">Bodega Boys</a>, <a href="https://overcast.fm/itunes1219395487/stoner" target="_blank">Stoner</a>
 * <a href="https://www.youtube.com/channel/UCJHA_jMfCvEnv-3kRjTCQXw" target="_blank">Binging With Babish</a>
 * Radiohead at Sprint Center
