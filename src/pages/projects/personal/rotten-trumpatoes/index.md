@@ -17,6 +17,10 @@ Like all great ideas, it started with a tweet.
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Every morning I wake up and check if Trump is polling higher or lower than the movie Suicide Squad. It’s getting close. <a href="https://t.co/f9O9NcuUPz">pic.twitter.com/f9O9NcuUPz</a></p>&mdash; PJ Vogt (@PJVogt) <a href="https://twitter.com/PJVogt/status/895824447113842689?ref_src=twsrc%5Etfw">August 11, 2017</a></blockquote>
 
 In an era where everything is rated, from movies to restaurants to <a href="https://thewirecutter.com/reviews/best-fidget-spinners/" target="_blank">fidget spinners</a>, there was something really amusing about comparing apples and oranges, as it were: this brunch spot is about as popular as that pair of headphones; this album is about as popular as that Airbnb host, etc. So, I set out to find a movie that is doing about as well as the president.
+
+<div class="blog-inset">
+<img src="index.png" alt="Rotten Trumpatoes" title="Rotten Trumpatoes" data-action="zoom"/>
+</div>
 </section>
 
 <section class="blog-section">
@@ -28,10 +32,6 @@ First, I had to figure out how well the president is actually doing. Picking a s
 Next, I tackled the problem of building up a database of movies with their corresponding <a href="https://www.rottentomatoes.com/" target="_blank">Rotten Tomatoes</a> ratings. The only problem is, there isn't a publicly accessible API for this information. There is a <a href="https://developer.fandango.com/Rotten_Tomatoes" target="_blank">private API</a> which developers can apply to access (and I did), but almost 4 months after submitting the application, I still haven't heard anything back. With further googling, I found two API's that I combined to do the job: <a href="https://www.themoviedb.org/" target="_blank">The Movie DB</a>, which offers a free <a href="https://www.themoviedb.org/documentation/api" target="_blank">API</a> with a `/discover` endpoint that yields lists of popular movies, but *doesn't* include the RT rating, and <a href="http://www.omdbapi.com/" target="_blank">The Open Movie Database</a> (OMDb), which doesn't provide any sort of `/discover` feature, but *does* include the RT rating for specific movies.
 
 While FiveThirtyEight gives a rating to the tenth (e.g. 38.7%), RT deals in integers, so I knew I'd have to gather enough movies to cover each possible rating, 0% - 100. (In reality, there's never going to be anywhere near total consensus, so it's unlikely that some movies will be used, but hey, with this President you never know.) I also wanted to have enough for each rating that the results were varied, and you could come back to the site and get different results each time. I ended up building a <a href="https://github.com/prichey/rottentrumpatoes/blob/master/movies.json" target="_blank">database</a> of over 1,800 movies, each with a title, year, RT rating, number of IMDB ratings, and poster image. I ignore movies from this year, since their rating may not be stable yet. Then, for each rating, I select the 20 movies with the most ratings on IMDB (even if a movie is 'bad', movies with the most reviews are more likely to be recognizable), and provide one at random that matches the president's current rating (which is updated every hour).
-
-<div class="blog-inset">
-<img src="index.png" alt="Rotten Trumpatoes" title="Rotten Trumpatoes" data-action="zoom"/>
-</div>
 </section>
 
 <section class="blog-section">
