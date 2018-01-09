@@ -56,7 +56,7 @@ class Head extends React.Component {
       const scalar = 11;
       // const scalar = 30;
       obj.scale.set(scalar, scalar, scalar);
-      obj.rotation.set(Math.PI * 0, Math.PI * 0, Math.PI * 0);
+      obj.rotation.set(Math.PI * -0.05, Math.PI * 0, Math.PI * 0);
       group.add(obj);
       this.setState({
         obj: obj
