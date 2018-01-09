@@ -7,6 +7,8 @@ import WheelReact from 'wheel-react';
 
 OBJLoader(THREE);
 
+// TODO: THREE DRAG CONTROLS?
+
 class Head extends React.Component {
   constructor(props, context) {
     super(props, context);
