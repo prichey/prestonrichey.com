@@ -46,7 +46,7 @@ export const query = graphql`
         frontmatter: { publish: { eq: true } }
         fields: { type: { eq: "project" } }
       }
-      sort: { fields: [frontmatter___order], order: ASC }
+      sort: { fields: [frontmatter___order], order: DESC }
     ) {
       edges {
         node {
