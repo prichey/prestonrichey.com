@@ -71,11 +71,11 @@ class Nav extends React.Component {
               /projects
             </NavItem>
           </ListElement>
-          {/* <ListElement>
+          <ListElement>
             <NavItem to="/about/" activeClassName={activeClassName}>
               /about
             </NavItem>
-          </ListElement> */}
+          </ListElement>
         </StyledList>
       </StyledNav>
     );
