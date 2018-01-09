@@ -65,4 +65,4 @@ they wanted to delete Tweets to dead Meerkat streams (even if I still believed
 that's what should be done). Twitter has since added a clause in their Terms of
 Service that prevents bots from reaching out to users, unprovoked, something I
 learned later on when building
-[@menemnesa](http://localhost:8000/projects/personal/menemnesa/).
+[@menemnesa](/projects/personal/menemnesa/).
