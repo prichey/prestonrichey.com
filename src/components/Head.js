@@ -3,7 +3,6 @@ import * as THREE from 'three';
 import React3 from 'react-three-renderer';
 import OBJLoader from 'three-obj-loader';
 import Dimensions from 'react-dimensions';
-import WheelReact from 'wheel-react';
 
 OBJLoader(THREE);
 
