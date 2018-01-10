@@ -8,7 +8,7 @@ OBJLoader(THREE);
 
 // TODO: THREE DRAG CONTROLS?
 
-class Head extends React.Component {
+class HeadScene extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = this.state || {};
@@ -105,4 +105,4 @@ class Head extends React.Component {
   }
 }
 
-export default Dimensions()(Head);
+export default Dimensions()(HeadScene);
