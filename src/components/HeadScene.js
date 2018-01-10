@@ -4,11 +4,10 @@ import React3 from 'react-three-renderer';
 import OBJLoader from 'three-obj-loader';
 import Dimensions from 'react-dimensions';
 
+const OrbitControls = require('three-orbit-controls')(THREE);
 OBJLoader(THREE);
 
-// TODO: THREE DRAG CONTROLS?
-
-class Head extends React.Component {
+class HeadScene extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = this.state || {};
@@ -20,6 +19,7 @@ class Head extends React.Component {
     this.state.cubeRotation = new THREE.Euler();
 
     this._onAnimate = () => {
+      return;
       // we will get this callback every frame
 
       // pretend cubeRotation is immutable.
@@ -36,7 +36,10 @@ class Head extends React.Component {
   }
 
   componentDidMount() {
-    const { group } = this.refs;
+    const { group, camera } = this.refs;
+
+    const controls = new OrbitControls(camera);
+    this.controls = controls;
 
     const objLoader = new THREE.OBJLoader();
     objLoader.load('/head-modified.obj', obj => {
@@ -73,6 +76,9 @@ class Head extends React.Component {
 
   componentWillUnmount() {
     this.refs.group.remove(this.state.obj);
+
+    this.controls.dispose();
+    delete this.controls;
   }
 
   render() {
@@ -83,7 +89,7 @@ class Head extends React.Component {
 
     return (
       <React3
-        mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
+        mainCamera="mainCamera"
         width={width}
         height={height}
         onAnimate={this._onAnimate}
@@ -91,7 +97,8 @@ class Head extends React.Component {
         pixelRatio={window.devicePixelRatio}>
         <scene ref="scene">
           <perspectiveCamera
-            name="camera"
+            name="mainCamera"
+            ref="camera"
             fov={50}
             aspect={width / height}
             near={0.1}
@@ -105,4 +112,4 @@ class Head extends React.Component {
   }
 }
 
-export default Dimensions()(Head);
+export default Dimensions()(HeadScene);
