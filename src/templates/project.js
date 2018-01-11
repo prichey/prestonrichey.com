@@ -7,7 +7,6 @@ import ProjectLinks from './../components/ProjectLinks';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
-  console.log(post);
 
   return (
     <div>

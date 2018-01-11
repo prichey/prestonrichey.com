@@ -9,12 +9,10 @@ class ProjectsPage extends React.Component {
     const personalProjects = allProjects.filter(
       project => project.node.fields.projectType === 'personal'
     );
-    console.log(personalProjects);
 
     const professionalProjects = allProjects.filter(
       project => project.node.fields.projectType === 'professional'
     );
-    console.log(professionalProjects);
 
     return (
       <div>
