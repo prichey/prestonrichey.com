@@ -8,6 +8,7 @@ const StyledProjectLinksList = styled.ul`
 
 const StyledProjectLink = styled.li`
   display: inline;
+  line-height: 1.5em;
 
   &:after {
     content: ' | ';

@@ -4,9 +4,7 @@ import styled from 'styled-components';
 import HeadScene from './../components/HeadScene';
 
 const StyledContainer = styled.div`
-  width: 100%;
   height: 100%;
-  background: pink;
   max-height: 350px;
 
   @media (min-width: 520px) {

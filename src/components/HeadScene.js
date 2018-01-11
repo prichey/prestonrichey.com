@@ -18,7 +18,8 @@ class HeadScene extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      cameraPosition: new THREE.Vector3(0, 0, 30)
+      cameraPosition: new THREE.Vector3(0, 0, 30),
+      obj: null
     };
 
     this._onAnimate = () => {
@@ -53,25 +54,40 @@ class HeadScene extends React.Component {
       });
     });
 
-    const objLoader = new THREE.OBJLoader();
-    objLoader.load('/head-modified.obj', obj => {
-      obj.traverse(child => {
-        if (child instanceof THREE.Mesh) {
-          // child.geometry.computeVertexNormals();
-          child.material = new THREE.MeshNormalMaterial({
-            side: THREE.DoubleSide,
-            wireframe: false,
-            flatShading: false,
-            morphTargets: false
-          });
-        }
-      });
+    let headAdded = false;
+    if (!!window.headObject) {
+      try {
+        group.add(window.headObject);
+        headAdded = true;
+      } catch (e) {
+        console.log(e);
+      }
+    }
 
-      const scalar = 11;
-      obj.scale.set(scalar, scalar, scalar);
-      obj.rotation.set(Math.PI * -0.05, Math.PI * 0, Math.PI * 0);
-      group.add(obj);
-    });
+    if (!headAdded) {
+      const objLoader = new THREE.OBJLoader();
+      objLoader.load('/head-modified.obj', obj => {
+        obj.traverse(child => {
+          if (child instanceof THREE.Mesh) {
+            child.material = new THREE.MeshNormalMaterial({
+              side: THREE.DoubleSide,
+              wireframe: false,
+              flatShading: false,
+              morphTargets: false
+            });
+          }
+        });
+
+        const scalar = 11;
+        obj.scale.set(scalar, scalar, scalar);
+        obj.rotation.set(Math.PI * -0.05, Math.PI * 0, Math.PI * 0);
+        group.add(obj);
+
+        window.headObject = obj; // store the head on the window
+        // there's probably a better way to do this, but I can't figure it out at the moment
+        // this seems to work better than requesting the obj on each request
+      });
+    }
   }
 
   componentWillUnmount() {
