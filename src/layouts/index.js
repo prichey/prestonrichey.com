@@ -17,7 +17,7 @@ const Main = styled.main`
   margin: 0 auto;
 
   @media (min-width: 350px) {
-    padding: 1em 2em 4em;
+    padding: 1em 1.5em 4em;
   }
 
   @media (min-width: 520px) {
@@ -29,10 +29,10 @@ const StyledHeader = styled.header``;
 
 const StyledTitle = styled.h1`
   // margin-bottom: 2rem;
-  margin: 0.3em 0 0;
+  margin: 0.3em 0;
 
   @media (min-width: 350px) {
-    margin: 0.5em 0 0;
+    margin: 0.5em 0 0.2em;
   }
 
   @media (min-width: 520px) {
