@@ -13,8 +13,12 @@ import baseStyles from './../utils/base-styles';
 
 const Main = styled.main`
   max-width: 80rem;
-  padding: 1.5rem;
+  padding: 1em 1em 2em;
   margin: 0 auto;
+
+  @media (min-width: 350px) {
+    padding: 1em 2em 4em;
+  }
 
   @media (min-width: 520px) {
     padding: 2rem 2em 6rem;
@@ -25,10 +29,10 @@ const StyledHeader = styled.header``;
 
 const StyledTitle = styled.h1`
   // margin-bottom: 2rem;
-  margin: 0.3em 0;
+  margin: 0.3em 0 0;
 
   @media (min-width: 350px) {
-    margin: 0.5em 0;
+    margin: 0.5em 0 0;
   }
 
   @media (min-width: 520px) {

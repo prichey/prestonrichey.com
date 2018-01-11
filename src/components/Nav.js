@@ -18,6 +18,7 @@ const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 0;
 
   @media (min-width: 520px) {
     display: block;
@@ -26,9 +27,15 @@ const StyledList = styled.ul`
 
 const ListElement = styled.li`
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   text-align: center;
   font-size: 1.8rem;
+
+  @media (min-width: 300px) {
+    font-size: 2.2rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
 
   @media (min-width: 350px) {
     font-size: 2.2rem;

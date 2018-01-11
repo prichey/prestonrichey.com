@@ -7,7 +7,10 @@ const DateSpan = styled.span`
   margin-left: 0.5em;
 `;
 
-const StyledBlogListing = styled.ul`list-style: none;`;
+const StyledBlogListing = styled.ul`
+  list-style: none;
+`;
+
 const StyledBlogItem = styled.li`
   font-size: 1.8rem;
   // text-decoration: none;
