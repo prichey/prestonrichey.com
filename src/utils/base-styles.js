@@ -9,15 +9,6 @@ export default () => {
       height: 100%;
     }
 
-    #___gatsby {
-      position: absolute;
-      width: 100%;
-    }
-
-    #___gatsby, [data-reactroot] {
-      height: 100%;
-    }
-
     html {
       box-sizing: border-box;
       font-size: 62.5%;
@@ -113,7 +104,11 @@ export default () => {
       }
 
       ul {
-        margin-left: 2em;
+        margin-left: 1.5em;
+
+        @media (min-width: 520px) {
+          margin-left: 2.5em;
+        }
       }
 
       li {

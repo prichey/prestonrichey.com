@@ -4,15 +4,14 @@ import styled from 'styled-components';
 import HeadScene from './../components/HeadScene';
 
 const StyledContainer = styled.div`
-  height: 100%;
-  max-height: 350px;
+  height: 350px;
 
   @media (min-width: 520px) {
-    max-height: 400px;
+    height: 400px;
   }
 
   @media (min-width: 1400px) {
-    max-height: 500px;
+    height: 500px;
   }
 `;
 

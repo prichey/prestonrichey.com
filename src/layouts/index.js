@@ -13,8 +13,12 @@ import baseStyles from './../utils/base-styles';
 
 const Main = styled.main`
   max-width: 80rem;
-  padding: 2rem 2rem 6rem;
+  padding: 1.5rem;
   margin: 0 auto;
+
+  @media (min-width: 520px) {
+    padding: 2rem 2em 6rem;
+  }
 `;
 
 const StyledHeader = styled.header``;

@@ -26,7 +26,7 @@ const StyledList = styled.ul`
 
 const ListElement = styled.li`
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.5em 1em;
   text-align: center;
   font-size: 1.8rem;
 
@@ -40,13 +40,14 @@ const ListElement = styled.li`
     font-size: 2.4rem;
   }
 
-  @media (min-width: 520px) {
-  }
-
   &:after {
     content: ' ';
-    display: inline-block;
+    display: none;
     white-space: pre;
+
+    @media (min-width: 520px) {
+      display: inline-block;
+    }
   }
 `;
 
