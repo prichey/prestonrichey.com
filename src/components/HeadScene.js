@@ -37,6 +37,8 @@ class HeadScene extends React.Component {
     controls.enablePan = false;
     controls.autoRotate = false;
     controls.enableKeys = false;
+    // controls.minPolarAngle = -Infinity;
+    // controls.maxPolarAngle = Infinity;
     this.controls = controls;
 
     this.controls.addEventListener('start', () => {

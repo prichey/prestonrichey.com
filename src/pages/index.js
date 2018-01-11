@@ -5,7 +5,17 @@ import HeadScene from './../components/HeadScene';
 
 const StyledContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 100%;
+  background: pink;
+  max-height: 350px;
+
+  @media (min-width: 520px) {
+    max-height: 400px;
+  }
+
+  @media (min-width: 1400px) {
+    max-height: 500px;
+  }
 `;
 
 class Index extends React.Component {
@@ -13,6 +23,7 @@ class Index extends React.Component {
     return (
       <StyledContainer>
         <HeadScene />
+        {/* <h2>hi</h2> */}
       </StyledContainer>
     );
   }

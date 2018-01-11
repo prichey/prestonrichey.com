@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import Dimensions from 'react-dimensions';
 
 import 'prismjs/themes/prism-solarizedlight.css';
 
@@ -16,8 +17,19 @@ const Main = styled.main`
   margin: 0 auto;
 `;
 
+const StyledHeader = styled.header``;
+
 const StyledTitle = styled.h1`
   // margin-bottom: 2rem;
+  margin: 0.3em 0;
+
+  @media (min-width: 350px) {
+    margin: 0.5em 0;
+  }
+
+  @media (min-width: 520px) {
+    margin: 0.667em 0;
+  }
 `;
 
 const TitleLink = styled(Link)`
@@ -31,7 +43,7 @@ const TitleLink = styled(Link)`
   }
 `;
 
-export default class Template extends React.Component {
+class Template extends React.Component {
   render() {
     baseStyles();
 
@@ -44,17 +56,20 @@ export default class Template extends React.Component {
             href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:700"
             rel="stylesheet"
           />
-          <title>prichey.net</title>
+          <title>Preston Richey</title>
         </Helmet>
 
-        <StyledTitle>
-          <TitleLink to="/">Preston Richey</TitleLink>
-        </StyledTitle>
+        <StyledHeader>
+          <StyledTitle>
+            <TitleLink to="/">Preston Richey</TitleLink>
+          </StyledTitle>
 
-        <Nav />
+          <Nav />
+        </StyledHeader>
 
         {this.props.children()}
       </Main>
     );
   }
 }
+export default Template;

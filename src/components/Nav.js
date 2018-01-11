@@ -6,13 +6,17 @@ import styled from 'styled-components';
 const activeClassName = 'active';
 
 const StyledNav = styled.nav`
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+
+  @media (min-width: 520px) {
+    margin-bottom: 2em;
+  }
 `;
 
 const StyledList = styled.ul`
   padding: 0;
   display: flex;
-  flex-wrap: wrap:
+  flex-wrap: wrap;
   justify-content: space-between;
 
   @media (min-width: 520px) {
@@ -21,17 +25,22 @@ const StyledList = styled.ul`
 `;
 
 const ListElement = styled.li`
-  font-size: 1.6rem;
   display: inline-block;
-  margin-right: 1.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.8rem;
 
-  @media (min-width: 520px) {
-    font-size: 1.8rem;
-    margin-right: 2rem;
+  @media (min-width: 350px) {
+    font-size: 2.2rem;
   }
 
   @media (min-width: 520px) {
+    padding: 0;
+    margin-right: 2rem;
     font-size: 2.4rem;
+  }
+
+  @media (min-width: 520px) {
   }
 
   &:after {
@@ -51,6 +60,15 @@ const NavItem = styled(Link).attrs({
     color: blue;
   }
 
+  &:before {
+    content: '/';
+    display: none;
+
+    @media (min-width: 520px) {
+      display: inline;
+    }
+  }
+
   &.${activeClassName} {
     font-weight: bold;
   }
@@ -63,17 +81,17 @@ class Nav extends React.Component {
         <StyledList>
           <ListElement>
             <NavItem to="/blog/" activeClassName={activeClassName}>
-              /blog
+              blog
             </NavItem>
           </ListElement>
           <ListElement>
             <NavItem to="/projects/" activeClassName={activeClassName}>
-              /projects
+              projects
             </NavItem>
           </ListElement>
           <ListElement>
             <NavItem to="/about/" activeClassName={activeClassName}>
-              /about
+              about
             </NavItem>
           </ListElement>
         </StyledList>

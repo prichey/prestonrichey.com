@@ -5,6 +5,19 @@ export default () => {
   injectGlobal`
     ${normalize}
 
+    html, body {
+      height: 100%;
+    }
+
+    #___gatsby {
+      position: absolute;
+      width: 100%;
+    }
+
+    #___gatsby, [data-reactroot] {
+      height: 100%;
+    }
+
     html {
       box-sizing: border-box;
       font-size: 62.5%;
