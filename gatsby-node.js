@@ -11,7 +11,21 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       value: slug
     });
 
-    const type = path.parse(slug).dir === '/blog' ? 'post' : 'project';
+    const dirSplit = path.parse(slug).dir.split(path.sep);
+    if (dirSplit.length > 0 && dirSplit[0] === '') {
+      dirSplit.shift(); // because path starts with /, '' is always at position 0
+    }
+
+    let type = 'page';
+    switch (dirSplit[0]) {
+      case 'projects':
+        type = 'project';
+        break;
+      case 'blog':
+        type = 'post';
+        break;
+    }
+
     createNodeField({
       node,
       name: 'type',
@@ -19,14 +33,15 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     });
 
     if (type === 'project') {
-      const pathArray = path.parse(slug).dir.split(path.sep);
-      const projectType = pathArray[pathArray.length - 1];
-
-      createNodeField({
-        node,
-        name: 'projectType',
-        value: projectType
-      });
+      if (dirSplit.length > 1) {
+        createNodeField({
+          node,
+          name: 'projectType',
+          value: dirSplit[1]
+        });
+      } else {
+        throw new Error('each project needs a type');
+      }
     }
   }
 };
