@@ -5,7 +5,7 @@ lede: "An interactive installation for the Nelson Atkins Museum of Art."
 link: ""
 repo: ""
 order: 5
-publish: false
+publish: true
 ---
 
 hi from test project
