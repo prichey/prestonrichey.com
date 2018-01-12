@@ -6,7 +6,7 @@ My name is Preston and I'm a developer living in Kansas City. Currently, I work 
 
 In my free time, I enjoy cycling and listening to jazz.
 
-You can find me on <a href="https://twitter.com/prestonrichey" target="_blank">Twitter</a>, <a href="https://github.com/prichey" target="_blank">Github</a>, and <a href="https://www.strava.com/athletes/6928920" target="_blank">Strava</a>.
+You can find me on <a href="https://twitter.com/prestonrichey" target="_blank">Twitter</a>, <a href="https://github.com/prichey" target="_blank">Github</a>, and <a href="https://www.strava.com/athletes/6928920" target="_blank">Strava</a>, or reach me via <a href="mailto:prestonleerichey@gmail.com">email</a>.
 
 </div>
 
