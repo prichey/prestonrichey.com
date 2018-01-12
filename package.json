@@ -7,7 +7,7 @@
     "develop": "gatsby develop",
     "build": "gatsby build --verbose",
     "serve": "gatsby serve --verbose",
-    "deploy": "gatsby build && gh-pages -d public --branch master"
+    "deploy": "gatsby build && netlify deploy"
   },
   "dependencies": {
     "gatsby": "^1.9.79",
@@ -32,6 +32,6 @@
     "three-orbit-controls": "^82.1.0"
   },
   "devDependencies": {
-    "gh-pages": "^1.0.0"
+    "netlify": "^1.2.0"
   }
 }
