@@ -2,7 +2,7 @@
 
 ## Howdy.
 
-My name is Preston and I'm a developer living in Kansas City. Currently, I work as the Creative Technologist at <a href="https://www.barkleyus.com/" target="_blank">Barkley</a>. I'm passionate about solving problems, strong passwords, and pho.
+My name is Preston and I'm a developer living in Kansas City. Currently, I work as the Creative Technologist at <a href="https://www.barkleyus.com/" target="_blank">Barkley</a>. I'm passionate about solving problems, using strong passwords, and pho.
 
 In my free time, I enjoy cycling and listening to jazz.
 
