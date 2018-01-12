@@ -14,7 +14,7 @@ You can find me on <a href="https://twitter.com/prestonrichey" target="_blank">T
 
 ## Colophon
 
-This site was made with the excellent <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a> and is hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>. You can look at its code <a href="https://github.com/prichey/prichey.github.io" target="_blank">here</a>. I used <a href="https://threejs.org/" target="_blank">three.js</a> to import a model of my head which was scanned with a <a href="https://structure.io/" target="_blank">Structure Sensor</a>.
+This site was made with the excellent <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a> and is hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>. You can look at its code <a href="https://github.com/prichey/prestonrichey.com" target="_blank">here</a>. I used <a href="https://threejs.org/" target="_blank">three.js</a> to import a model of my head which was scanned with a <a href="https://structure.io/" target="_blank">Structure Sensor</a>.
 
 The monospace font is <a href="https://fonts.google.com/specimen/Roboto+Mono" target="_blank">Roboto Mono</a> and the sans-serif is <a href="https://fonts.google.com/specimen/Rubik" target="_blank">Rubik</a>.
 
