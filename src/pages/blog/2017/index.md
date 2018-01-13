@@ -1,6 +1,7 @@
 ---
 title: "</2017>"
 date: "2018-01-01"
+publish: true
 ---
 
 <section class="blog-section">
