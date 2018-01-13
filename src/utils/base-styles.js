@@ -73,6 +73,28 @@ export default () => {
       margin: 0 auto;
     }
 
+    .sidebar {
+      margin-left: auto;
+      margin-right: auto;
+
+      @media (min-width: 520px) {
+        width: calc(50% + 1em);
+        clear: both;
+        float: right;
+        padding-left: 1em;
+      }
+
+      &.left {
+        float: left;
+        padding-left: 0;
+        padding-right: 1em;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
     .blog-inset {
       margin-left: auto;
       margin-right: auto;

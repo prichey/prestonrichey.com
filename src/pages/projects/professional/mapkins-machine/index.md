@@ -1,11 +1,53 @@
 ---
 title: "Mapkins Machine"
 date: "2017"
-lede: "A vending machine that dispenses Mapkins when texted."
+lede: "An Arduino-powered vending machine that dispenses Mapkins for a text."
 link: ""
-repo: ""
+repo: "https://github.com/MoonshotLab/mapkins-machine"
 order: 6
 publish: true
+zoom: true
+lang: "Node.js, Arduino"
 ---
 
-hi from test project
+<div class="blog-section">
+
+First, some etymology:
+
+* A <em>Mapkin machine</em> is a machine that dispenses Mapkins.
+* A <em>Mapkin</em> is a portmanteau of map + napkin invented by marketing people who thought 'Screenprinted Map-Napkin Vending Machine' didn't quite roll off the tongue. Honestly, I can't be one to argue.
+* The <em><a href="http://www.americanroyal.com/" target="_blank">American Royal</a></em> is a livestock show held in Kansas City since 1899 and has in recent decades become one of the leading barbecue competitions in the United States.
+
+Lots of barbecue means lots of messy fingers. And lots of messy fingers means lots of napkins. That's where the Mapkins Machine comes in.
+
+<div class="sidebar right">
+<img src="/mapkin-machine.jpg" alt="Mapkin Machine In Situ" title="Mapkin Machine In Situ" data-action="zoom"/>
+</div>
+
+In partnership with local organization <a href="http://www.kcloves.com/" target="_blank">KC Loves</a>, partners at <a href="https://www.barkleyus.com/" target="_blank">Barkley</a> designed and built the machine, which would be stationed around the BBQ competition dispensing Mapkins, themselves both functional napkins but also (assuming you kept it clean) a collectible map to all the barbecue restaurants around the KC metro area. Because the Mapkins would be in a limited supply, we wanted to ensure that each customer would just receive one. Our solution? An Arduino-powered vending machine leveraging the <a href="https://www.twilio.com/sms" target="_blank">Twilio SMS</a> API using a <a href="https://www.amazon.com/kuman-Expansion-Stepper-Heatsink-Arduino/dp/B06XHKSVTG/" target="_blank">CNC Shield</a> to turn stepper motors. Obviously.
+
+We started with with the shell of a 1960's Pepsi vending machine. After stripping out all of the internals, we added in 4 shelves each with a stepper motor turning a custom corkscrew feeding into a hopper, as well as an Arduino Uno with CNC Shield connected to a <a href="https://www.particle.io/products/hardware/electron-cellular-dev-kit">Particle Electron</a> 3G-enabled microcontroller. Fast forward through the weeks of 3 burnt servos and 2 ruined CNC shields (I never claimed electrical engineering is my specialty) and lots of guess and check, add a 12V power supply, and we had a working prototype.
+
+The team made a case study video to show the machine in action (I'm posting this here because I imagine 95% of people do not care about the technical details that follow):
+
+<div class="blog-inset">
+  <iframe class="youtube" src="https://www.youtube.com/embed/medilILfr_M?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+For the 3 of you out there still interested: <a href="/internals.jpg" target="_blank">here</a>'s an image of the internals. I should probably make a <a href="http://fritzing.org/home/" target="_blank">Fritzing diagram</a>, but here's roughly how it worked:
+  * A user texts a phone number, purchased from Twilio, which posts a payload via webhook to a server.
+  * The server checks if the phone number is in its database. If so, respond politely to the texter that we can only give one Mapkin per person. If not, check if the machine is out of Mapkins. If the machine is out, add user to a waitlist and text back informing them that they'll receive a message whenever the machine is restocked.
+  * If the machine is stocked and the texter is unique, dispense a Mapkin. The server determines which stepper to turn (based on how many Mapkins are in machine), and posts that information via another webhook to a 3G-connected Particle Electron inside the Mapkin machine.
+  * The Electron sends a message to the Arduino Uno via serial telling it which stepper to turn.
+  * The Arduino Uno, via CNC Shield, turns the corresponding stepper, and passes a success message back up the stack, which responds to the user with a confirmation message.
+  * ???
+  * Profit!
+
+Projects that require this amount of interconnected physical components generally fill me with a deep sense of dread, merely due to the fact that debugging any issues in the system are exponentially more difficult than any programming environment where you can just `console.log(foo)`. Still, there's something incredibly gratifying about hearing the clunk of a successful vend, knowing how many things came together to make it happen.
+
+</div>
+
+</section>
+
+
+</div>
