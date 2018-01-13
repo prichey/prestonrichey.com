@@ -69,15 +69,21 @@ class Template extends React.Component {
           <meta property="og:description" content="Personal Website" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://prestonrichey.com" />
-          <meta property="og:image" content="/android-chrome-192x192.png" />
+          <meta
+            property="og:image"
+            content="https://prestonrichey.com/android-chrome-192x192.png"
+          />
           <meta
             property="og:image:secure_url"
-            content="/android-chrome-192x192.png"
+            content="https://prestonrichey.com/android-chrome-192x192.png"
           />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content="Preston Richey" />
           <meta name="twitter:description" content="Personal Website" />
-          <meta name="twitter:image" content="/android-chrome-192x192.png" />
+          <meta
+            name="twitter:image"
+            content="https://prestonrichey.com/android-chrome-192x192.png"
+          />
           <meta name="twitter:creator" content="@prestonrichey" />
         </Helmet>
 
