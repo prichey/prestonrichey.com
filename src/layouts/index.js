@@ -65,6 +65,20 @@ class Template extends React.Component {
             rel="stylesheet"
           />
           <title>Preston Richey</title>
+          <meta property="og:title" content="Preston Richey" />
+          <meta property="og:description" content="Personal Website" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://prestonrichey.com" />
+          <meta property="og:image" content="/android-chrome-192x192.png" />
+          <meta
+            property="og:image:secure_url"
+            content="/android-chrome-192x192.png"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="Preston Richey" />
+          <meta name="twitter:description" content="Personal Website" />
+          <meta name="twitter:image" content="/android-chrome-192x192.png" />
+          <meta name="twitter:creator" content="@prestonrichey" />
         </Helmet>
 
         <StyledHeader>
