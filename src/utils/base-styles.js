@@ -50,7 +50,7 @@ export default () => {
     ul {
       // list-style: none;
       padding: 0;
-      ${'' /* list-style: square; */}
+      list-style: square;
     }
 
     a {

@@ -66,7 +66,7 @@ class HeadScene extends React.Component {
 
     if (!headAdded) {
       const objLoader = new THREE.OBJLoader();
-      objLoader.load('/head-modified.obj', obj => {
+      objLoader.load('/head.obj', obj => {
         obj.traverse(child => {
           if (child instanceof THREE.Mesh) {
             child.material = new THREE.MeshNormalMaterial({

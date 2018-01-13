@@ -22,6 +22,6 @@ Carmen can provide directions to any building in the room, as well as send maps 
   <img src="map.jpeg" alt="Carmen Map" title="Carmen Map" data-action="zoom"/>
 </div>
 
-Though Carmen isn't able to hold a conversation about anything other than the location of rooms, it has proven to be an indispensable tool for getting around in the time since going live. In fact, in just under 3 months since launch, Carmen has sent 1364 messages to 132 unique Barkley partners (roughly %%% of the office in Kansas City). I keep a track of any inputs Carmen doesn't understand, as well as which rooms are most often requested, which may inform future iterations of the bot or even wayfinding around the building.
+Though Carmen isn't able to hold a conversation about anything other than the location of rooms, it has proven to be an indispensable tool for getting around in the time since going live. In fact, in just under 3 months since launch, Carmen has sent 1364 messages to 132 unique Barkley partners (over 50% of the office in Kansas City). I keep a track of any inputs Carmen doesn't understand, as well as which rooms are most often requested, which may inform future iterations of the bot or even wayfinding around the building.
 
 I for one welcome our new (helpful, utilitarian) chatbot overlords.
