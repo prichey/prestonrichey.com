@@ -5,7 +5,6 @@ class BlogPage extends React.Component {
   render() {
     try {
       const posts = this.props.data.allMarkdownRemark.edges;
-      console.log(posts);
       return <BlogListing posts={posts} />;
     } catch (e) {
       console.log(e);

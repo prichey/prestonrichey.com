@@ -19,7 +19,7 @@ Like all great ideas, it started with a tweet.
 In an era where everything is rated, from movies to restaurants to <a href="https://thewirecutter.com/reviews/best-fidget-spinners/" target="_blank">fidget spinners</a>, there was something really amusing about comparing apples and oranges, as it were: this brunch spot is about as popular as that pair of headphones; this album is about as popular as that Airbnb host, etc. So, I set out to find a movie that is doing about as well as the president.
 
 <div class="blog-inset">
-<img src="index.png" alt="Rotten Trumpatoes" title="Rotten Trumpatoes" data-action="zoom"/>
+<img src="index.jpg" alt="Rotten Trumpatoes" title="Rotten Trumpatoes" data-action="zoom"/>
 </div>
 </section>
 
@@ -41,13 +41,13 @@ While FiveThirtyEight gives a rating to the tenth (e.g. 38.7%), RT deals in inte
 While not publicly accessible, I created a way to manage movies in the DB which allowed me to remove movies from consideration, as well as merely to examine the huge list of movies I created. I decided to remove some movies from the DB that were either unknown, in poor taste, or just weren't funny. Since my database was a huge JSON file, it was nearly impossible to view in a text editor, but viewing the top results via this interface turned out to be very useful.
 
 <div class="blog-inset">
-<img src="movies.png" alt="Movies Interface" title="Movies Interface" data-action="zoom"/>
+<img src="movies.jpg" alt="Movies Interface" title="Movies Interface" data-action="zoom"/>
 </div>
 
 I also made an interface for scraping, which allows you to specify the specific pages of the TMDb `/discover` endpoint to scrape (useful if the app crashes, which of course it never did). Using `socket.io` I streamed the server results in realtime to the client, so that you can follow along and see progress as the scraper runs, which is helpful as I let it run over the course of 10+ hours.
 
 <div class="blog-inset">
-<img src="scrape.png" alt="Scraping Interface" title="Scraping Interface" data-action="zoom"/>
+<img src="scrape.jpg" alt="Scraping Interface" title="Scraping Interface" data-action="zoom"/>
 </div>
 
 I learned a lot working on this project. I combined several disparate API's (at least 4, by my count), as well as brushed up my scraping skills (most of it done with Google's newish <a href="https://github.com/GoogleChrome/puppeteer" target="_blank">Puppeteer</a>, which turned out to be a blast to use). After more than a month of working evenings and weekends, I launched the site (via tweet, of course), which, to my surprise, was retweeted by PJ, the originator of the initial idea.
