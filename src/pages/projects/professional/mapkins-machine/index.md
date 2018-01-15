@@ -12,7 +12,7 @@ lang: "Node.js, Arduino"
 
 <div class="blog-section">
 
-First, some etymology:
+First, some terminology:
 
 * A <em>Mapkin machine</em> is a machine that dispenses Mapkins.
 * A <em>Mapkin</em> is a portmanteau of map + napkin invented by marketing people who thought 'Screenprinted Map-Napkin Vending Machine' didn't quite roll off the tongue. Honestly, I can't be one to argue.
