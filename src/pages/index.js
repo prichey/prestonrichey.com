@@ -20,7 +20,6 @@ class Index extends React.Component {
     return (
       <StyledContainer>
         <HeadScene />
-        {/* <h2>hi</h2> */}
       </StyledContainer>
     );
   }
