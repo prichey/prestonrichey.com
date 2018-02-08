@@ -1,5 +1,7 @@
 import React from 'react';
 import TextPostBody from './../components/TextPostBody';
+// import ZoomImageFoo from './../components/ZoomImageFoo';
+import ImageZoom from 'react-medium-image-zoom';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
@@ -7,7 +9,18 @@ export default ({ data }) => {
   return (
     <div>
       <h1>{post.frontmatter.title}</h1>
-      <TextPostBody html={post.html} />
+      {/* <ImageZoom
+        image={{
+          src: 'index.jpg',
+          alt: 'hi'
+        }}
+        zoomImage={{
+          src: 'index.jpg',
+          alt: 'there'
+        }}
+      /> */}
+      {/* <TextPostBody html={post.html} /> */}
+      <TextPostBody htmlAst={post.htmlAst} />
     </div>
   );
 };
@@ -15,7 +28,7 @@ export default ({ data }) => {
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       frontmatter {
         title
       }

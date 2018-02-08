@@ -6,7 +6,6 @@ link: "https://rottentrumpatoes.com/"
 repo: "https://github.com/prichey/rottentrumpatoes"
 order: 7
 publish: true
-zoom: true
 lang: "Node.js"
 ---
 

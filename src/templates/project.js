@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Script from 'react-load-script';
 
 import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
@@ -17,22 +16,7 @@ export default ({ data }) => {
         date={post.frontmatter.date}
         lang={post.frontmatter.lang}
       />
-      <TextPostBody html={post.html} />
-
-      {post.frontmatter.zoom === true && (
-        <div>
-          <link href="/zoom.css" rel="stylesheet" />
-          <Script url="/zoom-bundle.min.js" />
-        </div>
-      )}
-
-      {post.frontmatter.zoom !== true && (
-        // idk why we get here
-        <div>
-          <link href="/zoom.css" rel="stylesheet" />
-          <Script url="/zoom-bundle.min.js" />
-        </div>
-      )}
+      <TextPostBody htmlAst={post.htmlAst} />
     </div>
   );
 };
@@ -40,13 +24,12 @@ export default ({ data }) => {
 export const query = graphql`
   query ProjectQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       frontmatter {
         title
         link
         repo
         date
-        zoom
         lang
       }
     }

@@ -8,6 +8,10 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-component',
+            options: { components: ['echo', 'zoom-image'] }
+          },
+          {
             resolve: 'gatsby-remark-prismjs'
           },
           // {
