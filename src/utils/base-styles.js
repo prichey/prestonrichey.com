@@ -143,13 +143,19 @@ export default () => {
         }
       }
 
-      ${'' /* .section-anchor {
+      ${
+        '' /* .section-anchor {
         &:before {
           content: '#';
           position: absolute;
           left: -2rem;
         }
-      } */}
+      } */
+      }
+    }
+
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+      font-size: 0.9em;
     }
 
     .gatsby-highlight-code-line {

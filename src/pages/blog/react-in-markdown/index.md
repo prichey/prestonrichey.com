@@ -1,17 +1,114 @@
 ---
 title: "React In Markdown In React"
-date: "2018-02-03"
-publish: false
+date: "2018-02-08"
+publish: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<section class="blog-section">
+
+This website is made with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a>, a static site generator for React. You can look at its source <a href="#" target="_blank">here</a>. Gatsby (via Webpack) packages up React components, Markdown files, and other assets, creating a bundle that loads as fast as possible. The experience developing a Gatsby site is also the best I've ever had, including a hot-reloading development server and a truly zero-config setup. I'm smitten.
+
+My <em>one</em> complaint with Gatsby was that I wanted to be able to embed React components inside of Markdown. Say you want to make a cool D3 visualization to add to your blog post. Or maybe you want to make an ad-hoc interactive survey form. React (fortunately, in my opinion) forces you to think about your code in components, so it seemed like a significant loss <em>not</em> to be able to use components within a blog post. Surely I wasn't the only one who felt the same way, so I did a quick search on Gatsby's Github page, and sure enough, someone had opened up an <a href="https://github.com/gatsbyjs/gatsby/issues/312" target="_blank">issue</a> in June 2016 asking:
+
+> Is there an easy way to use React components in my Markdown source. Something like reactdown?
+
+I subscribed to get notifications on any further discussion of the topic and went about my way, waiting for someone smarter than myself (or at least more familiar with React internals and compiling HAST) to come along and offer up a solution.
+
+</section>
+
+<section class="blog-section">
+
+## Enter Custom Components
+
+A few more months of waiting, et voila! A week ago, Kyle Mathews <a href="https://github.com/gatsbyjs/gatsby/issues/312#issuecomment-362391685" target="_blank">commented</a> on the issue that a <a href="https://github.com/gatsbyjs/gatsby/pull/3732" target="_blank">PR</a> had been merged showing how to embed components in Markdown, using a package called <a href="https://github.com/rhysd/rehype-react" target="_blank">rehype-react</a>.
+
+I won't rehash how to add custom components to your own Gatsby site, since there are comprehensive instructions <a href="https://using-remark.gatsbyjs.org/custom-components/" target="_blank">here</a>. I'd just like to show a few examples of why being able to do so is so exciting, and how I figured out a few quirks of the approach along the way.
+
+</section>
+
+<section class="blog-section">
+
+## ZoomImage
+
+The initial use case that got me wondering if this was possible was that I wanted to add a Medium-esqe image zoom. I had found a React package <a href="https://github.com/rpearce/react-medium-image-zoom" target="_blank">react-medium-image-zoom</a> that seemed like it would work great if only I could use React components. I figured out a hacky solution by conditionally including a <a href="https://github.com/fat/zoom.js/" target="_blank">different</a> (non-React) library for blog posts that had images, but this felt gross because the library didn't get rolled up into the bundle served by Gatsby, and was thus unoptimized. After figuring out how to add custom components, I happily swapped that approach out for one using an actual React component.
+
+Here's what it looks like:
 
 <div class="blog-inset">
-<zoom-image src='https://fat.github.io/zoom.js/img/palm.jpg' alt='Golden Gate Bridge'></zoom-image>
+  <zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' alt='Lake 22'></zoom-image>
+  <hidden>
+    <img src='lake-22.jpg' />
+    <img src='lake-22-zoom.jpg' />
+  </hidden>
 </div>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Due to a quirk with the way components in Markdown are parsed, all of the props are passed with lowercase keys and string values. Because `ImageZoom` expects props `image` and `zoomImage` to be objects, it was necessary to write a simple convenience wrapper to pass in the values as it expects them (code <a href="#" target="_blank">here</a>).
 
-<echo text='Testing 1 2 3...'></echo>
+Then, you simply include it in Markdown like so:
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```html
+<div class='blog-inset'>
+  <zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' alt='Lake 22'></zoom-image>
+  <hidden>
+    <!-- These don't actually get rendered to the DOM -->
+    <img src='lake-22.jpg' />
+    <img src='lake-22-zoom.jpg' />
+  </hidden>
+</div>
+```
+
+Adding the `<hidden />` component here is a hacky solution to a Webpack issue I haven't quite figured out yet. Gatsby has a sophisticated <a href="https://www.gatsbyjs.org/docs/adding-images-fonts-files/" target="_blank">asset pipeline</a> which takes relative paths to assets and replaces them with cache-busting paths in the `/public` directory (which is what ultimately gets deployed). This means you can maintain an organized asset structure, with each post's folder containing relevant assets, while not worrying about the actual path of the asset.
+
+For example:
+
+```html
+<img src='lake-22.jpg' />
+```
+
+gets replaced with something like
+
+```html
+<img src='/lake-22-9eef24d18518fa6f6576ccd96c3927a0.jpg' />
+```
+
+The issue is: without including the `<img />` tags, Webpack doesn't replace the path passed to `ZoomImage`, which ultimately ends 404ing, since there isn't anything at `/blog/react-in-markdown/lake-22.jpg`. Including them in the Markdown causes Webpack to replace the path for both that `img` as well as the one created by the `ZoomImage` component. Interestingly, `<hidden />` is a component which returns `null` (you can look at its source <a href="" target="_blank">here</a>), and therefore doesn't render its children, so the extra `img` tags aren't actually added to the DOM. Simply including them in the Markdown is enough to make Webpack to do its magic.
+
+Another interesting issue is that the `<hidden />` component can appear directly before or after the `ZoomImage` component, but if there's a blank line of whitespace or more in between, the paths don't get replaced. I'm going to keep on digging into this issue to try and figure out a way to get around this hacky fix, but for now it works fine and doesn't ultimately affect page performance.
+
+</section>
+
+<section class="blog-section">
+
+## A few other examples
+
+Custom components allow you to add all sorts of interactive elements to blog posts. For example, maybe a timer that shows the amount of time since this page was loaded?
+
+<div>
+  <countup></countup>
+</div>
+
+Or maybe a spinning 3D torus knot?
+
+<div style="height: 400px;">
+  <rainbowknot></rainbowknot>
+</div>
+
+Why not? The possibilities are endless!
+
+</section>
+
+<section class="blog-section">
+
+## A level deeper
+
+I think it's a common impulse for developers to push recursion as far as possible. How deep <em>does</em> the rabbit hole go? That being the case, my next question was obvious: would it be possible to write a React component that renders Markdown... inside of Markdown rendered by React?
+
+I'll cut to the chase: yes, yes it is.
+
+<div>
+  <markdownrenderer></markdownrenderer>
+</div>
+
+Insert Xzibit meme here.
+
+</section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 
 import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
@@ -9,6 +10,11 @@ export default ({ data }) => {
 
   return (
     <div>
+      {post.frontmatter.title && (
+        <Helmet>
+          <title>Preston Richey | {post.frontmatter.title}</title>
+        </Helmet>
+      )}
       <h1>{post.frontmatter.title}</h1>
       <ProjectLinks
         link={post.frontmatter.link}

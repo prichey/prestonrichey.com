@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ImageZoom from 'react-medium-image-zoom';
-import Helmet from 'react-helmet';
 
-class ZoomImage extends Component {
+class ZoomImage extends React.Component {
   render() {
     return (
       <ImageZoom
