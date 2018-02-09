@@ -6,7 +6,6 @@ link: "https://twitter.com/canizen"
 repo: "https://github.com/MoonshotLab/state-of-zen"
 order: 4
 publish: true
-zoom: true
 lang: "Node.js"
 ---
 

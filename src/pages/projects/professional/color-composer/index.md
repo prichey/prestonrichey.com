@@ -6,7 +6,6 @@ link: "https://color-composer.net/"
 repo: "https://github.com/MoonshotLab/color-composer"
 order: 5
 publish: true
-zoom: true
 lang: "Node.js"
 ---
 

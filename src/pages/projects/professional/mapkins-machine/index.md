@@ -6,7 +6,6 @@ link: ""
 repo: "https://github.com/MoonshotLab/mapkins-machine"
 order: 6
 publish: true
-zoom: true
 lang: "Node.js, Arduino"
 ---
 

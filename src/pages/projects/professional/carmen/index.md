@@ -5,7 +5,6 @@ lede: "A Chatbot that helps Barkley partners find their way."
 link: ""
 repo: "https://github.com/MoonshotLab/carmen"
 order: 7
-zoom: true
 publish: true
 lang: "Node.js"
 ---
