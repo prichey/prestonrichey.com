@@ -6,7 +6,7 @@ publish: true
 
 <section class="blog-section">
 
-This website is made with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a>, a static site generator for React. You can look at its source <a href="#" target="_blank">here</a>. Gatsby (via Webpack) packages up React components, Markdown files, and other assets, creating a bundle that loads as fast as possible. The experience developing a Gatsby site is also the best I've ever had, including a hot-reloading development server and a truly zero-config setup. I'm smitten.
+This website is made with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a>, a static site generator for React. You can look at its source <a href="https://github.com/prichey/prestonrichey.com" target="_blank">here</a>. Gatsby (via Webpack) packages up React components, Markdown files, and other assets, creating a bundle that loads as fast as possible. The experience developing a Gatsby site is also the best I've ever had, including a hot-reloading development server and a truly zero-config setup. I'm smitten.
 
 My <em>one</em> complaint with Gatsby was that I wanted to be able to embed React components inside of Markdown. Say you want to make a cool D3 visualization to add to your blog post. Or maybe you want to make an ad-hoc interactive survey form. React (fortunately, in my opinion) forces you to think about your code in components, so it seemed like a significant loss <em>not</em> to be able to use components within a blog post. Surely I wasn't the only one who felt the same way, so I did a quick search on Gatsby's Github page, and sure enough, someone had opened up an <a href="https://github.com/gatsbyjs/gatsby/issues/312" target="_blank">issue</a> in June 2016 asking:
 
@@ -20,7 +20,7 @@ I subscribed to get notifications on any further discussion of the topic and wen
 
 ## Enter Custom Components
 
-A few more months of waiting, et voila! A week ago, Kyle Mathews <a href="https://github.com/gatsbyjs/gatsby/issues/312#issuecomment-362391685" target="_blank">commented</a> on the issue that a <a href="https://github.com/gatsbyjs/gatsby/pull/3732" target="_blank">PR</a> had been merged showing how to embed components in Markdown, using a package called <a href="https://github.com/rhysd/rehype-react" target="_blank">rehype-react</a>.
+A few more months of waiting, et voila! A week ago, a developer named Ryan Kennedy submitted a <a href="https://github.com/gatsbyjs/gatsby/pull/3732" target="_blank">PR</a> showing how to embed components in Markdown, using a package called <a href="https://github.com/rhysd/rehype-react" target="_blank">rehype-react</a>.
 
 I won't rehash how to add custom components to your own Gatsby site, since there are comprehensive instructions <a href="https://using-remark.gatsbyjs.org/custom-components/" target="_blank">here</a>. I'd just like to show a few examples of why being able to do so is so exciting, and how I figured out a few quirks of the approach along the way.
 
@@ -42,7 +42,7 @@ Here's what it looks like:
   </hidden>
 </div>
 
-Due to a quirk with the way components in Markdown are parsed, all of the props are passed with lowercase keys and string values. Because `ImageZoom` expects props `image` and `zoomImage` to be objects, it was necessary to write a simple convenience wrapper to pass in the values as it expects them (code <a href="#" target="_blank">here</a>).
+Due to a quirk with the way components in Markdown are parsed, all of the props are passed with lowercase keys and string values. Because `ImageZoom` expects props `image` and `zoomImage` to be objects, it was necessary to write a simple convenience wrapper to pass in the values as it expects them (code <a href="https://github.com/prichey/prestonrichey.com/blob/master/src/components/ZoomImage.js" target="_blank">here</a>).
 
 Then, you simply include it in Markdown like so:
 
@@ -71,7 +71,7 @@ gets replaced with something like
 <img src='/lake-22-9eef24d18518fa6f6576ccd96c3927a0.jpg' />
 ```
 
-The issue is: without including the `<img />` tags, Webpack doesn't replace the path passed to `ZoomImage`, which ultimately ends 404ing, since there isn't anything at `/blog/react-in-markdown/lake-22.jpg`. Including them in the Markdown causes Webpack to replace the path for both that `img` as well as the one created by the `ZoomImage` component. Interestingly, `<hidden />` is a component which returns `null` (you can look at its source <a href="" target="_blank">here</a>), and therefore doesn't render its children, so the extra `img` tags aren't actually added to the DOM. Simply including them in the Markdown is enough to make Webpack to do its magic.
+The issue is: without including the `<img />` tags, Webpack doesn't replace the path passed to `ZoomImage`, which ultimately ends 404ing, since there isn't anything at `/blog/react-in-markdown/lake-22.jpg`. Including them in the Markdown causes Webpack to replace the path for both that `img` as well as the one created by the `ZoomImage` component. Interestingly, `<hidden />` is a component which returns `null` (you can look at its source <a href="https://github.com/prichey/prestonrichey.com/blob/master/src/components/Hidden.js" target="_blank">here</a>), and therefore doesn't render its children, so the extra `img` tags aren't actually added to the DOM. Simply including them in the Markdown is enough to make Webpack to do its magic.
 
 Another interesting issue is that the `<hidden />` component can appear directly before or after the `ZoomImage` component, but if there's a blank line of whitespace or more in between, the paths don't get replaced. I'm going to keep on digging into this issue to try and figure out a way to get around this hacky fix, but for now it works fine and doesn't ultimately affect page performance.
 

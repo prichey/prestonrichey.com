@@ -42,6 +42,8 @@ class RainbowCube extends React.Component {
         width={width}
         height={height}
         onAnimate={this._onAnimate}
+        antialias
+        pixelRatio={window.devicePixelRatio}
         clearColor={0xffffff}>
         <scene>
           <perspectiveCamera

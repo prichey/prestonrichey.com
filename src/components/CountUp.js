@@ -24,7 +24,7 @@ class CountUp extends React.Component {
   }
 
   render() {
-    return <h3>Seconds since counter was mounted: {this.state.counter}.</h3>;
+    return <h3>Seconds since component was mounted: {this.state.counter}.</h3>;
   }
 }
 

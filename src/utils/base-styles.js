@@ -47,6 +47,16 @@ export default () => {
 
     }
 
+    blockquote {
+      margin-left: 1em;
+      margin-right: 1em;
+
+      @media (min-width: 520px) {
+        margin-left: 2em;
+        margin-right: 2em;
+      }
+    }
+
     ul {
       // list-style: none;
       padding: 0;
