@@ -21,7 +21,11 @@ First, some terminology:
 Lots of barbecue means lots of messy fingers. And lots of messy fingers means lots of napkins. That's where the Mapkins Machine comes in.
 
 <div class="sidebar right">
-<img src="/mapkin-machine.jpg" alt="Mapkin Machine In Situ" title="Mapkin Machine In Situ" data-action="zoom"/>
+  <hidden>
+    <img src='mapkins-machine.jpg' />
+    <img src='mapkins-machine-zoom.jpg' />
+  </hidden>
+  <zoom-image src='mapkins-machine.jpg' zoomSrc='mapkins-machine-zoom.jpg' alt='Mapkin Machine In Situ'></zoom-image>
 </div>
 
 In partnership with local organization <a href="http://www.kcloves.com/" target="_blank">KC Loves</a>, partners at <a href="https://www.barkleyus.com/" target="_blank">Barkley</a> designed and built the machine, which would be stationed around the BBQ competition dispensing Mapkins, themselves both functional napkins but also (assuming you kept it clean) a collectible map to all the barbecue restaurants around the KC metro area. Because the Mapkins would be in a limited supply, we wanted to ensure that each customer would just receive one. Our solution? An Arduino-powered vending machine leveraging the <a href="https://www.twilio.com/sms" target="_blank">Twilio SMS</a> API using a <a href="https://www.amazon.com/kuman-Expansion-Stepper-Heatsink-Arduino/dp/B06XHKSVTG/" target="_blank">CNC Shield</a> to turn stepper motors. Obviously.
