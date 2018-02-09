@@ -6,7 +6,6 @@ link: "https://chrome.google.com/webstore/detail/they-linkedin/cmjockpmecfhkaead
 repo: "https://github.com/prichey/they-linkedin"
 order: 9
 publish: true
-zoom: true
 lang: "Node.js"
 ---
 
@@ -17,7 +16,11 @@ Someone saner than I would, given these opinions about a free and totally option
 <a href="https://chrome.google.com/webstore/detail/they-linkedin/cmjockpmecfhkaeadcgneakffkioombe" target="_blank">They LinkedIn</a>, inspired by John Carpenter's <a href="https://www.youtube.com/watch?v=JI8AMRbqY6w&t=68s" target="_blank">They Live</a> and an episode of the podcast <a href="https://trackchanges.postlight.com/paul-and-rich-try-to-talk-about-something-else-but-end-up-complaining-about-linkedin-again-c20526cfdb74" target="_blank">Track Changes</a>, lets you see past the jargon. It works similar to <a href="https://github.com/panicsteve/cloud-to-butt" target="_blank">cloud-to-butt</a> but it only runs on linkedin.com. It replaces phrases like "People you may know" with "Synergistic partners", and "What people are talking about now" with "Your boss expects you to know about this". Etc.
 
 <div class="blog-inset">
-  <img src="screenshot.jpg" alt="Plugin Screenshot" title="Plugin Screenshot" data-action="zoom"/>
+  <hidden>
+    <img src='screenshot.jpg' />
+    <img src='screenshot-zoom.jpg' />
+  </hidden>
+  <zoom-image src='screenshot.jpg' zoomSrc='screenshot-zoom.jpg' alt='Plugin Screenshot'></zoom-image>
 </div>
 
 If you found any of this interesting, send me a note. I'd love to add you to my professional network. And, if you would, please endorse me for 'growth hacking' and 'thought leadership'. Thanks in advance!
