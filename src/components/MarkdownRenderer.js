@@ -58,7 +58,7 @@ class MarkdownRenderer extends React.Component {
     this.state = {
       value: `### this textarea is editable
 
-![](http://i.imgur.com/rv81Iei.gif)`
+![](https://i.imgur.com/rv81Iei.gif)`
     };
 
     this.handleChange = this.handleChange.bind(this);
