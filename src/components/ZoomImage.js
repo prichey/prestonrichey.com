@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ImageZoom from 'react-medium-image-zoom';
 import Helmet from 'react-helmet';
 
-class ZoomImageFoo extends Component {
+class ZoomImage extends Component {
   render() {
     return (
       <ImageZoom
@@ -19,4 +19,4 @@ class ZoomImageFoo extends Component {
   }
 }
 
-export default ZoomImageFoo;
+export default ZoomImage;

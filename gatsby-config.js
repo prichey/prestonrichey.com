@@ -9,7 +9,7 @@ module.exports = {
         plugins: [
           {
             resolve: 'gatsby-remark-component',
-            options: { components: ['echo', 'zoom-image'] }
+            options: { components: ['echo', 'zoom-image', 'hidden'] }
           },
           {
             resolve: 'gatsby-remark-prismjs'
