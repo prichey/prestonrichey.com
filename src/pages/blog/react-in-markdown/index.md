@@ -1,18 +1,18 @@
 ---
-title: "React In Markdown In React"
-date: "2018-02-08"
+title: "React In Markdown (In React)"
+date: "2018-02-10"
 publish: true
 ---
 
 <section class="blog-section">
 
-This website is made with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a>, a static site generator for React. You can look at its source <a href="https://github.com/prichey/prestonrichey.com" target="_blank">here</a>. Gatsby (via Webpack) packages up React components, Markdown files, and other assets, creating a bundle that loads as fast as possible. The experience developing a Gatsby site is also the best I've ever had, including a hot-reloading development server and a truly zero-config setup. I'm smitten.
+This website is made with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a>, a static site generator for React. You can look at its source <a href="https://github.com/prichey/prestonrichey.com" target="_blank">here</a>. Gatsby packages up React components, Markdown files, and other assets, creating bundles of code that load as fast as possible. The experience developing a Gatsby site is also the best I've ever had, including a hot-reloading development server and a zero-config setup. I'm smitten.
 
 My <em>one</em> complaint with Gatsby was that I wanted to be able to embed React components inside of Markdown. Say you want to make a cool D3 visualization to add to your blog post. Or maybe you want to make an ad-hoc interactive survey form. React (fortunately, in my opinion) forces you to think about your code in components, so it seemed like a significant loss <em>not</em> to be able to use components within a blog post. Surely I wasn't the only one who felt the same way, so I did a quick search on Gatsby's Github page, and sure enough, someone had opened up an <a href="https://github.com/gatsbyjs/gatsby/issues/312" target="_blank">issue</a> in June 2016 asking:
 
 > Is there an easy way to use React components in my Markdown source. Something like reactdown?
 
-I subscribed to get notifications on any further discussion of the topic and went about my way, waiting for someone smarter than myself (or at least more familiar with React internals and compiling HAST) to come along and offer up a solution.
+I subscribed to get notifications on any further discussion of the topic and went about my way, waiting for someone smarter than myself (or at least more familiar with React internals and compiling <a href="https://github.com/syntax-tree/hast" target="_blank">HAST</a>) to come along and offer up a solution.
 
 </section>
 
@@ -30,7 +30,7 @@ I won't rehash how to add custom components to your own Gatsby site, since there
 
 ## ZoomImage
 
-The initial use case that got me wondering if this was possible was that I wanted to add a Medium-esqe image zoom. I had found a React package <a href="https://github.com/rpearce/react-medium-image-zoom" target="_blank">react-medium-image-zoom</a> that seemed like it would work great if only I could use React components. I figured out a hacky solution by conditionally including a <a href="https://github.com/fat/zoom.js/" target="_blank">different</a> (non-React) library for blog posts that had images, but this felt gross because the library didn't get rolled up into the bundle served by Gatsby, and was thus unoptimized. After figuring out how to add custom components, I happily swapped that approach out for one using an actual React component.
+My initial use case for wanting to embed a react component was that I wanted to add a Medium-esqe image zoom effect for my blog. I had found a React package <a href="https://github.com/rpearce/react-medium-image-zoom" target="_blank">react-medium-image-zoom</a> that seemed like it would work great if only I could use React components. I figured out a hacky solution by conditionally including a <a href="https://github.com/fat/zoom.js/" target="_blank">different</a> (non-React) library for blog posts that had images, but this felt gross because the library didn't get rolled up into the bundle served by Gatsby, and was thus unoptimized. After figuring out how to add custom components, I happily swapped that approach out for one using an actual React component.
 
 Here's what it looks like:
 
@@ -81,11 +81,13 @@ Another interesting issue is that the `<hidden />` component can appear directly
 
 ## A few other examples
 
-Custom components allow you to add all sorts of interactive elements to blog posts. For example, maybe a timer that shows the amount of time since this page was loaded?
+Custom components allow you to add all sorts of interactive elements to blog posts. What about a timer that shows the amount of time since this page was loaded?
 
 <div>
   <countup></countup>
 </div>
+
+No problem!
 
 Or maybe a spinning 3D torus knot?
 
@@ -110,5 +112,13 @@ I'll cut to the chase: yes, yes it is.
 </div>
 
 Insert Xzibit meme here.
+
+</section>
+
+<section class="blog-section">
+
+## .mdx?
+
+One of the exciting things about working with both React and Gatsby is how much momentum there is behind adding features and improving tooling and performance. There are many different approaches to use components in Markdown and I'm sure there will be lots of continued discussion and development of the topic. Just yesterday I came across a <a href="https://spectrum.chat/thread/1021be59-2738-4511-aceb-c66921050b9a" target="_blank">proposal</a> from Zeit's Guillermo Rauch discussing a `.mdx` file format which would marry Markdown and JSX for use cases such as this. There seems to be lots of community support around finding a solution to this common issue, so I'm excited to see what comes next.
 
 </section>

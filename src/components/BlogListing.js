@@ -3,8 +3,13 @@ import styled from 'styled-components';
 import Link from 'gatsby-link';
 
 const DateSpan = styled.span`
+  display: none;
   color: #999;
   margin-left: 0.5em;
+
+  @media (min-width: 520px) {
+    display: inline;
+  }
 `;
 
 const StyledBlogListing = styled.ul`
