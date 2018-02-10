@@ -30,23 +30,12 @@ export default ({ data }) => {
       {post.frontmatter.title && (
         <Helmet>
           <title>Preston Richey | {post.frontmatter.title}</title>
-          <meta
-            name="twitter:title"
-            content={'Preston Richey | ' + post.frontmatter.title}
-          />
-          <meta
-            property="og:title"
-            content={'Preston Richey | ' + post.frontmatter.title}
-          />
+          <meta property="og:description" content={post.frontmatter.title} />
+          <meta name="twitter:description" content={post.frontmatter.title} />
         </Helmet>
       )}
 
-      {post.frontmatter.date && (
-        <Helmet>
-          <meta property="og:description" content={post.frontmatter.date} />
-          <meta name="twitter:description" content={post.frontmatter.date} />
-        </Helmet>
-      )}
+      {post.frontmatter.date && <Helmet />}
 
       <h1>{post.frontmatter.title}</h1>
       <TextPostBody htmlAst={post.htmlAst} />
