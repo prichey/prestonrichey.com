@@ -1,6 +1,7 @@
 ---
 title: "React In Markdown (In React)"
 date: "2018-02-10"
+excerpt: "Why I'm so excited about custom components in Markdown with Gatsby.js."
 publish: true
 ---
 

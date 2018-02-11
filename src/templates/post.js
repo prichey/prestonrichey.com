@@ -30,12 +30,25 @@ export default ({ data }) => {
       {post.frontmatter.title && (
         <Helmet>
           <title>Preston Richey | {post.frontmatter.title}</title>
-          <meta property="og:description" content={post.frontmatter.title} />
-          <meta name="twitter:description" content={post.frontmatter.title} />
         </Helmet>
       )}
 
-      {post.frontmatter.date && <Helmet />}
+      {post.frontmatter.title &&
+        post.frontmatter.excerpt && (
+          <Helmet>
+            <meta property="og:title" content={post.frontmatter.title} />
+            <meta name="twitter:title" content={post.frontmatter.title} />
+
+            <meta
+              property="og:description"
+              content={post.frontmatter.excerpt}
+            />
+            <meta
+              name="twitter:description"
+              content={post.frontmatter.excerpt}
+            />
+          </Helmet>
+        )}
 
       <h1>{post.frontmatter.title}</h1>
       <TextPostBody htmlAst={post.htmlAst} />
@@ -51,6 +64,7 @@ export const query = graphql`
       frontmatter {
         title
         date
+        excerpt
       }
     }
   }

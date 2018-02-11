@@ -1,6 +1,7 @@
 ---
 title: "</2017>"
 date: "2018-01-01"
+excerpt: "Some of my favorite things from 2017."
 publish: true
 ---
 
