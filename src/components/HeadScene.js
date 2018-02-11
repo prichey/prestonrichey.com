@@ -19,11 +19,21 @@ class HeadScene extends React.Component {
     super(props, context);
     this.state = {
       cameraPosition: new THREE.Vector3(0, 0, 30),
+      groupRotation: new THREE.Euler(),
       obj: null
     };
 
     this._onAnimate = () => {
       this.controls.update();
+      // if (this.state.dragging !== true) {
+      //   this.setState({
+      //     groupRotation: new THREE.Euler(
+      //       this.state.groupRotation.x + 0.0,
+      //       this.state.groupRotation.y + 0.0,
+      //       this.state.groupRotation.z + 0.0
+      //     )
+      //   });
+      // }
     };
   }
 
@@ -124,7 +134,7 @@ class HeadScene extends React.Component {
               position={cameraPosition}
             />
 
-            <group ref="group" />
+            <group ref="group" rotation={this.state.groupRotation} />
           </scene>
         </React3>
       </StyledSceneWrap>
