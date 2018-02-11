@@ -90,13 +90,13 @@ Custom components allow you to add all sorts of interactive elements to blog pos
 
 No problem!
 
-Or maybe a spinning 3D torus knot?
+Or maybe a spinning rainbow torus knot?
 
 <div style="height: 400px;">
   <rainbowknot></rainbowknot>
 </div>
 
-Why not? The possibilities are endless!
+Why not? (Shh.) The possibilities are endless!
 
 </section>
 
