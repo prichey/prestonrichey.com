@@ -48,14 +48,12 @@ Due to a quirk with the way components in Markdown are parsed, all of the props 
 Then, you simply include it in Markdown like so:
 
 ```html
-<div class='blog-inset'>
-  <zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' alt='Lake 22'></zoom-image>
-  <hidden>
-    <!-- These don't actually get rendered to the DOM -->
-    <img src='lake-22.jpg' />
-    <img src='lake-22-zoom.jpg' />
-  </hidden>
-</div>
+<zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' alt='Lake 22'></zoom-image>
+<hidden>
+  <!-- These don't actually get rendered to the DOM -->
+  <img src='lake-22.jpg' />
+  <img src='lake-22-zoom.jpg' />
+</hidden>
 ```
 
 Adding the `<hidden />` component here is a hacky solution to a Webpack issue I haven't quite figured out yet. Gatsby has a sophisticated <a href="https://www.gatsbyjs.org/docs/adding-images-fonts-files/" target="_blank">asset pipeline</a> which takes relative paths to assets and replaces them with cache-busting paths in the `/public` directory (which is what ultimately gets deployed). This means you can maintain an organized asset structure, with each post's folder containing relevant assets, while not worrying about the actual path of the asset.

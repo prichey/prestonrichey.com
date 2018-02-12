@@ -14,6 +14,9 @@ module.exports = {
           {
             resolve: 'gatsby-remark-prismjs'
           },
+          {
+            resolve: 'gatsby-remark-smartypants'
+          },
           // {
           //   resolve: 'gatsby-remark-images',
           //   options: {
