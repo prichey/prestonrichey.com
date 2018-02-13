@@ -38,6 +38,7 @@ const StyledTextArea = styled.textarea`
   font-size: 0.9em;
   padding: 1em;
   min-height: 100px;
+  resize: none;
 
   @media (min-width: 550px) {
     min-height: 300px;
