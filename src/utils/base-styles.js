@@ -1,5 +1,5 @@
-import normalize from 'styled-normalize';
-import { injectGlobal } from 'styled-components';
+import normalize from "styled-normalize";
+import { injectGlobal } from "styled-components";
 
 export default () => {
   injectGlobal`
@@ -55,6 +55,10 @@ export default () => {
         margin-left: 2em;
         margin-right: 2em;
       }
+    }
+
+    figure {
+      margin: 0;
     }
 
     ul {
@@ -154,7 +158,7 @@ export default () => {
       }
 
       ${
-        '' /* .section-anchor {
+        "" /* .section-anchor {
         &:before {
           content: '#';
           position: absolute;

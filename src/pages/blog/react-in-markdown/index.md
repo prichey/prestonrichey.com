@@ -36,7 +36,7 @@ My initial use case for wanting to embed a react component was that I wanted to 
 Here's what it looks like:
 
 <div class="blog-inset">
-  <zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' alt='Lake 22'></zoom-image>
+  <zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' caption='Lake 22, WA'></zoom-image>
   <hidden>
     <img src='lake-22.jpg' />
     <img src='lake-22-zoom.jpg' />
@@ -48,7 +48,7 @@ Due to a quirk with the way components in Markdown are parsed, all of the props 
 Then, you simply include it in Markdown like so:
 
 ```html
-<zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' alt='Lake 22'></zoom-image>
+<zoom-image src='lake-22.jpg' zoomSrc='lake-22-zoom.jpg' caption='Lake 22, WA'></zoom-image>
 <hidden>
   <!-- These don't actually get rendered to the DOM -->
   <img src='lake-22.jpg' />
