@@ -2,7 +2,7 @@
 
 ## Howdy.
 
-My name is Preston and I'm a developer living in Kansas City. I work at [Postlight](https://postlight.com/)! I'm passionate about solving problems, using strong passwords, and pho.
+My name is Preston and I'm a developer living in Brooklyn. I work at [Postlight](https://postlight.com/)! I'm passionate about solving problems, using strong passwords, and pho.
 
 In my free time, I enjoy cycling and listening to jazz.
 
