@@ -25,15 +25,15 @@ class HeadScene extends React.Component {
 
     this._onAnimate = () => {
       this.controls.update();
-      // if (this.state.dragging !== true) {
-      //   this.setState({
-      //     groupRotation: new THREE.Euler(
-      //       this.state.groupRotation.x + 0.0,
-      //       this.state.groupRotation.y + 0.005,
-      //       this.state.groupRotation.z + 0.0
-      //     )
-      //   });
-      // }
+      if (this.state.dragging !== true) {
+        this.setState({
+          groupRotation: new THREE.Euler(
+            this.state.groupRotation.x + 0.0,
+            this.state.groupRotation.y + 0.005,
+            this.state.groupRotation.z + 0.0
+          )
+        });
+      }
     };
   }
 
