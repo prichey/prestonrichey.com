@@ -112,6 +112,6 @@ Thanks for being here with me. 😘
   <zoom-image src='end.jpg' zoomSrc='end-zoom.jpg'></zoom-image>
 </div>
 
-P.S. If you'd like to get a notification whenever I send out an update, sign up for my newborn email newsletter, <a target="_blank" href="https://tinyletter.com/prichey">Hey Presto!</a>
+P.S. If you'd like to get a notification whenever I send out an update, you can sign up for my newborn email newsletter, <a target="_blank" href="https://tinyletter.com/prichey">Hey Presto!</a>
 
 </section>
