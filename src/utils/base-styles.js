@@ -109,6 +109,7 @@ export default () => {
       }
     }
 
+    .blog-full,
     .blog-inset {
       margin-left: auto;
       margin-right: auto;
@@ -117,7 +118,9 @@ export default () => {
       img {
         width: 100%;
       }
+    }
 
+    .blog-inset {
       @media (min-width: 520px) {
         margin-top: 2em;
         margin-bottom: 2em;
