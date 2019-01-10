@@ -7,13 +7,15 @@ publish: true
 
 <section class="blog-section">
 
-At the end of 2017, <a target="_blank" href="https://prestonrichey.com/blog/2017/">I wrote</a> about some of my favorite things that happened that year. While the exercise of distilling a year down into a few paragraphs is an exhausting one for me, I enjoy both doing it and having done it, so this is my attempt at summing up last year. I called 2017 "exhausting and edifying"; I could say the same of 2018 (and, in retrospect, probably any good year), but I'd add, more simply: coalescent.
+Last year was an incredibly busy one for me: I held three different jobs, moved cross-country, and in between did a decent amount of traveling. Yet I didn't talk about it much online. I posted only twice to this blog, 9 times to <a href="https://www.instagram.com/preston.richey/">Instagram</a>, and only a handful of throwaway jokes to <a href="https://twitter.com/prestonrichey">Twitter</a> (though this one was <a href="https://twitter.com/prestonrichey/status/1029509482240532480">pretty good</a>). While the exercise of distilling a year down into a few paragraphs was fairly exhausting, I enjoyed the opportunity to look back at a year that was deeply challenging and rewarding. It's longer than I initially expected, but I guess that's what I get for going so long without checking in.
 
 I started 2018 in Kansas City, working as Creative Technologist of <a target="_blank" href="https://www.barkleyus.com/">Barkley</a>'s (now defunct) innovation lab, <a target="_blank" href="https://medium.com/moonshotlab">Moonshot</a>. In January, we finished <a target="_blank" href="https://medium.com/moonshotlab/marco-polo-58201c14c669">Marco Polo</a>, a comprehensive exhibit showcasing conversational technology. Being the only developer on the team taught me to learn quickly and solve problems by myself, but it soon became evident that to continue my development as a developer, I needed to work more closely with other developers more senior to myself. I started looking for a new position where I would be challenged in different ways than at Barkley, and in March, I found it, at SelectQuote.
 
 My tenure at <a target="_blank" href="https://www.selectquote.com/">SelectQuote</a> was relatively short, but during my time there I was surrounded by a team of incredibly sharp engineers. I worked, for the first time, on substantial enterprise applications written with <a target="_blank" href="https://reactjs.org/">React</a> (😍) and benefitted from a strong culture of code review and pair programming. I learned a ton, but I knew my role there would only go so far in getting me closer to a job in New York, a goal I had had ever since visiting the city for the first time <a target="_blank" href="https://photos.google.com/share/AF1QipMeUHAdXIR_e7hvGZQdmsoEqBFVhTvOH2uQ_XTlySEKz0S5tpXBmkTe_kLwo9IshA/photo/AF1QipMppKCMCiUhL3F94uRlFfY61ZNSAVxpRsQPtTsK?key=b2pyT3RtU0NvaHo2M1lIUkp1RW9hellKYnlnMXJB">at age 13</a>. That's why, when I finally heard back from <a target="_blank" href="https://postlight.com/">Postlight</a>, a digital product studio based in Manhattan, I knew my time in the Midwest was, after 26 years, coming to an end.
 
-I couldn't have been more excited to start at Postlight at the end of June. A decent amount of Postlight's engineers work remotely, so I knew it wouldn't be an issue to work from Kansas City in the interim, but I immediately started looking into the logistics of moving myself (and some subset of the mostly-full one-bedroom apartment I lived in) to New York City. In September, I sold my beloved <a target="_blank" href="https://photos.google.com/share/AF1QipMeUHAdXIR_e7hvGZQdmsoEqBFVhTvOH2uQ_XTlySEKz0S5tpXBmkTe_kLwo9IshA/photo/AF1QipPtT0UIZU61HN8NjCE92t79gb3mPi2LKG7nEUqQ?key=b2pyT3RtU0NvaHo2M1lIUkp1RW9hellKYnlnMXJB">Honda Fit</a> (not a week after paying it off in full), packed a handful of boxes into a ~300 ft<sup>3</sup> <a target="_blank" href="https://photos.google.com/share/AF1QipMeUHAdXIR_e7hvGZQdmsoEqBFVhTvOH2uQ_XTlySEKz0S5tpXBmkTe_kLwo9IshA/photo/AF1QipN1DqVOr3NPjVOwk-bFzPPci05av1HpnbbNa7W8?key=b2pyT3RtU0NvaHo2M1lIUkp1RW9hellKYnlnMXJB">moving container</a>, and said my good-byes-for-now. Being of the ilk of Midwesterners totally undeterred by a 20-hour drive, my parents graciously offered to drive with me from Kansas City to New York, so on September 30th, we loaded several suitcases, an air mattress, and my fiddle-leaf fig into a rental car and set the GPS towards Brooklyn.
+I couldn't have been more excited to start at Postlight at the end of June. A decent amount of Postlight's engineers work remotely, so I knew it wouldn't be an issue to work from Kansas City in the interim, but I immediately started looking into the logistics of moving myself (and some subset of the mostly-full one-bedroom apartment I lived in) to New York City.
+
+In September, I sold my beloved <a target="_blank" href="https://photos.google.com/share/AF1QipMeUHAdXIR_e7hvGZQdmsoEqBFVhTvOH2uQ_XTlySEKz0S5tpXBmkTe_kLwo9IshA/photo/AF1QipPtT0UIZU61HN8NjCE92t79gb3mPi2LKG7nEUqQ?key=b2pyT3RtU0NvaHo2M1lIUkp1RW9hellKYnlnMXJB">Honda Fit</a> (not a week after paying it off in full), packed a handful of boxes into a ~300 ft<sup>3</sup> <a target="_blank" href="https://photos.google.com/share/AF1QipMeUHAdXIR_e7hvGZQdmsoEqBFVhTvOH2uQ_XTlySEKz0S5tpXBmkTe_kLwo9IshA/photo/AF1QipN1DqVOr3NPjVOwk-bFzPPci05av1HpnbbNa7W8?key=b2pyT3RtU0NvaHo2M1lIUkp1RW9hellKYnlnMXJB">moving container</a>, and said my good-byes-for-now. Being of the ilk of Midwesterners totally undeterred by a 20-hour drive, my parents graciously offered to drive with me from Kansas City to New York, so on September 30th, we loaded several suitcases, an air mattress, and my fiddle-leaf fig into a rental car and set the GPS towards Brooklyn.
 
 <div class="blog-inset">
   <hidden>
@@ -98,11 +100,11 @@ Without further ado, here's a list, in no particular order, of a few of the thin
 * Everlane's <a target="_blank" href="https://www.everlane.com/products/mens-coach-jacket-midblue">Coach Jacket</a> in mid blue
 * <a target="_blank" href="https://thompsontee.com/">Thompson Tees</a> (for the second year running)
 
+Thanks for being here with me. 😘
+
 </section>
 
 <section class="blog-section">
-
-Thanks for being here with me. 😘
 
 <div class="blog-inset">
   <hidden>
