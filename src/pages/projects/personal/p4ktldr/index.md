@@ -1,0 +1,54 @@
+---
+title: "p4ktldr"
+date: "2019"
+lede: 'Pitchfork but TL;DR.'
+link: "https://p4ktldr.com/"
+repo: "https://github.com/prichey/p4ktldr"
+order: 10
+publish: true
+lang: "React"
+---
+
+<section class="blog-section">
+
+Sometimes an idea gets lodged in the back of your head and there's nothing you can do but to bring it into the world, no matter how inane. This project was one of those ideas. I originally bought the domain in October 2017 and in the time since have started fresh at least 4 different times - most recently, about a month ago, spurred on by a bout of sober productivity (hello Dry January!) and an interest in playing around with the soon-to-be-released <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a>.
+
+So, the idea: <a href="https://pitchfork.com/">Pitchfork</a> <a href="https://en.wiktionary.org/wiki/too_long;_didn%27t_read#English">TL;DR</a>. (That's it.)
+
+<div class="blog-inset">
+  <hidden>
+    <img src='p4ktldr.jpg' />
+    <img src='p4ktldr-zoom.jpg' />
+  </hidden>
+  <zoom-image src='p4ktldr.jpg' zoomSrc='p4ktldr-zoom.jpg' alt='EDIT'></zoom-image>
+</div>
+
+Pitchfork (sometimes shortened as P4k) is a website of various repute that covers and critiques popular music, both mainstream and independent. It for years was (and to some extent still is) known as the preeminent arbiter of opinions on 'hipster' music (<a href="https://www.urbandictionary.com/define.php?term=Pitchfork%20Hipster">whatever that means</a>).  Albums are given a rating 0 - 10, and the best are given the distinction of '<a href="https://pitchfork.com/reviews/best/albums/">Best New Music</a>'. A rave review can lead to an invitation to play at <a href="https://pitchforkmusicfestival.com">Pitchfork Festival</a>, while a pan can be damning.
+
+Let's set aside the extreme subjectivity of attempting to objectively score any piece of art. (This is a big ask, I know.) Regardless of the value given to a certain review, at the very least I believe that Pitchfork (much as any other establishment concerned with critique) attempts to articulate a consistent viewpoint. This, in my opinion, is useful, even if not fully realized.
+
+Whenever I am recommended a band to listen to, I like to have a place to start. I could pick an album at random, or I could seek out a aggregator like <a href="https://www.metacritic.com/">metacritic</a>, but oftentimes I start with whatever's most highly rated on Pitchfork. I may end up disagreeing, but it's a place to start, and it usually works out okay. The only problem is, there isn't an easy way to do this: I'd search a particular artist, open up each album's review in a new tab, and scan these to find the 'best'. This is not an exercise of nuance; it is one of efficiency.
+
+<div class="blog-inset">
+  <hidden>
+    <img src='pitchfork-wilco.jpg' />
+    <img src='pitchfork-wilco-zoom.jpg' />
+  </hidden>
+  <zoom-image src='pitchfork-wilco.jpg' zoomSrc='pitchfork-wilco-zoom.jpg' alt='EDIT'></zoom-image>
+</div>
+
+So, I made <a href="https://p4ktldr.com/">p4ktldr</a>. Search for an artist, see the albums sorted by rating. Click through to read further. I use the same APIs that pitchfork.com uses, both for the <a href="https://github.com/prichey/p4ktldr/blob/master/src/components/Search/api.js#L16">artist suggestions</a> as you type, and also for the <a href="https://github.com/prichey/p4ktldr/blob/master/src/components/Search/api.js#L33">album reviews</a> once you select a certain artist.
+
+The site itself is a simple React app hosted on <a href="https://www.netlify.com/">Netlify</a>. There are just three routes, `/`, `/search/:artist`, and `/about`. As I mentioned above, I used React Hooks which on the whole were incredibly pleasant to use: while it took a bit of time to get used to, transitioning from thinking in terms of `componentDidMount` and `componentDidUpdate` to Hooks' `useEffect` turned out to be entirely ergonomic.
+
+<div class="blog-inset">
+  <hidden>
+    <img src='p4ktldr-wilco.jpg' />
+    <img src='p4ktldr-wilco-zoom.jpg' />
+  </hidden>
+  <zoom-image src='p4ktldr-wilco.jpg' zoomSrc='p4ktldr-wilco-zoom.jpg' alt='EDIT'></zoom-image>
+</div>
+
+I'm glad to be done with this one. It'll be useful to me, regardless of whether or not anyone else finds it worthwhile. Sometimes an itch goes away, and sometimes you have to build a stupid website to scratch it. 
+
+</section>
