@@ -49,6 +49,15 @@ The site itself is a simple React app hosted on <a href="https://www.netlify.com
   <zoom-image src='p4ktldr-wilco.jpg' zoomSrc='p4ktldr-wilco-zoom.jpg' alt='EDIT'></zoom-image>
 </div>
 
-I'm glad to be done with this one. It'll be useful to me, regardless of whether or not anyone else finds it worthwhile. Sometimes an itch goes away, and sometimes you have to build a stupid website to scratch it. 
+I'm glad to be done with this one. It'll be useful to me, regardless of whether or not anyone else finds it worthwhile. Sometimes an itch goes away, and sometimes you have to build a stupid website to scratch it.
+
+<!-- </section>
+
+<section class="blog-section">
+ -->
+
+## Update
+
+I got <a href="/blog/how-to-get-trolled/">trolled</a>.
 
 </section>
