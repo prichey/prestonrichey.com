@@ -15,6 +15,7 @@ export default ({ data }) => {
           <title>Preston Richey | {post.frontmatter.title}</title>
         </Helmet>
       )}
+
       <h1>{post.frontmatter.title}</h1>
       <ProjectLinks
         link={post.frontmatter.link}
