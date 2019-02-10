@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 
+import Layout from './../components/Layout';
 import TextPostBody from './../components/TextPostBody';
 // import ProjectLinks from './../components/ProjectLinks';
 
@@ -27,7 +28,7 @@ export default ({ data }) => {
   const post = data.markdownRemark;
 
   return (
-    <div>
+    <Layout>
       {post.frontmatter.title && (
         <Helmet>
           <title>Preston Richey | {post.frontmatter.title}</title>
@@ -51,7 +52,7 @@ export default ({ data }) => {
       <h1>{post.frontmatter.title}</h1>
       <TextPostBody htmlAst={post.htmlAst} />
       <StyledPostDate>{post.frontmatter.date}</StyledPostDate>
-    </div>
+    </Layout>
   );
 };
 

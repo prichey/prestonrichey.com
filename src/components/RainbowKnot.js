@@ -1,35 +1,66 @@
 import React from 'react';
-import React3 from 'react-three-renderer';
 import * as THREE from 'three';
 import Dimensions from 'react-dimensions';
 
-class RainbowCube extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+class RainbowKnot extends React.Component {
+  componentDidMount() {
+    const width = this.props.containerWidth;
+    const height = this.props.containerHeight;
 
-    this.cameraPosition = new THREE.Vector3(0, 0, 3.5);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 
-    // construct the position vector here, because if we use 'new' within render,
-    // React will think that things have changed when they have not.
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true
+    });
 
-    this.state = {
-      cubeRotation: new THREE.Euler()
-    };
+    const geometry = new THREE.TorusKnotGeometry(1, 0.175, 100, 10, 5, 6);
+    const material = new THREE.MeshNormalMaterial();
+    const torus = new THREE.Mesh(geometry, material);
 
-    this._onAnimate = () => {
-      // we will get this callback every frame
+    camera.position.z = 3.5;
 
-      // pretend cubeRotation is immutable.
-      // this helps with updates and pure rendering.
-      // React will be sure that the rotation has now updated.
-      this.setState({
-        cubeRotation: new THREE.Euler(
-          this.state.cubeRotation.x + 0.01,
-          this.state.cubeRotation.y + 0.01,
-          this.state.cubeRotation.z + 0.01
-        )
-      });
-    };
+    scene.add(torus);
+
+    renderer.setClearColor('#ffffff');
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    this.scene = scene;
+    this.camera = camera;
+    this.renderer = renderer;
+    this.torus = torus;
+
+    this.mount.appendChild(this.renderer.domElement);
+    this.start();
+  }
+
+  componentWillUnmount() {
+    this.stop();
+    this.mount.removeChild(this.renderer.domElement);
+  }
+
+  start = () => {
+    if (!this.frameId) {
+      this.frameId = requestAnimationFrame(this.animate);
+    }
+  };
+
+  stop = () => {
+    cancelAnimationFrame(this.frameId);
+  };
+
+  animate = () => {
+    this.torus.rotation.x += 0.01;
+    this.torus.rotation.y += 0.01;
+    this.torus.rotation.z += 0.01;
+
+    this.renderScene();
+    this.frameId = window.requestAnimationFrame(this.animate);
+  };
+
+  renderScene() {
+    this.renderer.render(this.scene, this.camera);
   }
 
   render() {
@@ -37,38 +68,15 @@ class RainbowCube extends React.Component {
     const height = this.props.containerHeight;
 
     return (
-      <React3
-        mainCamera="camera" // this points to the perspectiveCamera below
+      <div
         width={width}
         height={height}
-        onAnimate={this._onAnimate}
-        antialias
-        pixelRatio={window.devicePixelRatio}
-        clearColor={0xffffff}>
-        <scene>
-          <perspectiveCamera
-            name="camera"
-            fov={75}
-            aspect={width / height}
-            near={0.1}
-            far={1000}
-            position={this.cameraPosition}
-          />
-          <mesh rotation={this.state.cubeRotation}>
-            <torusKnotGeometry
-              radius={1}
-              tube={0.175}
-              p={5}
-              q={6}
-              tubularSegments={100}
-              radialSegments={10}
-            />
-            <meshNormalMaterial />
-          </mesh>
-        </scene>
-      </React3>
+        ref={mount => {
+          this.mount = mount;
+        }}
+      />
     );
   }
 }
 
-export default Dimensions()(RainbowCube);
+export default Dimensions()(RainbowKnot);

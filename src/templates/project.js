@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 
+import Layout from './../components/Layout';
 import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
 
@@ -9,7 +10,7 @@ export default ({ data }) => {
   const post = data.markdownRemark;
 
   return (
-    <div>
+    <Layout>
       {post.frontmatter.title && (
         <Helmet>
           <title>Preston Richey | {post.frontmatter.title}</title>
@@ -24,7 +25,7 @@ export default ({ data }) => {
         lang={post.frontmatter.lang}
       />
       <TextPostBody htmlAst={post.htmlAst} />
-    </div>
+    </Layout>
   );
 };
 
