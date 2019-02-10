@@ -1,68 +1,65 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
-import React3 from 'react-three-renderer';
 import OBJLoader from 'three-obj-loader';
 import Dimensions from 'react-dimensions';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const OrbitControls = require('three-orbit-controls')(THREE);
+// const OrbitControls = require('three-orbit-controls')(THREE);
 OBJLoader(THREE);
 
-const StyledSceneWrap = styled.div`
-  &:hover {
-    cursor: ${props => (props.dragging === true ? 'grabbing' : 'grab')};
-  }
-`;
+// const StyledSceneWrap = styled.div`
+//   &:hover {
+//     cursor: ${props => (props.dragging === true ? 'grabbing' : 'grab')};
+//   }
+// `;
 
-class HeadScene extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      cameraPosition: new THREE.Vector3(0, 0, 30),
-      groupRotation: new THREE.Euler(0, Math.PI * 0, 0),
-      obj: null
-    };
-
-    this._onAnimate = () => {
-      this.controls.update();
-      if (this.state.dragging !== true) {
-        this.setState({
-          groupRotation: new THREE.Euler(
-            this.state.groupRotation.x + 0.0,
-            this.state.groupRotation.y + 0.005,
-            this.state.groupRotation.z + 0.0
-          )
-        });
-      }
-    };
-  }
+class HeadScene extends Component {
+  state = {
+    cameraPosition: new THREE.Vector3(0, 0, 4),
+    groupRotation: new THREE.Euler(0, Math.PI * 0, 0),
+    obj: null
+  };
 
   componentDidMount() {
-    const { group, camera } = this.refs;
+    const width = this.props.containerWidth;
+    const height = this.props.containerHeight;
 
-    const controls = new OrbitControls(camera);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.4;
-    controls.rotateSpeed = 0.6;
-    controls.enableZoom = false;
-    controls.enablePan = false;
-    controls.autoRotate = false;
-    controls.enableKeys = false;
-    // controls.minPolarAngle = -Infinity;
-    // controls.maxPolarAngle = Infinity;
-    this.controls = controls;
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
 
-    this.controls.addEventListener('start', () => {
-      this.setState({
-        dragging: true
-      });
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true
     });
 
-    this.controls.addEventListener('end', () => {
-      this.setState({
-        dragging: false
-      });
-    });
+    // const controls = new THREE.OrbitControls(camera);
+    // camera.position.set(this.state.cameraPosition);
+    // controls.update();
+
+    const group = new THREE.Group();
+
+    // const controls = new OrbitControls(camera);
+    // controls.enableDamping = true;
+    // controls.dampingFactor = 0.4;
+    // controls.rotateSpeed = 0.6;
+    // controls.enableZoom = false;
+    // controls.enablePan = false;
+    // controls.autoRotate = false;
+    // controls.enableKeys = false;
+    // // controls.minPolarAngle = -Infinity;
+    // // controls.maxPolarAngle = Infinity;
+    // this.controls = controls;
+    //
+    // this.controls.addEventListener('start', () => {
+    //   this.setState({
+    //     dragging: true
+    //   });
+    // });
+    //
+    // this.controls.addEventListener('end', () => {
+    //   this.setState({
+    //     dragging: false
+    //   });
+    // });
 
     let headAdded = false;
     if (!!window.headObject) {
@@ -87,8 +84,8 @@ class HeadScene extends React.Component {
             });
           }
         });
-
-        const scalar = 11;
+        //
+        const scalar = 1.5;
         obj.scale.set(scalar, scalar, scalar);
         obj.rotation.set(Math.PI * -0.05, Math.PI * 0, Math.PI * 0);
         group.add(obj);
@@ -98,46 +95,68 @@ class HeadScene extends React.Component {
         // this seems to work better than requesting the obj on each request
       });
     }
+
+    camera.position.set(
+      this.state.cameraPosition.x,
+      this.state.cameraPosition.y,
+      this.state.cameraPosition.z
+    );
+
+    scene.add(group);
+    renderer.setClearColor('#ffffff');
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    this.scene = scene;
+    this.camera = camera;
+    this.renderer = renderer;
+    this.group = group;
+
+    this.mount.appendChild(this.renderer.domElement);
+    this.start();
   }
 
   componentWillUnmount() {
-    this.refs.scene.remove(this.refs.group);
+    this.stop();
+    this.mount.removeChild(this.renderer.domElement);
 
-    this.controls.dispose();
-    delete this.controls;
+    // this.controls.dispose();
+    // delete this.controls;
+  }
+
+  start = () => {
+    if (!this.frameId) {
+      this.frameId = requestAnimationFrame(this.animate);
+    }
+  };
+
+  stop = () => {
+    cancelAnimationFrame(this.frameId);
+  };
+
+  animate = () => {
+    this.group.rotation.y += 0.01;
+
+    this.renderScene();
+    this.frameId = window.requestAnimationFrame(this.animate);
+  };
+
+  renderScene() {
+    this.renderer.render(this.scene, this.camera);
   }
 
   render() {
     const width = this.props.containerWidth;
     const height = this.props.containerHeight;
 
-    const { dragging, cameraPosition } = this.state;
-
     return (
-      <StyledSceneWrap dragging={dragging}>
-        <React3
-          mainCamera="mainCamera"
-          width={width}
-          height={height}
-          onAnimate={this._onAnimate}
-          clearColor={0xffffff}
-          antialias
-          pixelRatio={window.devicePixelRatio}>
-          <scene ref="scene">
-            <perspectiveCamera
-              name="mainCamera"
-              ref="camera"
-              fov={50}
-              aspect={width / height}
-              near={0.1}
-              far={1000}
-              position={cameraPosition}
-            />
-
-            <group ref="group" rotation={this.state.groupRotation} />
-          </scene>
-        </React3>
-      </StyledSceneWrap>
+      <div
+        width={width}
+        height={height}
+        ref={mount => {
+          this.mount = mount;
+        }}
+      />
     );
   }
 }

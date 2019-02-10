@@ -1,17 +1,19 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 
+import Layout from './../components/Layout';
 import TextPostBody from './../components/TextPostBody';
-import ProjectLinks from './../components/ProjectLinks';
+// import ProjectLinks from './../components/ProjectLinks';
 
-const StyledTitleWrap = styled.div`
-  margin-bottom: 1em;
-`;
+// const StyledTitleWrap = styled.div`
+//   margin-bottom: 1em;
+// `;
 
-const StyledTitle = styled.h1`
-  margin-bottom: 0;
-`;
+// const StyledTitle = styled.h1`
+//   margin-bottom: 0;
+// `;
 
 const StyledPostDate = styled.time`
   color: #999;
@@ -26,7 +28,7 @@ export default ({ data }) => {
   const post = data.markdownRemark;
 
   return (
-    <div>
+    <Layout>
       {post.frontmatter.title && (
         <Helmet>
           <title>Preston Richey | {post.frontmatter.title}</title>
@@ -50,12 +52,12 @@ export default ({ data }) => {
       <h1>{post.frontmatter.title}</h1>
       <TextPostBody htmlAst={post.htmlAst} />
       <StyledPostDate>{post.frontmatter.date}</StyledPostDate>
-    </div>
+    </Layout>
   );
 };
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
+  query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
       frontmatter {

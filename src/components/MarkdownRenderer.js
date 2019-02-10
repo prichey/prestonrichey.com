@@ -2,22 +2,11 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
-const input = '# This is a header\n\nAnd this is a paragraph';
-
 const StyledMarkdownRenderer = styled.div`
   width: 100%;
 
   @media (min-width: 550px) {
     overflow: hidden;
-  }
-`;
-
-const StyledHalfDiv = styled.div`
-  height: 100%;
-
-  @media (min-width: 550px) {
-    width: 50%;
-    float: left;
   }
 `;
 
