@@ -58,6 +58,6 @@ I'm glad to be done with this one. It'll be useful to me, regardless of whether 
 
 ## Update
 
-I got <a href="/blog/how-to-get-trolled/">trolled</a>.
+I got <a href="/blog/i-got-got/">trolled</a>.
 
 </section>
