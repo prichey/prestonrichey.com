@@ -12,7 +12,6 @@
   "dependencies": {
     "ajv": "^6.8.1",
     "gatsby": "^2.0.118",
-    "gatsby-link": "^2.0.10",
     "gatsby-plugin-google-analytics": "^2.0.13",
     "gatsby-plugin-nprogress": "^2.0.8",
     "gatsby-plugin-react-helmet": "^3.0.6",

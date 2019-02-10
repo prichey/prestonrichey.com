@@ -1,12 +1,11 @@
 import React from 'react';
-
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
-const DateSpan = styled.span`
-  color: #999;
-  margin-left: 0.5em;
-`;
+// const DateSpan = styled.span`
+//   color: #999;
+//   margin-left: 0.5em;
+// `;
 
 const StyledProjectListing = styled.ul`
   list-style: none;

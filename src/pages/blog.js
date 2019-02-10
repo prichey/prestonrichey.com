@@ -18,7 +18,7 @@ class BlogPage extends React.Component {
 export default BlogPage;
 
 export const query = graphql`
-  query BlogPageQuery {
+  query {
     allMarkdownRemark(
       filter: {
         frontmatter: { publish: { eq: true } }

@@ -1,18 +1,18 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 
 import TextPostBody from './../components/TextPostBody';
-import ProjectLinks from './../components/ProjectLinks';
+// import ProjectLinks from './../components/ProjectLinks';
 
-const StyledTitleWrap = styled.div`
-  margin-bottom: 1em;
-`;
+// const StyledTitleWrap = styled.div`
+//   margin-bottom: 1em;
+// `;
 
-const StyledTitle = styled.h1`
-  margin-bottom: 0;
-`;
+// const StyledTitle = styled.h1`
+//   margin-bottom: 0;
+// `;
 
 const StyledPostDate = styled.time`
   color: #999;
@@ -56,7 +56,7 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
+  query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
       frontmatter {

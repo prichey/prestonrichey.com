@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
-import Dimensions from 'react-dimensions';
+// import Dimensions from 'react-dimensions';
 
 import 'prismjs/themes/prism-solarizedlight.css';
 
 import Nav from './../components/Nav';
 import Favicon from './../components/Favicon';
 
-import baseStyles from './../utils/base-styles';
+import GlobalStyle from './GlobalStyle';
 
 const Main = styled.main`
   max-width: 83rem;
@@ -53,10 +53,11 @@ const TitleLink = styled(Link)`
 
 class Template extends React.Component {
   render() {
-    baseStyles();
+    // baseStyles();
 
     return (
       <Main>
+        <GlobalStyle />
         <Favicon />
 
         <Helmet>

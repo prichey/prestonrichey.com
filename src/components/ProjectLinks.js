@@ -28,7 +28,11 @@ class ProjectLinks extends React.Component {
         <StyledProjectLinksList>
           {this.props.link && (
             <StyledProjectLink>
-              <a href={this.props.link} target="_blank">
+              <a
+                href={this.props.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {this.props.link.length > 40 ? 'Link' : this.props.link}
               </a>
             </StyledProjectLink>
@@ -44,7 +48,11 @@ class ProjectLinks extends React.Component {
 
           {this.props.repo && (
             <StyledProjectLink>
-              <a href={this.props.repo} target="_blank">
+              <a
+                href={this.props.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Repo
               </a>
             </StyledProjectLink>

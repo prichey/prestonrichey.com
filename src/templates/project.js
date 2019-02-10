@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 
@@ -30,7 +29,7 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query ProjectQuery($slug: String!) {
+  query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
       frontmatter {

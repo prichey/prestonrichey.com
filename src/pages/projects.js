@@ -44,7 +44,7 @@ class ProjectsPage extends React.Component {
 export default ProjectsPage;
 
 export const query = graphql`
-  query ProjectsPageQuery {
+  query {
     allMarkdownRemark(
       filter: {
         frontmatter: { publish: { eq: true } }

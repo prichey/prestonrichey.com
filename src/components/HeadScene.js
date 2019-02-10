@@ -14,7 +14,7 @@ const StyledSceneWrap = styled.div`
   }
 `;
 
-class HeadScene extends React.Component {
+class HeadScene extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -75,7 +75,8 @@ class HeadScene extends React.Component {
     }
 
     if (!headAdded) {
-      const objLoader = new THREE.OBJLoader();
+      // const objLoader = new THREE.OBJLoader();
+      const objLoader = new OBJLoader();
       objLoader.load('/head.obj', obj => {
         obj.traverse(child => {
           if (child instanceof THREE.Mesh) {
@@ -122,7 +123,8 @@ class HeadScene extends React.Component {
           onAnimate={this._onAnimate}
           clearColor={0xffffff}
           antialias
-          pixelRatio={window.devicePixelRatio}>
+          pixelRatio={window.devicePixelRatio}
+        >
           <scene ref="scene">
             <perspectiveCamera
               name="mainCamera"
