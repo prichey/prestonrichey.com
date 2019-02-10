@@ -1,7 +1,7 @@
 ---
-title: "How to Get Trolled (with React Hooks)"
+title: "How to Get Dunked On By Pitchfork"
 date: "2019-02-09"
-excerpt: "Featuring Jet"
+excerpt: "Featuring Jet."
 publish: true
 ---
 
@@ -54,7 +54,7 @@ I'm reluctant to talk about my solution because currently (as of Saturday Feb. 9
   <zoom-image src='jet.jpg' zoomSrc='jet.jpg' caption="Proxy joke to come."></zoom-image>
 </div>
 
-So, my solution: I use a proxy. The initial requests to Pitchfork's servers were made from the site itself, so it was trivial to detect and give a spoofed response. This approach was the easiest to implement, but also the easiest to detect. With a proxy, I essentially introduce a middleman which makes requests on the behalf of the application. This approach obscures the referrer, making it harder to track, but is noticeably slower (a proxied request can take 2 - 5 times longer).
+My solution: use a proxy. The initial requests to Pitchfork's servers were made from the site itself, so it was trivial to detect and give a spoofed response. This approach was the easiest to implement, but also the easiest to detect. With a proxy, I essentially introduce a middleman which makes requests on the behalf of the application. This approach obscures the referrer, making it harder to track, but is noticeably slower (a proxied request can take 2 - 5 times longer).
 
 This approach does have the potential to cost me money, since the proxy is an <a target="_blank" href="https://aws.amazon.com/lambda/">AWS Lambda</a> function charged per usage. It also is also somewhat brittle because Pitchfork could easily track down the IP of the proxy and blacklist it, much like they originally did to p4ktldr.com itself. I could probably fight this by relocating the proxy, but it'd be an exhausting game of cat and mouse and I would much rather spend my time doing other things.
 
