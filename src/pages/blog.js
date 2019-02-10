@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+
 import BlogListing from './../components/BlogListing';
 
 class BlogPage extends React.Component {

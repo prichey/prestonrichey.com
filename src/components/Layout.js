@@ -95,7 +95,7 @@ class Template extends React.Component {
           <Nav />
         </StyledHeader>
 
-        {this.props.children()}
+        {this.props.children}
       </Main>
     );
   }

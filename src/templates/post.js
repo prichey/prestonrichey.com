@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 
 import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Layout from './../components/Layout';
 import HeadScene from './../components/HeadScene';
 
 const StyledContainer = styled.div`
@@ -18,9 +19,11 @@ const StyledContainer = styled.div`
 class Index extends React.Component {
   render() {
     return (
-      <StyledContainer>
-        <HeadScene />
-      </StyledContainer>
+      <Layout>
+        <StyledContainer>
+          <HeadScene />
+        </StyledContainer>
+      </Layout>
     );
   }
 }
