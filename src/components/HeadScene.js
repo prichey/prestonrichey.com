@@ -2,22 +2,24 @@ import React, { Component } from 'react';
 import * as THREE from 'three';
 import OBJLoader from 'three-obj-loader';
 import Dimensions from 'react-dimensions';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 // const OrbitControls = require('three-orbit-controls')(THREE);
 OBJLoader(THREE);
 
-// const StyledSceneWrap = styled.div`
-//   &:hover {
-//     cursor: ${props => (props.dragging === true ? 'grabbing' : 'grab')};
-//   }
-// `;
+const StyledSceneWrap = styled.div`
+  /* &:hover {
+    cursor: ${props => (props.dragging === true ? 'grabbing' : 'grab')};
+  } */
+  display: ${props => (props.loaded ? 'block' : 'none')}
+`;
 
 class HeadScene extends Component {
   state = {
     cameraPosition: new THREE.Vector3(0, 0, 4),
     groupRotation: new THREE.Euler(0, Math.PI * 0, 0),
-    obj: null
+    obj: null,
+    loaded: false
   };
 
   componentDidMount() {
@@ -66,6 +68,7 @@ class HeadScene extends Component {
       try {
         group.add(window.headObject);
         headAdded = true;
+        this.setState({ loaded: true });
       } catch (e) {
         console.log(e);
       }
@@ -89,7 +92,7 @@ class HeadScene extends Component {
         obj.scale.set(scalar, scalar, scalar);
         obj.rotation.set(Math.PI * -0.05, Math.PI * 0, Math.PI * 0);
         group.add(obj);
-
+        this.setState({ loaded: true });
         window.headObject = obj; // store the head on the window
         // there's probably a better way to do this, but I can't figure it out at the moment
         // this seems to work better than requesting the obj on each request
@@ -119,6 +122,7 @@ class HeadScene extends Component {
   componentWillUnmount() {
     this.stop();
     this.mount.removeChild(this.renderer.domElement);
+    this.setState({ loaded: false });
 
     // this.controls.dispose();
     // delete this.controls;
@@ -150,13 +154,15 @@ class HeadScene extends Component {
     const height = this.props.containerHeight;
 
     return (
-      <div
-        width={width}
-        height={height}
-        ref={mount => {
-          this.mount = mount;
-        }}
-      />
+      <StyledSceneWrap loaded={this.state.loaded}>
+        <div
+          width={width}
+          height={height}
+          ref={mount => {
+            this.mount = mount;
+          }}
+        />
+      </StyledSceneWrap>
     );
   }
 }
