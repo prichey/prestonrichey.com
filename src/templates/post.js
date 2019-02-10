@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
@@ -33,22 +33,19 @@ export default ({ data }) => {
         </Helmet>
       )}
 
-      {post.frontmatter.title &&
-        post.frontmatter.excerpt && (
-          <Helmet>
-            <meta property="og:title" content={post.frontmatter.title} />
-            <meta name="twitter:title" content={post.frontmatter.title} />
+      {post.frontmatter.title && (
+        <Helmet>
+          <meta property="og:title" content={post.frontmatter.title} />
+          <meta name="twitter:title" content={post.frontmatter.title} />
+        </Helmet>
+      )}
 
-            <meta
-              property="og:description"
-              content={post.frontmatter.excerpt}
-            />
-            <meta
-              name="twitter:description"
-              content={post.frontmatter.excerpt}
-            />
-          </Helmet>
-        )}
+      {post.frontmatter.excerpt && (
+        <Helmet>
+          <meta property="og:description" content={post.frontmatter.excerpt} />
+          <meta name="twitter:description" content={post.frontmatter.excerpt} />
+        </Helmet>
+      )}
 
       <h1>{post.frontmatter.title}</h1>
       <TextPostBody htmlAst={post.htmlAst} />

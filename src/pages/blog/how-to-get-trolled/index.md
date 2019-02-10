@@ -1,6 +1,7 @@
 ---
 title: "How to Get Trolled (with React Hooks)"
 date: "2019-02-09"
+excerpt: "Featuring Jet"
 publish: true
 ---
 
