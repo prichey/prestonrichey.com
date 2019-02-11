@@ -1,7 +1,7 @@
 ---
-title: "How to Get Dunked On By Pitchfork"
+title: "Pitchfork and Proxies and Jet, Oh My!"
 date: "2019-02-09"
-excerpt: "Featuring Jet."
+excerpt: "I got got."
 publish: true
 ---
 
@@ -43,24 +43,26 @@ I'm willing to bet you get the picture even if you can't read <a target="_blank"
 
 So, I knew that someone on the Pitchfork dev team had found out about my site and decided to have some fun with me. It's worth saying, I think, that I wasn't upset by the trolling. After all, I was using a public but undocumented API provided by Pitchfork without their permission. They could have sent back an error response, at best, and a cease and desist, at worse. I appreciated that the team took the time to break my site in such a specific and laughable way.
 
-But I knew I couldn't just accept defeat. I certainly don't have the time, knowledge, or prowess to wage war with a Condé Nast-funded team of developers. Yet I knew I had to at least try to answer what I saw as a challenge.
+But I knew I couldn't just accept defeat. I certainly don't have the time, knowledge, or prowess to wage war with a Condé Nast-funded team of developers. Still, I knew I had to at least attempt to answer what I saw as a challenge.
 
-I'm reluctant to talk about my solution because currently (as of Saturday Feb. 9th), it's working, but is probably trivial to break more permanently, so whatever. I have no intention to monetize p4ktldr and I don't really stand to benefit from its success other than its existence as a tool I personally find useful. But I figure the site's survival hinges less on whether I write about it now and more on the goodwill of the dev team at Pitchfork (or their ability to turn a blind eye to the trivial amount of traffic p4ktldr drives their way).
+I'm reluctant to talk about my solution because currently (as of Saturday Feb. 9th), it's working. But I figure the site's survival hinges less on whether I write about it now and more on the goodwill of the dev team at Pitchfork (or their ability to turn a blind eye to the trivial amount of traffic p4ktldr drives their way). I have no intention to monetize p4ktldr and I don't really stand to benefit from its success other than its existence as a tool I personally find useful.
 
 <div class="blog-inset">
   <hidden>
     <img src='jet.jpg' />
   </hidden>
-  <zoom-image src='jet.jpg' zoomSrc='jet.jpg' caption="Proxy joke to come."></zoom-image>
+  <zoom-image src='jet.jpg' zoomSrc='jet.jpg' caption="These guys say, 'use a proxy.'"></zoom-image>
 </div>
 
-My solution: use a proxy. The initial requests to Pitchfork's servers were made from the site itself, so it was trivial to detect and give a spoofed response. This approach was the easiest to implement, but also the easiest to detect. With a proxy, I essentially introduce a middleman which makes requests on the behalf of the application. This approach obscures the referrer, making it harder to track, but is noticeably slower (a proxied request can take 2 - 5 times longer).
+So, my solution: use a proxy.
 
-This approach does have the potential to cost me money, since the proxy is an <a target="_blank" href="https://aws.amazon.com/lambda/">AWS Lambda</a> function charged per usage. It also is also somewhat brittle because Pitchfork could easily track down the IP of the proxy and blacklist it, much like they originally did to p4ktldr.com itself. I could probably fight this by relocating the proxy, but it'd be an exhausting game of cat and mouse and I would much rather spend my time doing other things.
+The initial requests to Pitchfork's servers were made from the site itself, so it was trivial to detect and give a spoofed response. This approach was the easiest to implement, but also the easiest to detect. With a proxy, I essentially introduce a middleman which makes requests on the behalf of the application. This approach obscures the referrer, making it harder to track, but is noticeably slower (a proxied request can take 2 - 5 times longer).
+
+There are other reasons it isn't an ideal solution. For one, it has the potential to cost me money, since the proxy is an <a target="_blank" href="https://aws.amazon.com/lambda/">AWS Lambda</a> function charged per usage. It also is also somewhat brittle because Pitchfork could easily track down the IP of the proxy and blacklist it, much like they originally did to p4ktldr.com itself. I could probably fight this by relocating the proxy, but it'd be an exhausting game of cat and mouse and I'd much rather spend my time doing other things.
 
 For those interested in how I make these proxied requests, you can check out the source <a target="_blank" href="https://github.com/prichey/p4ktldr/tree/master/src/lambda">here</a> and <a target="_blank" href="https://github.com/prichey/p4ktldr/blob/master/src/setupProxy.js">here</a>. The site was already hosted on <a target="_blank" href="https://www.netlify.com/">Netlify</a>, so I used <a target="_blank" href="https://www.netlify.com/docs/functions/">Functions</a>, which turned out to be very intuitive to use. <a target="_blank" href="https://github.com/netlify/netlify-lambda">This repo</a> was invaluable in getting everything wired up.
 
-So, the ball's back in Pitchfork's court. For all I know, p4ktldr may be broken again later this evening. Or, it could carry on quietly for years to come. I appreciate that the dev team had a sense of humor about this, and frankly it gave me an opportunity to think through how to proxy requests in React, a question I'd yet to face in my years as a developer.
+So, the ball's back in Pitchfork's court. For all I know, p4ktldr may be broken again later this evening. Or, it could carry on quietly for years to come. I appreciate that the dev team had a sense of humor about this, and frankly I learned quite a bit thinking through how to proxy requests in React, a question I'd yet to face in my years as a developer.
 
 I still find p4ktldr useful so I'm going to fight for its continued existence, but if I run into further challenges it may be hosted somewhere a bit more obscure.
 
