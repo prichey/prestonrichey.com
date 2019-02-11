@@ -7,7 +7,7 @@ publish: true
 
 <section class="blog-section">
 
-On Monday, I launched <a target="_blank" href="https://p4ktldr.com/">p4ktldr</a>. By Tuesday, I knew I'd been had.
+Last Monday, I launched <a target="_blank" href="https://p4ktldr.com/">p4ktldr</a>. By Tuesday, I knew I'd been had.
 
 The idea for p4ktldr was simple: I'd provide a simple and intuitive interface to search for album reviews on <a target="_blank" href="https://pitchfork.com/">Pitchfork</a>, sorted by rating. The idea had been in my head for more than a year and I had started the site some 3 or 4 times since, most recently about a month ago spurred on by a bout of sober productivity (hello Dry January!) I took the opportunity to play around with <a target="_blank" href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> and a few weekends and weeknights later, I had a working prototype.
 
