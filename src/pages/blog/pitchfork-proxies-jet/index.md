@@ -25,7 +25,7 @@ I immediately knew something was up. Not only did any search return Jet and Jet 
   <zoom-image src='shine-on.jpg' zoomSrc='shine-on-zoom.jpg'></zoom-image>
 </div>
 
-I knew so because I knew Pitchfork had not given *Shine On* a 10 rating, but rather, [in]famously, a 0. The review had become a bit of a meme, harkening back to <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">link-trolling</a> popular around 2006. Alongside the 0.0 review of *Shine On*, in place of any explanation, is an embedded video of a chimpanzee peeing in its own mouth. <a target="_blank" href="https://pitchfork.com/reviews/albums/9464-shine-on/">Really</a>.
+I knew so because I knew Pitchfork had not given *Shine On* a 10 rating, but rather, [in]famously, a 0. The review had become a bit of a meme, reminiscent of <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">link-trolling</a> popular around that time. Alongside the 0.0 review of *Shine On*, in place of any explanation, was (and still is) an embedded video of a chimpanzee peeing in its own mouth. <a target="_blank" href="https://pitchfork.com/reviews/albums/9464-shine-on/">Really</a>.
 
 After doing a bit more poking around, I found a final clue to what had happened. Embedded in the spoofed data returned by Pitchfork's API was a field that looked like this:
 
