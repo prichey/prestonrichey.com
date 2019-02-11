@@ -1,7 +1,7 @@
 ---
 title: "p4ktldr"
 date: "2019"
-lede: 'Pitchfork but TL;DR.'
+lede: 'Pitchfork TL;DR.'
 link: "https://p4ktldr.com/"
 repo: "https://github.com/prichey/p4ktldr"
 order: 10
