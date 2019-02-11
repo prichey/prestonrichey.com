@@ -1,7 +1,7 @@
 ---
 title: "Pitchfork and Proxies and Jet, Oh My!"
 date: "2019-02-09"
-excerpt: "I got got."
+excerpt: "On Monday, I launched p4ktldr. By Tuesday, I knew I'd been had."
 publish: true
 ---
 
