@@ -234,11 +234,6 @@ Note: I'm using <xa href="https://reactjs.org/docs/hooks-intro.html">Hooks</xa> 
 
 You should see a button on screen, 'Load library.' Click on that then click again to call the loaded library. If everything went as expected, you should see an alert pop up with a greeting. Congrats, you have successfully imported and run Wasm code!
 
-Through the incredible power of <xa href="/blog/react-in-markdown/">React in Markdown</xa>, here's a working example of what we coded above:
-
-<div><wasmgreeting></wasmgreeting></div>
-
-
 </section>
 
 <section class="blog-section">

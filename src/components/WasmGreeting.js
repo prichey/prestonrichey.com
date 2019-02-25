@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+// Through the incredible power of <xa href="/blog/react-in-markdown/">React in Markdown</xa>, here's a working example of what we coded above:
+//
+// <div><wasmgreeting></wasmgreeting></div>
+
 const Button = styled.button`
   padding: 0.5em;
   border-radius: 5px;
@@ -23,6 +27,7 @@ const WasmGreeting = () => {
   const loadWasm = async () => {
     try {
       setLoading(true);
+      console.log('loading async');
       const wasm = await import('@prichey/hello-wasm');
       setWasm(wasm);
     } finally {
