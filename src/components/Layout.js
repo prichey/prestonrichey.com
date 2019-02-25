@@ -4,7 +4,8 @@ import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 // import Dimensions from 'react-dimensions';
 
-import 'prismjs/themes/prism-solarizedlight.css';
+// import 'prismjs/themes/prism-solarizedlight.css';
+import 'prismjs/themes/prism.css';
 
 import Nav from './../components/Nav';
 import Favicon from './../components/Favicon';

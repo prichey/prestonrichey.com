@@ -10,6 +10,7 @@
     "deploy": "gatsby build && netlify deploy"
   },
   "dependencies": {
+    "@prichey/hello-wasm": "^0.1.1",
     "ajv": "^6.8.1",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.118",
