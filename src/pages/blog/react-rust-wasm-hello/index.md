@@ -9,7 +9,7 @@ publish: true
 
 I'm super excited about <xa href="https://webassembly.org/">WebAssembly</xa>! It's fast, (can be) small, and extremely portable. In fact, I wouldn't be surprised if in the near future most web developers write code that eventually gets compiled to Wasm.
 
-But currently there's not a huge selection resources online showing how to get up and running with WebAssembly (abbreviated as *Wasm*). Most tutorials (understandably) focus on writing and compiling a module, but are handwavy about the logistics of actually using the generated module. What follows is a working setup I figured out for using Wasm code in a basic React app.
+But currently there's not a huge selection of resources showing how to get started with WebAssembly, and I couldn't find any tutorials that worked with <xa href="https://github.com/facebook/create-react-app">create-react-app</xa>. Most focus on writing and compiling a module, but rush over the details of actually using Wasm code. What follows is a basic setup for a React app using WebAssembly that should serve as a good foundation for more complex applications.
 
 </section>
 
@@ -57,7 +57,7 @@ crate-type = ["cdylib", "rlib"]
 [dependencies]
 wasm-bindgen = "=0.2.34"
 ```
-Note: we need this specific `wasm-bindgen` version because of <xa href="https://github.com/rustwasm/book/issues/148#issuecomment-463809784">reasons</xa>.
+> Note: we need this specific `wasm-bindgen` version because of <xa href="https://github.com/rustwasm/book/issues/148#issuecomment-463809784">reasons</xa>.
 
 I'm omitting some niceties included in the Rust book setup doc, like allocation optimizations and an improved error handling. (<xa href="https://github.com/rustwasm/wasm-pack-template/blob/master/Cargo.toml">More here.</xa>) You should probably include those if you plan on going further than this tutorial, but for the sake of simplicity I'll leave that as an exercise for the reader. (That's you!)
 
@@ -84,7 +84,7 @@ pub fn greet() {
 }
 ```
 
-I'm going to wave my hands here and just say that we're importing an external package <xa href="https://github.com/rustwasm/wasm-bindgen">wasm_bindgen</xa> which generates the bindings and glue for our public function `greet` so that it gets exported and can be called by JavaScript. Our `greet` function calls some externally defined function `alert`, which in this case is JavaScript's <xa href="https://developer.mozilla.org/en-US/docs/Web/API/Window/alert">window.alert()</xa>. For more information, check out the <xa href="https://rustwasm.github.io/wasm-bindgen/">wasm-bindgen docs</xa>.
+Briefly, what's going on here is that we're importing an external package `wasm_bindgen` which generates the bindings and glue for our public function `greet` so that it gets exported and can be called by JavaScript. Our `greet` function calls some externally defined function `alert`, which in this case is JavaScript's `window.alert()`. For more information on `wasm_bindgen`, check out the <xa href="https://rustwasm.github.io/wasm-bindgen/">docs</xa>.
 
 </section>
 
@@ -118,7 +118,7 @@ This tells `npm` that any time you try to import `module-name` (in our case `hel
 
 ## Creating the client
 
-Now that our Rust module is all built and linked, it is ready to be used by our web app. I'm partial to React, so that's what we'll use. I'll use <xa href="https://github.com/facebook/create-react-app">create-react-app</xa>, to initialize our app.
+Now that our Rust module is all built and linked, it is ready to be used by our web app. I'm partial to React, (and to the convenience of <xa href="https://github.com/facebook/create-react-app">create-react-app</xa>) so that's what we'll use.
 
 Back in the root of the project, run the following:
 
@@ -192,7 +192,7 @@ npm link hello-wasm
 
 Now, all's that's left is to use the module in our React app. Feel free to start the app (`npm run start`), and go to <xa href="http://localhost:3000">localhost:3000</xa> to see it running in your browser.
 
-Next, replace `app/src/App.js` with the following:
+Next, replace `App.js` with the following:
 
 ```jsx
 import React, { useState } from 'react';
@@ -200,7 +200,7 @@ import './App.css';
 
 const Loaded = ({ wasm }) => <button onClick={wasm.greet}>Click me</button>;
 
-const UnLoaded = ({ loading, loadWasm }) => {
+const Unloaded = ({ loading, loadWasm }) => {
   return loading ? (
     <div>Loading...</div>
   ) : (
@@ -228,7 +228,7 @@ const App = () => {
         {wasm ? (
           <Loaded wasm={wasm} />
         ) : (
-          <UnLoaded loading={loading} loadWasm={loadWasm} />
+          <Unloaded loading={loading} loadWasm={loadWasm} />
         )}
       </header>
     </div>
@@ -238,7 +238,7 @@ const App = () => {
 export default App;
 ```
 
-Note: I'm using <xa href="https://reactjs.org/docs/hooks-intro.html">Hooks</xa> here, which depend on React 16.8 or higher. If you just created your app, you shouldnt' have any issues, but if you're using a legacy app you'll either need to do some refactoring or update React.
+> Note: I'm using <xa href="https://reactjs.org/docs/hooks-intro.html">Hooks</xa> here, which depend on React 16.8 or higher. If you just created your app, you shouldnt' have any issues, but if you're using a legacy app you'll either need to do some refactoring or update React.
 
 You should see a button on screen, 'Load library.' Click on that then click again to call the loaded library. If everything went as expected, you should see an alert pop up with a greeting. Congrats, you have successfully imported and run Wasm code!
 
@@ -246,7 +246,7 @@ You should see a button on screen, 'Load library.' Click on that then click agai
 
 <section class="blog-section">
 
-## Extra credit
+## Going deeper
 
 Conceptually, there are a few things going on here. I'll go into detail about a few points that are worth discussing.
 
@@ -281,7 +281,7 @@ Our App renders the following JSX:
     {wasm ? (
       <Loaded wasm={wasm} />
     ) : (
-      <UnLoaded loading={loading} loadWasm={loadWasm} />
+      <Unloaded loading={loading} loadWasm={loadWasm} />
     )}
   </header>
 </div>
@@ -290,7 +290,7 @@ Our App renders the following JSX:
 If our `wasm` library hasn't been loaded, we render the `Unloaded` component, passing through props `loading` (whether or not the App is currently loading the Wasm module) and `loadWasm` (the function which, once called, will import the Wasm code itself).
 
 ```jsx
-const UnLoaded = ({ loading, loadWasm }) => {
+const Unloaded = ({ loading, loadWasm }) => {
   return loading ? (
     <div>Loading...</div>
   ) : (
