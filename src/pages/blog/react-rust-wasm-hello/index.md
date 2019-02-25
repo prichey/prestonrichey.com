@@ -240,7 +240,7 @@ You should see a button on screen, 'Load library.' Click on that then click agai
 
 ## Extra credit
 
-Conceptually, there's a few things going on here. I'll go into detail about a few points that are worth discussing.
+Conceptually, there are a few things going on here. I'll go into detail about a few points that are worth discussing.
 
 First, inside our `App` component, we have a function `loadWasm`:
 
