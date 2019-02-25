@@ -21,29 +21,31 @@ const UnLoaded = ({ loading, loadWasm }) => {
 };
 
 const WasmGreeting = () => {
-  const [loading, setLoading] = useState(false);
-  const [wasm, setWasm] = useState(null);
+  return null;
 
-  const loadWasm = async () => {
-    try {
-      setLoading(true);
-      console.log('loading async');
-      const wasm = await import('@prichey/hello-wasm');
-      setWasm(wasm);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div>
-      {wasm ? (
-        <Loaded wasm={wasm} />
-      ) : (
-        <UnLoaded loading={loading} loadWasm={loadWasm} />
-      )}
-    </div>
-  );
+  // const [loading, setLoading] = useState(false);
+  // const [wasm, setWasm] = useState(null);
+  //
+  // const loadWasm = async () => {
+  //   try {
+  //     setLoading(true);
+  //     console.log('loading async');
+  //     const wasm = await import('@prichey/hello-wasm');
+  //     setWasm(wasm);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+  //
+  // return (
+  //   <div>
+  //     {wasm ? (
+  //       <Loaded wasm={wasm} />
+  //     ) : (
+  //       <UnLoaded loading={loading} loadWasm={loadWasm} />
+  //     )}
+  //   </div>
+  // );
 };
 
 export default WasmGreeting;
