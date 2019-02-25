@@ -1,7 +1,7 @@
 ---
-title: "👋 🌍 with React + Rust + WebAssembly"
+title: "Up and Running with React + Rust + Wasm"
 date: "2019-02-25"
-excerpt: "Up and running with Wasm and create-react-app"
+excerpt: "A very roundabout way to call window.alert()"
 publish: true
 ---
 
@@ -10,6 +10,10 @@ publish: true
 I'm super excited about <xa href="https://webassembly.org/">WebAssembly</xa>! It's fast, (can be) small, and extremely portable. In fact, I wouldn't be surprised if in the near future most web developers write code that eventually gets compiled to Wasm.
 
 But currently there's not a huge selection resources online showing how to get up and running with WebAssembly (abbreviated as *Wasm*). Most tutorials (understandably) focus on writing and compiling a module, but are handwavy about the logistics of actually using the generated module. What follows is a working setup I figured out for using Wasm code in a basic React app.
+
+</section>
+
+<section class="blog-section">
 
 ## Setup
 
@@ -81,6 +85,10 @@ pub fn greet() {
 ```
 
 I'm going to wave my hands here and just say that we're importing an external package <xa href="https://github.com/rustwasm/wasm-bindgen">wasm_bindgen</xa> which generates the bindings and glue for our public function `greet` so that it gets exported and can be called by JavaScript. Our `greet` function calls some externally defined function `alert`, which in this case is JavaScript's <xa href="https://developer.mozilla.org/en-US/docs/Web/API/Window/alert">window.alert()</xa>. For more information, check out the <xa href="https://rustwasm.github.io/wasm-bindgen/">wasm-bindgen docs</xa>.
+
+</section>
+
+<section class="blog-section">
 
 ## Building and linking
 
