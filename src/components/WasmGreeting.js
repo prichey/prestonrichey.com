@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+// TODO: get to work with blog post
 // Through the incredible power of <xa href="/blog/react-in-markdown/">React in Markdown</xa>, here's a working example of what we coded above:
 //
 // <div><wasmgreeting></wasmgreeting></div>
@@ -21,31 +22,28 @@ const UnLoaded = ({ loading, loadWasm }) => {
 };
 
 const WasmGreeting = () => {
-  return null;
+  const [loading, setLoading] = useState(false);
+  const [wasm, setWasm] = useState(null);
 
-  // const [loading, setLoading] = useState(false);
-  // const [wasm, setWasm] = useState(null);
-  //
-  // const loadWasm = async () => {
-  //   try {
-  //     setLoading(true);
-  //     console.log('loading async');
-  //     const wasm = await import('@prichey/hello-wasm');
-  //     setWasm(wasm);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-  //
-  // return (
-  //   <div>
-  //     {wasm ? (
-  //       <Loaded wasm={wasm} />
-  //     ) : (
-  //       <UnLoaded loading={loading} loadWasm={loadWasm} />
-  //     )}
-  //   </div>
-  // );
+  const loadWasm = async () => {
+    try {
+      setLoading(true);
+      const wasm = await import('@prichey/hello-wasm');
+      setWasm(wasm);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      {wasm ? (
+        <Loaded wasm={wasm} />
+      ) : (
+        <UnLoaded loading={loading} loadWasm={loadWasm} />
+      )}
+    </div>
+  );
 };
 
 export default WasmGreeting;

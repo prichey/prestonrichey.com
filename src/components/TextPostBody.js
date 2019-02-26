@@ -8,8 +8,9 @@ import Hidden from './Hidden';
 import CountUp from './CountUp';
 import RainbowKnot from './RainbowKnot';
 import MarkdownRenderer from './MarkdownRenderer';
-import WasmGreeting from './WasmGreeting';
 import ExternalAnchor from './ExternalAnchor';
+
+// import WasmGreeting from './WasmGreeting';
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -19,8 +20,8 @@ const renderAst = new rehypeReact({
     countup: CountUp,
     rainbowknot: RainbowKnot,
     markdownrenderer: MarkdownRenderer,
-    wasmgreeting: WasmGreeting,
     xa: ExternalAnchor
+    // wasmgreeting: WasmGreeting
   }
 }).Compiler;
 

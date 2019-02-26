@@ -57,7 +57,7 @@ crate-type = ["cdylib", "rlib"]
 [dependencies]
 wasm-bindgen = "=0.2.34"
 ```
-> Note: we need this specific `wasm-bindgen` version because of <xa href="https://github.com/rustwasm/book/issues/148#issuecomment-463809784">reasons</xa>.
+Note: we need this specific `wasm-bindgen` version because of <xa href="https://github.com/rustwasm/book/issues/148#issuecomment-463809784">reasons</xa>.
 
 I'm omitting some niceties included in the Rust book setup doc, like allocation optimizations and an improved error handling. (<xa href="https://github.com/rustwasm/wasm-pack-template/blob/master/Cargo.toml">More here.</xa>) You should probably include those if you plan on going further than this tutorial, but for the sake of simplicity I'll leave that as an exercise for the reader. (That's you!)
 
@@ -144,19 +144,16 @@ module.exports = function override(config, env) {
 
   config.resolve.extensions.push('.wasm');
 
-  // Make the default file loader ignore Wasm files
-  let fileLoader = null;
   config.module.rules.forEach(rule => {
     (rule.oneOf || []).forEach(oneOf => {
       if (oneOf.loader && oneOf.loader.indexOf('file-loader') >= 0) {
-        fileLoader = oneOf;
+        // Make file-loader ignore WASM files
+        oneOf.exclude.push(wasmExtensionRegExp);
       }
     });
   });
 
-  fileLoader.exclude.push(wasmExtensionRegExp);
-
-  // Add a dedicated loader for Wasm
+  // Add a dedicated loader for WASM
   config.module.rules.push({
     test: wasmExtensionRegExp,
     include: path.resolve(__dirname, 'src'),
@@ -238,9 +235,11 @@ const App = () => {
 export default App;
 ```
 
-> Note: I'm using <xa href="https://reactjs.org/docs/hooks-intro.html">Hooks</xa> here, which depend on React 16.8 or higher. If you just created your app, you shouldnt' have any issues, but if you're using a legacy app you'll either need to do some refactoring or update React.
+Note: I'm using <xa href="https://reactjs.org/docs/hooks-intro.html">Hooks</xa> here, which depend on React 16.8 or higher. If you just created your app, you shouldnt' have any issues, but if you're using a legacy app you'll either need to do some refactoring or update React.
 
 You should see a button on screen, 'Load library.' Click on that then click again to call the loaded library. If everything went as expected, you should see an alert pop up with a greeting. Congrats, you have successfully imported and run Wasm code!
+
+You can also try out a (hopefully) working version of the app <xa href="https://hello-wasm.netlify.com/">here</xa>.
 
 </section>
 
