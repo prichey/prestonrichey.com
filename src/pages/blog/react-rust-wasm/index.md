@@ -1,7 +1,7 @@
 ---
 title: "Up and Running with React + Rust + Wasm"
 date: "2019-02-25"
-excerpt: "A very roundabout way to call window.alert()"
+excerpt: "A very roundabout way to call window.alert()."
 publish: true
 ---
 
