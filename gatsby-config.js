@@ -14,6 +14,9 @@ module.exports = {
             options: { components: ['zoom-image', 'hidden', 'countup'] }
           },
           {
+            resolve: 'gatsby-remark-autolink-headers'
+          },
+          {
             resolve: 'gatsby-remark-prismjs'
           },
           {

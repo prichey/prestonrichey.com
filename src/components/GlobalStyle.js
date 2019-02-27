@@ -75,7 +75,12 @@ const GlobalStyle = createGlobalStyle`
       color: #999;
       border-color: #999;
     }
+
+    &.anchor {
+      border: none;
+    }
   }
+
 
   p {
     line-height: 1.5em;
@@ -157,16 +162,6 @@ const GlobalStyle = createGlobalStyle`
       p {
         margin: 0;
       }
-    }
-
-    ${
-      '' /* .section-anchor {
-      &:before {
-        content: '#';
-        position: absolute;
-        left: -2rem;
-      }
-    } */
     }
   }
 
