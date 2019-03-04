@@ -332,7 +332,7 @@ Two clicks later...
 
 ## What's next?
 
-Hopefully everything included above works for you, or at least helps you getting to a working solution. And hopefully you're as excited as I am about the potential of WebAssembly! I plan on delving deeper into Wasm and using it for a more substantial application. Popping up an alert is cool and all, but it doesn't scratch the surface of what Wasm is really capable of. I plan on continuing to blog whenever I have anything interesting to say, so feel free to follow along either here or on <xa href="https://twitter.com/prestonrichey">Twitter</xa>. Thanks for reading!
+Hopefully everything included above works for you, or at least helps you getting to a working solution. And hopefully you're as excited as I am about the potential of WebAssembly! I plan on delving deeper into Wasm and using it for a more substantial application. Popping up an alert is cool and all, but it doesn't scratch the surface of what Wasm is really capable of. I plan on continuing to blog whenever I have anything interesting to say, so feel free to follow along either <xa href="https://prestonrichey.com/blog/">here</xa> or on <xa href="https://twitter.com/prestonrichey">Twitter</xa>. Thanks for reading!
 
 A caveat: WebAssembly is still in active development (as are most of the different tools used in the process of generating Wasm). I had to do lots of searching to find a solution that worked at the time of publishing. It's very possible that in the future these specific fixes won't work, and though I'll try to keep this post updated, there's no way I can guarantee this will work in perpetuity. Just a heads up!
 
