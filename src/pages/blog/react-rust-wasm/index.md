@@ -270,7 +270,7 @@ WebAssembly module is included in initial chunk.
 This is not allowed, because WebAssembly download and compilation must happen asynchronous.
 ```
 
-Furthermore, allowing the user to opt in to loading the full Wasm code is the best practice due to the large size of the Wasm module. On my machine, compiled with flags shown above, loading `hello-wasm` import XXXKB of JavaScript, which is quite a lot. Giving a user a heads up before loading such a large chunk (especially those on slower or mobile connections) is probably the best approach in this situation [EDIT].
+Furthermore, allowing the user to opt in to loading the full Wasm code is the best practice especially if your Wasm module is huge. Giving a user a heads up before loading such a large chunk (especially those on slower or mobile connections) is probably the best approach in this situation.
 
 Our App renders the following JSX:
 
