@@ -49,8 +49,3 @@ For the 3 of you out there still interested: <a href="/internals.jpg" target="_b
 Projects that require this amount of interconnected physical components generally fill me with a deep sense of dread, merely due to the fact that debugging any issues in the system are exponentially more difficult than any programming environment where you can just `console.log(foo)`. Still, there's something incredibly gratifying about hearing the clunk of a successful vend, knowing how many things came together to make it happen.
 
 </div>
-
-</section>
-
-
-</div>

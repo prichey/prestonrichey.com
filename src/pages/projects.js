@@ -6,7 +6,7 @@ import ProjectListingSection from './../components/ProjectListingSection';
 
 const ProjectsPageInner = props => {
   try {
-    const allProjects = props.data.allMarkdownRemark.edges;
+    const allProjects = props.data.allMdx ? props.data.allMdx.edges : [];
 
     const personalProjects = allProjects.filter(
       project => project.node.fields.projectType === 'personal'
@@ -52,25 +52,49 @@ class ProjectsPage extends React.Component {
 
 export default ProjectsPage;
 
+// export const query = graphql`
+//   query {
+//     allMdx(
+//       filter: {
+//         frontmatter: { publish: { eq: true } }
+//         fields: { type: { eq: "project" } }
+//       }
+//       sort: { fields: [frontmatter___date], order: DESC }
+//     ) {
+//       edges {
+//         node {
+//           frontmatter {
+//             title
+//             date
+//             lede
+//           }
+//           fields {
+//             slug
+//             projectType
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: {
         frontmatter: { publish: { eq: true } }
         fields: { type: { eq: "project" } }
       }
-      sort: { fields: [frontmatter___order], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
           frontmatter {
             title
             date
-            lede
           }
           fields {
             slug
-            projectType
           }
         }
       }

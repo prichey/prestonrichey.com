@@ -56,14 +56,15 @@ export default props => {
   );
 };
 
-export const query = graphql`
-  query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        date
-        excerpt
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($slug: String!) {
+//     mdx(fields: { slug: { eq: $slug } }) {
+//       html
+//       frontmatter {
+//         title
+//         date
+//         excerpt
+//       }
+//     }
+//   }
+// `;

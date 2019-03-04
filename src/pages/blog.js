@@ -6,7 +6,8 @@ import BlogListing from './../components/BlogListing';
 
 const BlogPageInner = props => {
   try {
-    const posts = props.data.allMarkdownRemark.edges;
+    const posts = props.data.allMdx ? props.data.allMdx.edges : [];
+
     return <BlogListing posts={posts} />;
   } catch (e) {
     console.log(e);
@@ -28,7 +29,7 @@ export default BlogPage;
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: {
         frontmatter: { publish: { eq: true } }
         fields: { type: { eq: "post" } }

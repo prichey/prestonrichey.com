@@ -9,10 +9,10 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          {
-            resolve: 'gatsby-remark-component',
-            options: { components: ['zoom-image', 'hidden', 'countup'] }
-          },
+          // {
+          //   resolve: 'gatsby-remark-component',
+          //   options: { components: ['zoom-image', 'hidden', 'countup'] }
+          // },
           {
             resolve: 'gatsby-remark-autolink-headers'
           },
@@ -51,6 +51,34 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/src/content/posts`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/src/content/projects`
+      }
+    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'posts',
+    //     path: `${__dirname}/src/pages/blog`
+    //   }
+    // },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'projects',
+    //     path: `${__dirname}/src/pages/projects`
+    //   }
+    // },
+    {
       resolve: 'gatsby-plugin-nprogress',
       options: {
         color: '#0000ff'
@@ -62,6 +90,29 @@ module.exports = {
         trackingId: 'UA-70108869-1'
       }
     },
-    'gatsby-plugin-twitter'
+    'gatsby-plugin-twitter',
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        defaultLayouts: {
+          // projects: require.resolve('./src/components/ProjectLayout.js'),
+          // posts: require.resolve('./src/components/PostLayout.js'),
+          default: require.resolve('./src/components/PostLayout.js')
+        },
+        extensions: ['.md', '.mdx'],
+        gatsbyRemarkPlugins: [
+          { resolve: 'gatsby-remark-autolink-headers' },
+          { resolve: 'gatsby-remark-prismjs', options: {} },
+          { resolve: 'gatsby-remark-smartypants' }
+          // {
+          //   resolve: 'gatsby-remark-copy-linked-files',
+          //   options: {
+          //     ignoreFileExtensions: []
+          //   }
+          // }
+        ]
+        // mdPlugins: [require('gatsby-remark-prismjs')]
+      }
+    }
   ]
 };

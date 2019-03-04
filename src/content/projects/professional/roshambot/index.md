@@ -12,8 +12,6 @@ lang: "Python, Arduino"
 Roshambot (more annoyingly styled RoShamBot) was my first project working with <a href="https://www.barkleyus.com/" target="_blank">Barkley</a>'s innovation lab, <a href="http://moonshot.barkleyus.com" target="_blank">Moonshot</a>. The idea for the project was to make artificial intelligence more easily understandable. We wanted to make the experience accessible to anyone, regardless of technical experience, so we decided to try and train an artificial intelligence to play a common, universal game. As luck would have it, a local bank just a few blocks away from Barkley holds an annual Rock-Paper-Scissors competition, et voilà, we decided to create an artificially intelligent RPS player.
 
 <div class="blog-inset">
-  <!-- This is still a mystery to me but if I don't include the `img` tags, Webpack doesn't correctly resolve the src url
-  This is despite the fact that the `img` tags are NOT rendered to the DOM. I have no idea. -->
   <hidden>
     <img src='hand.jpg' />
     <img src='hand-zoom.jpg' />

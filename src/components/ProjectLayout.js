@@ -1,16 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 
 import Layout from './../components/Layout';
 import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
 
-export default ({ data }) => {
-  console.log('Project', { data });
-
-  const { frontmatter, code } = data.mdx;
+export default props => {
+  return null;
+  // const { frontmatter, children } = props.pageContext;
+  // console.log('Project', { props, frontmatter });
 
   return (
     <Layout>
@@ -26,29 +25,23 @@ export default ({ data }) => {
         date={frontmatter.date}
         lang={frontmatter.lang}
       />
-      <TextPostBody>
-        <MDXRenderer>{code.body}</MDXRenderer>
-      </TextPostBody>
     </Layout>
   );
 };
 
-export const query = graphql`
-  query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
-      frontmatter {
-        title
-        link
-        repo
-        date
-        lang
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query($slug: String!) {
+//     mdx(fields: { slug: { eq: $slug } }) {
+//       frontmatter {
+//         title
+//         link
+//         repo
+//         date
+//         lang
+//       }
+//     }
+//   }
+// `;
 
 // export const query = graphql`
 //   query($slug: String!) {

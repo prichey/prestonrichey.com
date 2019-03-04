@@ -40,4 +40,4 @@ job, leaving the rest of us devoid of his precious nuggets of inspiration.
 Still, we had a permanent record of past thoughts, which was certainly
 better than nothing.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Amy: &quot;What kind of cat is it?&quot;<br>Fred: &quot;Normal.&quot;</p>&mdash; Fred Thoughts (@FromFredsMouth) <a href="https://twitter.com/FromFredsMouth/status/604444640335429633?ref_src=twsrc%5Etfw">May 30, 2015</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Amy: &quot;What kind of cat is it?&quot;<br />Fred: &quot;Normal.&quot;</p>&mdash; Fred Thoughts (@FromFredsMouth) <a href="https://twitter.com/FromFredsMouth/status/604444640335429633?ref_src=twsrc%5Etfw">May 30, 2015</a></blockquote>

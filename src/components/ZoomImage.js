@@ -1,6 +1,6 @@
-import React from "react";
-import ImageZoom from "react-medium-image-zoom";
-import styled from "styled-components";
+import React from 'react';
+import ImageZoom from 'react-medium-image-zoom';
+import styled from 'styled-components';
 
 const StyledFigcaption = styled.figcaption`
   text-align: right;
@@ -12,6 +12,8 @@ const StyledFigcaption = styled.figcaption`
 
 class ZoomImage extends React.Component {
   render() {
+    console.log('ZoomImage', { props: this.props });
+
     return (
       <figure>
         <ImageZoom
