@@ -11,9 +11,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       let slug = '';
       switch (sourceInstanceName) {
         case 'projects':
-          const dirSplit = path.parse(slug).dir.split(path.sep);
-          console.log({ dirSplit });
-
           slug = createFilePath({
             node,
             getNode
@@ -31,25 +28,26 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             value: 'project'
           });
 
-          // if (type === 'project') {
-          //   if (dirSplit.length > 1) {
-          //     createNodeField({
-          //       node,
-          //       name: 'projectType',
-          //       value: dirSplit[1]
-          //     });
-          //   } else {
-          //     throw new Error('each project needs a type');
-          //   }
-          // }
+          const dirSplit = path.parse(slug).dir.split(path.sep);
+          if (dirSplit.length > 0 && dirSplit[0] === '') {
+            dirSplit.shift(); // because path starts with /, '' is always at position 0
+          }
+
+          if (dirSplit.length) {
+            createNodeField({
+              node,
+              name: 'projectType',
+              value: dirSplit[0]
+            });
+          } else {
+            throw new Error('each project needs a type');
+          }
           break;
         case 'posts':
           slug = createFilePath({
             node,
             getNode
           });
-
-          console.log({ slug });
 
           createNodeField({
             node,
@@ -84,23 +82,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
           });
           break;
       }
-
-      // const dirSplit = path.parse(slug).dir.split(path.sep);
-      // if (dirSplit.length > 0 && dirSplit[0] === '') {
-      //   dirSplit.shift(); // because path starts with /, '' is always at position 0
-      // }
-      // console.log({ dirSplit });
-      //
-      // let type = 'page';
-      // switch (dirSplit[0]) {
-      //   case 'projects':
-      //     type = 'project';
-      //     break;
-      //   case 'posts':
-      //     type = 'post';
-      //     break;
-      // }
-      //
     }
   } catch (e) {
     console.log({ e });
@@ -142,8 +123,6 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug
-            // frontmatter: node.frontmatter,
-            // html: node.html
           }
         });
       });

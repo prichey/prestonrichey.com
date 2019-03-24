@@ -52,32 +52,6 @@ class ProjectsPage extends React.Component {
 
 export default ProjectsPage;
 
-// export const query = graphql`
-//   query {
-//     allMdx(
-//       filter: {
-//         frontmatter: { publish: { eq: true } }
-//         fields: { type: { eq: "project" } }
-//       }
-//       sort: { fields: [frontmatter___date], order: DESC }
-//     ) {
-//       edges {
-//         node {
-//           frontmatter {
-//             title
-//             date
-//             lede
-//           }
-//           fields {
-//             slug
-//             projectType
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
 export const query = graphql`
   query {
     allMdx(
@@ -92,9 +66,11 @@ export const query = graphql`
           frontmatter {
             title
             date
+            lede
           }
           fields {
             slug
+            projectType
           }
         }
       }
