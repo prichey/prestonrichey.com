@@ -1,8 +1,16 @@
 ---
 title: "Lessons in Stealing My Boss' Voice"
-date: "2018-03-01"
+date: '2018-03-01'
 publish: true
 ---
+
+import ZoomImage from 'components/ZoomImage';
+
+import jasmine from './jasmine.jpg';
+import jasmineZoom from './jasmine-zoom.jpg';
+import jeff from './jeff.jpg';
+import jeffZoom from './jeff-zoom.jpg';
+
 
 <section class="blog-section">
 
@@ -12,16 +20,23 @@ The story played audio synthesized with Lyrebird models trained on both Barack O
 
 This being the case, the technology was a natural shoe-in for Moonshot’s recently completed exhibit about Conversational Interfaces, which we’ve named Marco Polo. For more information about the exhibit as a whole, here’s <a href="https://medium.com/moonshotlab/marco-polo-58201c14c669">a quick write-up</a> by Barkley’s SVP of Innovation, <a href="https://www.linkedin.com/in/marklogan/">Mark Logan</a>.
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/318661840&amp;color=ff5500"></iframe>
+<iframe
+  width="100%"
+  height="166"
+  scrolling="no"
+  frameBorder="no"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/318661840&amp;color=ff5500"
+/>
 
 This being the case, the technology was a natural shoe-in for Moonshot’s recently completed exhibit about Conversational Interfaces, which we’ve named Marco Polo. For more information about the exhibit as a whole, here’s a quick write-up by Barkley’s SVP of Innovation, Mark Logan.
 
 <div class="blog-inset">
-  <hidden>
-    <img src='jasmine.jpg' />
-    <img src='jasmine-zoom.jpg' />
-  </hidden>
-  <zoom-image src='jasmine.jpg' zoomSrc='jasmine-zoom.jpg' alt='Lyrebird Demo, In Situ' caption='Lyrebird Demo, In Situ'></zoom-image>
+  <ZoomImage
+    src={jasmine}
+    zoomSrc={jasmineZoom}
+    alt="Lyrebird Demo, In Situ"
+    caption="Lyrebird Demo, In Situ"
+  />
 </div>
 
 </section>
@@ -45,11 +60,12 @@ After a few failed attempts at other solutions, I realized I hadn’t tried the 
 The next step was to actually train our voice model. We booked some time with Jeff to come in and record with a nice microphone in the production team’s sound-proof edit bay. Training a model with Lyrebird is incredibly simple but tedious: just press ‘record’, then read aloud a sentence given to you by Lyrebird (e.g. “That’s a sophisticated mechanical system! We want to disperse the core from the hull”). In about 15 minutes we hit the minimum of 30 sentences, but we kept on recording to try and get the best model we could. After 100 sentences, ‘fake Jeff’ was sounding pretty convincing.
 
 <div class="blog-inset">
-  <hidden>
-    <img src='jeff.jpg' />
-    <img src='jeff-zoom.jpg' />
-  </hidden>
-  <zoom-image src='jeff.jpg' zoomSrc='jeff-zoom.jpg' alt='Recording Session with Barkley CEO Jeff King' caption='Recording Session with Barkley CEO Jeff King'></zoom-image>
+  <ZoomImage
+    src={jeff}
+    zoomSrc={jeffZoom}
+    alt="Recording Session with Barkley CEO Jeff King"
+    caption="Recording Session with Barkley CEO Jeff King"
+  />
 </div>
 
 </section>
@@ -64,19 +80,43 @@ Despite being an exciting and impressive product, Lyrebird still has a way to go
 
 For example, “My name is Jeff” trails off with a robotic slurring at the end:
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402074355&amp;color=ff5500"></iframe>
+<iframe
+  width="100%"
+  height="166"
+  scrolling="no"
+  frameBorder="no"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402074355&amp;color=ff5500"
+/>
 
 Yet longer phrases sound convincing, even with difficult words like ‘Orangutan’ and ‘Worcestershire’ (neither of which appear in the original source recordings):
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402074367&amp;color=ff5500"></iframe>
+<iframe
+  width="100%"
+  height="166"
+  scrolling="no"
+  frameBorder="no"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402074367&amp;color=ff5500"
+/>
 
 Cadence and emphasis also leave something to be desired. For example, the model struggles with counting:
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402074385&amp;color=ff5500"></iframe>
+<iframe
+  width="100%"
+  height="166"
+  scrolling="no"
+  frameBorder="no"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402074385&amp;color=ff5500"
+/>
 
 There also seems to be a persistent low-volume buzz in all of the recordings. This can certainly be stripped out with post-processing, and I assume it will eventually be removed from the generated audio, but for now it can sometimes be distracting. Here’s a demonstration of raw compared to post-processed audio:
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402689490&amp;color=ff5500"></iframe>
+<iframe
+  width="100%"
+  height="166"
+  scrolling="no"
+  frameBorder="no"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402689490&amp;color=ff5500"
+/>
 
 </section>
 
@@ -92,7 +132,13 @@ On the other hand, there are obvious and vital implications for the way that we 
 
 While developers of these powerful technologies are responsible for taking all reasonable steps to make sure that their products are used ethically and legally, ultimately the onus falls on us to reinvestigate as a society how we decide what is real and what is fake. Just as the advent of Photoshop didn’t irreversibly corrupt photojournalism, I believe we will establish reliable techniques to make sense of the media we consume. We simply must remember not to blindly believe our eyes (or in this case, our ears).
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402706653&amp;color=ff5500"></iframe>
+<iframe
+  width="100%"
+  height="166"
+  scrolling="no"
+  frameBorder="no"
+  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/402706653&amp;color=ff5500"
+/>
 
 > This post originally appeared on Moonshot's <a href="https://medium.com/moonshotlab/lessons-in-stealing-my-bosses-voice-a56fb290f330">Medium</a>.
 

@@ -17,6 +17,7 @@ const BlogPageInner = props => {
 
 class BlogPage extends React.Component {
   render() {
+    console.log('BlogPage', { props: this.props });
     return (
       <Layout>
         <BlogPageInner {...this.props} />

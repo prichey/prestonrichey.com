@@ -1,10 +1,11 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-// import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-mdx';
 
 import Layout from './../components/Layout';
-import TextPostBody from './../components/TextPostBody';
+// import TextPostBody from './../components/TextPostBody';
 // import ProjectLinks from './../components/ProjectLinks';
 
 // const StyledTitleWrap = styled.div`
@@ -25,10 +26,9 @@ const StyledPostDate = styled.time`
 `;
 
 export default props => {
-  console.log('Post', { props });
-  return null;
+  console.log('post.js', { props });
 
-  const frontmatter = props.pageContext.frontmatter;
+  const frontmatter = props.data.mdx.frontmatter;
 
   return (
     <Layout>
@@ -50,6 +50,7 @@ export default props => {
         </Helmet>
       )}
       <h1>{frontmatter.title}</h1>
+      <MDXRenderer>{props.data.mdx.code.body}</MDXRenderer>
       {props.children}
       <StyledPostDate>{frontmatter.date}</StyledPostDate>
     </Layout>
@@ -63,6 +64,9 @@ export const query = graphql`
         title
         date
         excerpt
+      }
+      code {
+        body
       }
     }
   }

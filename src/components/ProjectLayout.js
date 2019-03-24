@@ -7,6 +7,8 @@ import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
 
 export default props => {
+  console.log('ProjectLayout.js', { props });
+
   return null;
   // const { frontmatter, children } = props.pageContext;
   // console.log('Project', { props, frontmatter });

@@ -5,8 +5,13 @@ excerpt: 'A very roundabout way to call window.alert().'
 publish: true
 ---
 
-import XA from './../components/ExternalAnchor';
-import Hidden from './../components/Hidden';
+import XA from 'components/ExternalAnchor';
+import ZoomImage from 'components/ZoomImage';
+
+import alert from './alert.jpg';
+import alertZoom from './alert-zoom.jpg';
+import load from './load.jpg';
+import loadZoom from './load-zoom.jpg';
 
 <section class="blog-section">
 
@@ -312,21 +317,13 @@ const Loaded = ({ wasm }) => <button onClick={wasm.greet}>Click me</button>;
 The Loaded component is where you would place any code that relies on your Wasm library. Here, we just render a button. On click, we call the one function exported by our Rust module, `greet`, which calls JavaScript's `alert`. If you haven't already, go ahead and click on the button to confirm it works as expected.
 
 <div class="blog-inset">
-  <zoom-image src="load.jpg" zoomSrc="load-zoom.jpg" />
-  <Hidden>
-    <img src="load.jpg" />
-    <img src="load-zoom.jpg" />
-  </Hidden>
+  <ZoomImage src={load} zoomSrc={loadZoom} />
 </div>
 
 Two clicks later...
 
 <div class="blog-inset">
-  <zoom-image src="alert.jpg" zoomSrc="alert-zoom.jpg" caption="Tada!" />
-  <Hidden>
-    <img src="alert.jpg" />
-    <img src="alert-zoom.jpg" />
-  </Hidden>
+  <ZoomImage src={alert} zoomSrc={alertZoom} caption="Tada!" />
 </div>
 
 (I added a bit of a bit of CSS for the sake of those screenshots.)

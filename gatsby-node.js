@@ -6,12 +6,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
   try {
     if (node.internal.type === 'Mdx') {
-      const fileNode = getNode(node.parent);
-      const { sourceInstanceName } = fileNode;
+      const { sourceInstanceName } = getNode(node.parent);
 
+      let slug = '';
       switch (sourceInstanceName) {
         case 'projects':
-          const slug = createFilePath({
+          const dirSplit = path.parse(slug).dir.split(path.sep);
+          console.log({ dirSplit });
+
+          slug = createFilePath({
             node,
             getNode
           });
@@ -20,6 +23,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             node,
             name: 'slug',
             value: `/${sourceInstanceName}${slug}`
+          });
+
+          createNodeField({
+            node,
+            name: 'type',
+            value: 'project'
           });
 
           // if (type === 'project') {
@@ -35,19 +44,28 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
           // }
           break;
         case 'posts':
-          const slug = createFilePath({
+          slug = createFilePath({
             node,
             getNode
           });
+
+          console.log({ slug });
 
           createNodeField({
             node,
             name: 'slug',
             value: `/blog${slug}`
           });
+
+          createNodeField({
+            node,
+            name: 'type',
+            value: 'post'
+          });
+          break;
         case 'pages':
         default:
-          const slug = createFilePath({
+          slug = createFilePath({
             node,
             getNode,
             basePath: 'pages'
@@ -57,6 +75,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             node,
             name: 'slug',
             value: slug
+          });
+
+          createNodeField({
+            node,
+            name: 'type',
+            value: 'page'
           });
           break;
       }
@@ -77,11 +101,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       //     break;
       // }
       //
-      createNodeField({
-        node,
-        name: 'type',
-        value: sourceInstanceName
-      });
     }
   } catch (e) {
     console.log({ e });
@@ -107,13 +126,11 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then(result => {
       if (result.errors) {
-        console.log('shit');
         console.error(result.errors);
         reject(result.errors);
       }
 
       result.data.allMdx.edges.forEach(({ node }) => {
-        console.log({ slug: node.fields.slug });
         const templatePath =
           node.fields.type === 'projects'
             ? './src/templates/project.js'
@@ -132,6 +149,14 @@ exports.createPages = ({ graphql, actions }) => {
       });
       resolve();
     });
+  });
+};
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    }
   });
 };
 

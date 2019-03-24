@@ -25,6 +25,15 @@ class Index extends React.Component {
         </StyledContainer>
       </Layout>
     );
+    // return (
+    //   <Layout>
+    //     <StyledContainer>
+    //       <Suspense fallback={<div />}>
+    //         <HeadScene />
+    //       </Suspense>
+    //     </StyledContainer>
+    //   </Layout>
+    // );
   }
 }
 

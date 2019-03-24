@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // import { graphql } from 'gatsby';
 
 import Layout from './../components/Layout';
-import TextPostBody from './../components/TextPostBody';
+// import TextPostBody from './../components/TextPostBody';
 // import ProjectLinks from './../components/ProjectLinks';
 
 // const StyledTitleWrap = styled.div`
@@ -25,7 +25,7 @@ const StyledPostDate = styled.time`
 `;
 
 export default props => {
-  console.log('Post', { props });
+  console.log('PostLayout.js', { props });
   return null;
 
   const frontmatter = props.pageContext.frontmatter;
