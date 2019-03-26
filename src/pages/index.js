@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import loadable from '@loadable/component';
 
 import Layout from './../components/Layout';
-import HeadScene from './../components/HeadScene';
+const HeadScene = loadable(() => import('./../components/HeadScene'));
 
 const StyledContainer = styled.div`
   height: 350px;
