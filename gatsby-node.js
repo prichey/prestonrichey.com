@@ -113,7 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       result.data.allMdx.edges.forEach(({ node }) => {
         const templatePath =
-          node.fields.type === 'projects'
+          node.fields.type === 'project'
             ? './src/templates/project.js'
             : './src/templates/post.js';
 

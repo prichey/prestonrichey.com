@@ -95,6 +95,9 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         extensions: ['.md', '.mdx'],
+        defaultLayouts: {
+          default: require.resolve('./src/components/Layout.js')
+        },
         gatsbyRemarkPlugins: [
           { resolve: 'gatsby-remark-autolink-headers' },
           { resolve: 'gatsby-remark-prismjs', options: {} },
