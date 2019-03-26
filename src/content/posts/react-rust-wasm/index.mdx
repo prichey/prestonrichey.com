@@ -280,7 +280,7 @@ WebAssembly module is included in initial chunk.
 This is not allowed, because WebAssembly download and compilation must happen asynchronous.
 ```
 
-Furthermore, allowing the user to opt in to loading the full Wasm code is the best practice due to the large size of the Wasm module. On my machine, compiled with flags shown above, loading `hello-wasm` import XXXKB of JavaScript, which is quite a lot. Giving a user a heads up before loading such a large chunk (especially those on slower or mobile connections) is probably the best approach in this situation [EDIT].
+Furthermore, allowing the user to opt in to loading the full Wasm code is the best practice especially if your Wasm module is huge. Giving a user a heads up before loading such a large chunk (especially those on slower or mobile connections) is probably the best approach in this situation.
 
 Our App renders the following JSX:
 
@@ -334,7 +334,7 @@ Two clicks later...
 
 ## What's next?
 
-Hopefully everything included above works for you, or at least helps you getting to a working solution. And hopefully you're as excited as I am about the potential of WebAssembly! I plan on delving deeper into Wasm and using it for a more substantial application. Popping up an alert is cool and all, but it doesn't scratch the surface of what Wasm is really capable of. I plan on continuing to blog whenever I have anything interesting to say, so feel free to follow along either here or on <XA href="https://twitter.com/prestonrichey">Twitter</XA>. Thanks for reading!
+Hopefully everything included above works for you, or at least helps you getting to a working solution. And hopefully you're as excited as I am about the potential of WebAssembly! I plan on delving deeper into Wasm and using it for a more substantial application. Popping up an alert is cool and all, but it doesn't scratch the surface of what Wasm is really capable of. I plan on continuing to blog whenever I have anything interesting to say, so feel free to follow along either <XA href="https://prestonrichey.com/blog/">here</XA> or on <XA href="https://twitter.com/prestonrichey">Twitter</XA>. Thanks for reading!
 
 A caveat: WebAssembly is still in active development (as are most of the different tools used in the process of generating Wasm). I had to do lots of searching to find a solution that worked at the time of publishing. It's very possible that in the future these specific fixes won't work, and though I'll try to keep this post updated, there's no way I can guarantee this will work in perpetuity. Just a heads up!
 
