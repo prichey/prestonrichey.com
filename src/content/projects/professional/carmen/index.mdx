@@ -1,0 +1,37 @@
+---
+title: "Carmen"
+date: "2017"
+lede: "A Chatbot that helps Barkley partners find their way."
+link: ""
+repo: "https://github.com/MoonshotLab/carmen"
+order: 7
+publish: true
+lang: "Node.js"
+---
+
+import ZoomImage from 'components/ZoomImage';
+import XA from 'components/ExternalAnchor';
+
+import animation from './animation.gif';
+import map from './map.jpg';
+import mapZoom from './map-zoom.jpg';
+
+Finding a meeting room at the 4-story <XA href="https://en.wikipedia.org/wiki/TWA_Corporate_Headquarters_Building">TWA Headquarters</XA> building <XA href="https://www.barkleyus.com/">Barkley</XA> calls home is notoriously frustrating. There's a vague naming scheme: celestial bodies (Big Dipper, Galaxy) on 1, people (Neil Armstrong, Ellen Ochoa) on 2, planets (Mercury, Neptune) on 3, and everything else (Flight Deck, Magenta Lounge) on 4. But even if you're on the right floor, it's pretty much guess and check from there. Not to mention the few rooms that have inexplicably moved locations on the same floor. (🤷‍♂️)
+
+One of the main functions of <XA href="http://moonshot.barkleyus.com">Moonshot</XA>, the innovation lab at Barkley, is to improve processes of all kinds (thinking, working, doing) within the building. As a part of an exploration into conversational interfaces (see this <XA href="https://medium.com/moonshotlab/revisiting-our-first-technology-ac8a10c63670">article</XA> by <XA href="https://twitter.com/mlogan">Mark Logan</XA> for more info), we decided to try and tackle this problem head-on. Enter Carmen, a chatbot!
+
+(Hold your groans, please.)
+
+<div class="sidebar right">
+  <ZoomImage src={animation} alt='Carmen Map' />
+</div>
+
+Carmen can provide directions to any building in the room, as well as send maps and detailed pictures. Because Carmen is built with <XA href="https://botkit.ai/">botkit</XA>, it could feasibly be extended to other platforms like Slack and Facebook Messenger, but interaction is currently limited to SMS via <XA href="https://www.twilio.com/">Twilio</XA>. You simply text Carmen's number a question like "Where's Sally Ride?" (or, if you're in a hurry, you can omit the niceties: "Sally Ride"), and Carmen promptly responds: "Sally Ride is a corner room on the 2nd floor, on the Main Street side, across from our parking garage. It's within shouting distance of the person leaving an unwashed dish in the sink of the 2nd floor kitchen. And anyone doing that deserves to be shouted at."
+
+<div class="blog-inset">
+  <ZoomImage src={map} zoomSrc={mapZoom} alt='Carmen Map' />
+</div>
+
+Though Carmen isn't able to hold a conversation about anything other than the location of rooms, it has proven to be an indispensable tool for getting around in the time since going live. In fact, in just under 3 months since launch, Carmen has sent 1364 messages to 132 unique Barkley partners (over 50% of the office in Kansas City). I keep a track of any inputs Carmen doesn't understand, as well as which rooms are most often requested, which may inform future iterations of the bot or even wayfinding around the building.
+
+I for one welcome our new (helpful, utilitarian) chatbot overlords.

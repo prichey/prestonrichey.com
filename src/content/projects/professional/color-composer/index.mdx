@@ -1,0 +1,47 @@
+---
+title: "Color Composer"
+date: "2017"
+lede: "An interactive installation for the Nelson Atkins Museum of Art."
+link: "https://color-composer.net/"
+repo: "https://github.com/MoonshotLab/color-composer"
+order: 5
+publish: true
+lang: "Node.js"
+---
+
+import ZoomImage from 'components/ZoomImage';
+import XA from 'components/ExternalAnchor';
+
+import staticPic from './static.jpg';
+import staticPicZoom from './static-zoom.jpg';
+import canvas from './canvas.jpg';
+import canvasZoom from './canvas-zoom.jpg';
+
+<div class="blog-section">
+
+In June 2015, the <XA href="https://nelson-atkins.org/">Nelson-Atkins Museum of Art</XA> in Kansas City received a significant donation of 29 works of Impressionist and Post-Impressionist painting (including works by Cézanne, Degas, Gauguin, Monet, van Gogh, and <XA href="https://nelson-atkins.org/the-bloch-galleries/">others</XA>) from the private collection of the Bloch family, of H&R Block fame. The donation was so significant that the museum decided to completely renovate and open  the all-new The Bloch Galleries to showcase the incredible donation.
+
+As a part of this renovation, the museum decided to include several interactive experiences that would teach about the works in the collection, as well as to integrate an innovative <XA href="https://www.detour.com/">Detour</XA> audio tour (the second of its kind, following SFMOMA). The interactives would be showcased on a handful of iPads spread throughout the space, tethered to viewing benches, as well as two 32" touchscreen tables with an individual experience on each. The Nelson-Atkins came to Moonshot, the innovation lab at <XA href="https://www.barkleyus.com/">Barkley</XA>, for help in designing and developing the experiences that would be showcased in the gallery alongside the artwork. We were honored to oblige.
+
+<div class="blog-inset">
+  <ZoomImage src={staticPic} zoomSrc={staticPicZoom} alt='Video Screenshot' />
+</div>
+
+I had the privilege of developing Color Composer, an interactive experience inspired by the works of Wassily Kandinsky. The experience is showcased on a 32" touchscreen table and seeks to recreate the inextricable connection between sound and color experienced by Kandinsky, who was reportedly a <XA href="https://en.wikipedia.org/wiki/Synesthesia">synesthete</XA>. A user would step up to the table and be presented with a blank canvas and a color picker. Each shape added to the canvas would be recognized (circle, square, triangle, line, other), and in combination with its color and size would produce a sound. The user could, once they were content with their composition, press a button and hear it played in its entirety: an invisible stylus would scan across, left to right, playing each sound sequentially. The user could then adjust their composition by using two fingers to adjust the size or position of any shape. Then, the composition could be exported as a video file and a link to the unique composition could be texted to a user's phone.
+
+<div class="blog-inset">
+  <ZoomImage src={canvas} zoomSrc={canvasZoom} alt='Canvas' />
+</div>
+
+This project was probably one of the most daunting ones I've ever faced. There were so many different pieces that needed to seamlessly blend together: multitouch interaction, editing the canvas, playing sounds, recording the canvas, putting in all the safeguards necessary for any sort of installation work (ignoring extraneous inputs, going to sleep, resetting work from previous users, logging errors, failing gracefully, autostarting, etc.), and more. On top of this, it was important to the museum that any installation available in gallery would also have a companion experience on the web, so that people who are unable to physically visit the gallery would still have the opportunity to experience the interactive. That meant building the experience for the browser (and making sure it plays well with a variety of browsers users could potentially use), which also increases the overhead significantly.
+
+For those curious, here are a few of the libraries I used:
+  * <XA href="http://paperjs.org/">paper.js</XA> for drawing shapes
+  * <XA href="https://hammerjs.github.io/">hammer.js</XA> for multitouch interactions
+  * <XA href="https://howlerjs.com/">howler.js</XA> for playing sounds
+  * <XA href="https://www.ffmpeg.org/">ffmpeg</XA> on the server to combine the sound produced by the canvas (via <XA href="https://github.com/mattdiamond/Recorderjs">recorder.js</XA>) with the screen recording (via <XA href="https://github.com/muaz-khan/RecordRTC/">recordRTC</XA>)
+  * <XA href="https://www.mailgun.com/">Mailgun</XA> for email
+  * <XA href="https://www.twilio.com/sms/">Twilio</XA> for SMS
+
+Despite being an incredibly challenging project, this is one that I had the most fun building and am most proud of having worked on. The gallery opened in March 2017 and this experience has been running daily since then.
+</div>
