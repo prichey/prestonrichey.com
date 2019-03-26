@@ -8,8 +8,6 @@ import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
 
 export default ({ data }) => {
-  console.log('Project', { data });
-
   const { frontmatter, code } = data.mdx;
 
   return (

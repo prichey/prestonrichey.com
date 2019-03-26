@@ -10,14 +10,12 @@ const BlogPageInner = props => {
 
     return <BlogListing posts={posts} />;
   } catch (e) {
-    console.log(e);
     return <h2>Unable to find any blog posts.</h2>;
   }
 };
 
 class BlogPage extends React.Component {
   render() {
-    console.log('BlogPage', { props: this.props });
     return (
       <Layout>
         <BlogPageInner {...this.props} />

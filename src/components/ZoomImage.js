@@ -12,8 +12,6 @@ const StyledFigcaption = styled.figcaption`
 
 class ZoomImage extends React.Component {
   render() {
-    console.log('ZoomImage', { props: this.props });
-
     return (
       <figure>
         <ImageZoom

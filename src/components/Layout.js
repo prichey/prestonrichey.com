@@ -54,8 +54,6 @@ const TitleLink = styled(Link)`
 
 class Template extends React.Component {
   render() {
-    console.log('Layout', { props: this.props });
-
     return (
       <Main>
         <GlobalStyle />

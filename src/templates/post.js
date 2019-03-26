@@ -25,10 +25,8 @@ const StyledPostDate = styled.time`
   text-align: right;
 `;
 
-export default props => {
-  console.log('post.js', { props });
-
-  const frontmatter = props.data.mdx.frontmatter;
+export default ({ data }) => {
+  const { frontmatter, code } = data.mdx;
 
   return (
     <Layout>
@@ -50,8 +48,7 @@ export default props => {
         </Helmet>
       )}
       <h1>{frontmatter.title}</h1>
-      <MDXRenderer>{props.data.mdx.code.body}</MDXRenderer>
-      {props.children}
+      <MDXRenderer>{code.body}</MDXRenderer>
       <StyledPostDate>{frontmatter.date}</StyledPostDate>
     </Layout>
   );
