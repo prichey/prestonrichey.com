@@ -7,7 +7,7 @@ import Layout from './../components/Layout';
 import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
 
-export default ({ data }) => {
+const ProjectTemplate = ({ data }) => {
   const { frontmatter, code } = data.mdx;
 
   return (
@@ -31,6 +31,8 @@ export default ({ data }) => {
   );
 };
 
+export default ProjectTemplate;
+
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
@@ -47,15 +49,3 @@ export const query = graphql`
     }
   }
 `;
-
-// export const query = graphql`
-//   query($slug: String!) {
-//     mdx(fields: { slug: { eq: $slug } }) {
-//       html
-//       frontmatter {
-//         title
-//         date
-//       }
-//     }
-//   }
-// `;

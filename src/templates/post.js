@@ -25,7 +25,7 @@ const StyledPostDate = styled.time`
   text-align: right;
 `;
 
-export default ({ data }) => {
+const PostTemplate = ({ data }) => {
   const { frontmatter, code } = data.mdx;
 
   return (
@@ -53,6 +53,8 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+export default PostTemplate;
 
 export const query = graphql`
   query($slug: String!) {

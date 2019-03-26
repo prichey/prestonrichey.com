@@ -52,52 +52,51 @@ const TitleLink = styled(Link)`
   }
 `;
 
-class Template extends React.Component {
-  render() {
-    return (
-      <Main>
-        <GlobalStyle />
-        <Favicon />
+const Layout = ({ children }) => {
+  return (
+    <Main>
+      <GlobalStyle />
+      <Favicon />
 
-        <Helmet>
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:700"
-            rel="stylesheet"
-          />
-          <title>Preston Richey</title>
-          <meta property="og:title" content="Preston Richey" />
-          <meta property="og:description" content="Personal Website" />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://prestonrichey.com" />
-          <meta
-            property="og:image"
-            content="https://prestonrichey.com/social-meta.png"
-          />
-          <meta
-            property="og:image:secure_url"
-            content="https://prestonrichey.com/social-meta.png"
-          />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:title" content="Preston Richey" />
-          <meta name="twitter:description" content="Personal Website" />
-          <meta
-            name="twitter:image"
-            content="https://prestonrichey.com/social-meta.png"
-          />
-          <meta name="twitter:creator" content="@prestonrichey" />
-        </Helmet>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Rubik:700"
+          rel="stylesheet"
+        />
+        <title>Preston Richey</title>
+        <meta property="og:title" content="Preston Richey" />
+        <meta property="og:description" content="Personal Website" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://prestonrichey.com" />
+        <meta
+          property="og:image"
+          content="https://prestonrichey.com/social-meta.png"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://prestonrichey.com/social-meta.png"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Preston Richey" />
+        <meta name="twitter:description" content="Personal Website" />
+        <meta
+          name="twitter:image"
+          content="https://prestonrichey.com/social-meta.png"
+        />
+        <meta name="twitter:creator" content="@prestonrichey" />
+      </Helmet>
 
-        <StyledHeader>
-          <StyledTitle>
-            <TitleLink to="/">Preston Richey</TitleLink>
-          </StyledTitle>
+      <StyledHeader>
+        <StyledTitle>
+          <TitleLink to="/">Preston Richey</TitleLink>
+        </StyledTitle>
 
-          <Nav />
-        </StyledHeader>
+        <Nav />
+      </StyledHeader>
 
-        {this.props.children}
-      </Main>
-    );
-  }
-}
-export default Template;
+      {children}
+    </Main>
+  );
+};
+
+export default Layout;

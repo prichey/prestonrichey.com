@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
@@ -42,38 +42,27 @@ const StyledMarkdownOutputWrap = styled.div`
   }
 `;
 
-class MarkdownRenderer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: `### this textarea is editable
+const MarkdownRenderer = () => {
+  const [value, setValue] = useState(`### this textarea is editable
 
-![](https://i.imgur.com/rv81Iei.gif)`
-    };
+![](https://i.imgur.com/rv81Iei.gif)`);
 
-    this.handleChange = this.handleChange.bind(this);
-  }
+  return (
+    <StyledMarkdownRenderer>
+      <StyledTextAreaWrap>
+        <StyledTextArea
+          value={value}
+          onChange={e => {
+            setValue(e.target.value);
+          }}
+        />
+      </StyledTextAreaWrap>
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  render() {
-    return (
-      <StyledMarkdownRenderer>
-        <StyledTextAreaWrap>
-          <StyledTextArea
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </StyledTextAreaWrap>
-
-        <StyledMarkdownOutputWrap>
-          <ReactMarkdown source={this.state.value} />
-        </StyledMarkdownOutputWrap>
-      </StyledMarkdownRenderer>
-    );
-  }
-}
+      <StyledMarkdownOutputWrap>
+        <ReactMarkdown source={value} />
+      </StyledMarkdownOutputWrap>
+    </StyledMarkdownRenderer>
+  );
+};
 
 export default MarkdownRenderer;

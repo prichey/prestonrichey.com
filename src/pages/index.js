@@ -16,16 +16,12 @@ const StyledContainer = styled.div`
   }
 `;
 
-class Index extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <StyledContainer>
-          <HeadScene />
-        </StyledContainer>
-      </Layout>
-    );
-  }
-}
+const Index = () => (
+  <Layout>
+    <StyledContainer>
+      <HeadScene />
+    </StyledContainer>
+  </Layout>
+);
 
 export default Index;

@@ -44,26 +44,24 @@ const StyledLedeSpan = styled.span`
   // display: block;
 `;
 
-class ProjectListing extends React.Component {
-  render() {
-    const projectLinks = this.props.projects.map(project => {
-      return (
-        <StyledProjectItem key={project.node.fields.slug}>
-          <StyledLinkWrap>
-            <StyledProjectLink to={project.node.fields.slug}>
-              {project.node.frontmatter.title}
-            </StyledProjectLink>
-            {': '}
-          </StyledLinkWrap>
-          {project.node.frontmatter.lede && (
-            <StyledLedeSpan>{project.node.frontmatter.lede}</StyledLedeSpan>
-          )}
-        </StyledProjectItem>
-      );
-    });
+const ProjectListing = ({ projects }) => {
+  const projectLinks = projects.map(project => {
+    return (
+      <StyledProjectItem key={project.node.fields.slug}>
+        <StyledLinkWrap>
+          <StyledProjectLink to={project.node.fields.slug}>
+            {project.node.frontmatter.title}
+          </StyledProjectLink>
+          {': '}
+        </StyledLinkWrap>
+        {project.node.frontmatter.lede && (
+          <StyledLedeSpan>{project.node.frontmatter.lede}</StyledLedeSpan>
+        )}
+      </StyledProjectItem>
+    );
+  });
 
-    return <StyledProjectListing>{projectLinks}</StyledProjectListing>;
-  }
-}
+  return <StyledProjectListing>{projectLinks}</StyledProjectListing>;
+};
 
 export default ProjectListing;

@@ -14,15 +14,13 @@ const BlogPageInner = props => {
   }
 };
 
-class BlogPage extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <BlogPageInner {...this.props} />
-      </Layout>
-    );
-  }
-}
+const BlogPage = props => {
+  return (
+    <Layout>
+      <BlogPageInner {...props} />
+    </Layout>
+  );
+};
 
 export default BlogPage;
 

@@ -10,26 +10,23 @@ const StyledFigcaption = styled.figcaption`
   color: #999;
 `;
 
-class ZoomImage extends React.Component {
-  render() {
-    return (
-      <figure>
-        <ImageZoom
-          image={{
-            src: this.props.src,
-            alt: this.props.alt || this.props.caption
-          }}
-          zoomImage={{
-            src: this.props.zoomsrc || this.props.src,
-            alt: this.props.alt || this.props.caption
-          }}
-        />
-        {this.props.caption && (
-          <StyledFigcaption>{this.props.caption}</StyledFigcaption>
-        )}
-      </figure>
-    );
-  }
-}
+const ZoomImage = ({ src, zoomSrc, alt, caption }) => {
+  return (
+    <figure>
+      <ImageZoom
+        image={{
+          src: src,
+          alt: alt || caption
+        }}
+        zoomImage={{
+          src: zoomSrc || src,
+          alt: alt || caption
+        }}
+      />
+
+      {caption && <StyledFigcaption>{caption}</StyledFigcaption>}
+    </figure>
+  );
+};
 
 export default ZoomImage;

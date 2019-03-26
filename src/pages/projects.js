@@ -40,15 +40,13 @@ const ProjectsPageInner = props => {
   }
 };
 
-class ProjectsPage extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <ProjectsPageInner {...this.props} />
-      </Layout>
-    );
-  }
-}
+const ProjectsPage = props => {
+  return (
+    <Layout>
+      <ProjectsPageInner {...props} />
+    </Layout>
+  );
+};
 
 export default ProjectsPage;
 

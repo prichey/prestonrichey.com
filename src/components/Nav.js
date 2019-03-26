@@ -82,30 +82,28 @@ const NavItem = styled(Link).attrs({
   }
 `;
 
-class Nav extends React.Component {
-  render() {
-    return (
-      <StyledNav>
-        <StyledList>
-          <ListElement>
-            <NavItem to="/blog/" activeClassName={activeClassName}>
-              blog
-            </NavItem>
-          </ListElement>
-          <ListElement>
-            <NavItem to="/projects/" activeClassName={activeClassName}>
-              projects
-            </NavItem>
-          </ListElement>
-          <ListElement>
-            <NavItem to="/about/" activeClassName={activeClassName}>
-              about
-            </NavItem>
-          </ListElement>
-        </StyledList>
-      </StyledNav>
-    );
-  }
-}
+const Nav = () => {
+  return (
+    <StyledNav>
+      <StyledList>
+        <ListElement>
+          <NavItem to="/blog/" activeClassName={activeClassName}>
+            blog
+          </NavItem>
+        </ListElement>
+        <ListElement>
+          <NavItem to="/projects/" activeClassName={activeClassName}>
+            projects
+          </NavItem>
+        </ListElement>
+        <ListElement>
+          <NavItem to="/about/" activeClassName={activeClassName}>
+            about
+          </NavItem>
+        </ListElement>
+      </StyledList>
+    </StyledNav>
+  );
+};
 
 export default Nav;

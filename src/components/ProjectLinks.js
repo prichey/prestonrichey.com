@@ -21,48 +21,32 @@ const StyledProjectLink = styled.li`
   }
 `;
 
-class ProjectLinks extends React.Component {
-  render() {
-    if (!!this.props.link || !!this.props.repo) {
-      return (
-        <StyledProjectLinksList>
-          {this.props.link && (
-            <StyledProjectLink>
-              <a
-                href={this.props.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {this.props.link.length > 40 ? 'Link' : this.props.link}
-              </a>
-            </StyledProjectLink>
-          )}
+const ProjectLinks = ({ link, repo, date, lang }) => {
+  if (!(!!link || !!repo)) return null;
 
-          {this.props.date && (
-            <StyledProjectLink>{this.props.date}</StyledProjectLink>
-          )}
+  return (
+    <StyledProjectLinksList>
+      {link && (
+        <StyledProjectLink>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {link.length > 40 ? 'Link' : link}
+          </a>
+        </StyledProjectLink>
+      )}
 
-          {this.props.lang && (
-            <StyledProjectLink>{this.props.lang}</StyledProjectLink>
-          )}
+      {date && <StyledProjectLink>{date}</StyledProjectLink>}
 
-          {this.props.repo && (
-            <StyledProjectLink>
-              <a
-                href={this.props.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Repo
-              </a>
-            </StyledProjectLink>
-          )}
-        </StyledProjectLinksList>
-      );
-    } else {
-      return null;
-    }
-  }
-}
+      {lang && <StyledProjectLink>{lang}</StyledProjectLink>}
+
+      {repo && (
+        <StyledProjectLink>
+          <a href={repo} target="_blank" rel="noopener noreferrer">
+            Repo
+          </a>
+        </StyledProjectLink>
+      )}
+    </StyledProjectLinksList>
+  );
+};
 
 export default ProjectLinks;

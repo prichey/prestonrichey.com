@@ -23,21 +23,19 @@ const StyledBlogItem = styled.li`
 `;
 const StyledBlogLink = styled(Link)``;
 
-class BlogListing extends React.Component {
-  render() {
-    const postLinks = this.props.posts.map(post => {
-      return (
-        <StyledBlogItem key={post.node.fields.slug}>
-          <StyledBlogLink to={post.node.fields.slug}>
-            {post.node.frontmatter.title}
-          </StyledBlogLink>
-          <DateSpan>({post.node.frontmatter.date})</DateSpan>
-        </StyledBlogItem>
-      );
-    });
+const BlogListing = ({ posts }) => {
+  const postLinks = posts.map(post => {
+    return (
+      <StyledBlogItem key={post.node.fields.slug}>
+        <StyledBlogLink to={post.node.fields.slug}>
+          {post.node.frontmatter.title}
+        </StyledBlogLink>
+        <DateSpan>({post.node.frontmatter.date})</DateSpan>
+      </StyledBlogItem>
+    );
+  });
 
-    return <StyledBlogListing>{postLinks}</StyledBlogListing>;
-  }
-}
+  return <StyledBlogListing>{postLinks}</StyledBlogListing>;
+};
 
 export default BlogListing;
