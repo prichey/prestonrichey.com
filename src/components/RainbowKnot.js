@@ -1,5 +1,12 @@
 import React from 'react';
-import * as THREE from 'three';
+import {
+  Scene,
+  PerspectiveCamera,
+  WebGLRenderer,
+  TorusKnotGeometry,
+  MeshNormalMaterial,
+  Mesh
+} from 'three';
 import Dimensions from 'react-dimensions';
 
 class RainbowKnot extends React.Component {
@@ -7,16 +14,16 @@ class RainbowKnot extends React.Component {
     const width = this.props.containerWidth;
     const height = this.props.containerHeight;
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    const scene = new Scene();
+    const camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
 
-    const renderer = new THREE.WebGLRenderer({
+    const renderer = new WebGLRenderer({
       antialias: true
     });
 
-    const geometry = new THREE.TorusKnotGeometry(1, 0.175, 100, 10, 5, 6);
-    const material = new THREE.MeshNormalMaterial();
-    const torus = new THREE.Mesh(geometry, material);
+    const geometry = new TorusKnotGeometry(1, 0.175, 100, 10, 5, 6);
+    const material = new MeshNormalMaterial();
+    const torus = new Mesh(geometry, material);
 
     camera.position.z = 3.5;
 
