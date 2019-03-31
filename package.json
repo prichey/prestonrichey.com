@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.7.0",
-    "@mdx-js/mdx": "^0.20.0",
+    "@mdx-js/mdx": "^0.20.3",
     "@mdx-js/tag": "^0.18.0",
     "@prichey/hello-wasm": "^0.1.1",
     "ajv": "^6.8.1",

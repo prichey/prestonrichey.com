@@ -1,0 +1,276 @@
+---
+title: "React In MDX (In React)"
+date: "2019-03-31"
+excerpt: "Migrating from rehype-react to gatsby-mdx, and a few lessons learned along the way."
+publish: true
+---
+
+import ZoomImage from 'components/ZoomImage';
+import XA from 'components/ExternalAnchor';
+
+import lake from './lake.jpg';
+import lakeZoom from './lake-zoom.jpg';
+
+<section class="blog-section">
+
+A bit over a year ago, <XA href="/blog/react-in-markdown">I wrote</XA> about why I was so excited for React in Markdown. (I'm still excited about it, by the way!) At the end of that post, I included a note about an interesting <XA href="https://spectrum.chat/frontend/general/mdx-proposal~1021be59-2738-4511-aceb-c66921050b9a">proposal</XA> for a `.mdx` format by ZEIT's Guillermo Rauch, which had been published just a day earlier. Fast forward to today and <XA href="https://github.com/mdx-js/mdx">MDX</XA> has over 6,000 stars on GitHub. Out of all the libraries in this space, MDX seems to be the clear winner.
+
+</section>
+
+<section class="blog-section">
+
+## Old and busted: rehype-react
+
+In addition to being <XA href="https://mdxjs.com/getting-started/">widely supported</XA>, it has a much better mental model than my previous approach to React in Markdown, which used <XA href="https://using-remark.gatsbyjs.org/custom-components/">rehype-react</XA> and had some ugly caveats.
+
+For one, I couldn't figure out a good way to include only a certain subset of components in a certain blog post. (I made <XA href="https://github.com/prichey/prestonrichey.com/commit/a8ce453816815a98fcd15965db392d0044506cae#diff-12ec4011600ff4508b69acef7fcec340L5">a note</XA> to myself to try and figure this out but I never did.) Every single component (even the heavy ones that include libraries like Three.js) gets included every single blog post, regardless of whether not they are all needed. Not ideal.
+
+This approach also requires that you pass all props to your embedded components as strings. The components I need for this blog are all fairly simple so this never was a huge issue, but if I wanted to do anything more complex this would quickly become a deal-breaker.
+
+All this to say, React in Markdown is here to stay. `rehype-react`, not so much (at least for me). I'd been following `MDX` for some time, as well as <XA href="https://github.com/ChristopherBiscardi/gatsby-mdx">gatsby-mdx</XA>, which makes it easy to consume `MDX` from a `Gatsby` blog. I finally had some time after wrapping up a few projects (<XA href="/projects/personal/p4ktldr/" title="p4ktldr">1</XA>, <XA href="/blog/react-rust-wasm/" title="React + Rust + Wasm">2</XA>) and decided to bite the bullet and give `gatsby-mdx` a try. A few weeks later, I'm back up and running (<XA>this page</XA> is MDX!) and on the whole, a total convert! Here are a few things I learned along the way.
+
+</section>
+
+<section class="blog-section">
+
+## New hotness: gatsby-mdx
+
+I took the opportunity while updating to `gatsby-mdx` to also refactor a fair amount of this blog. That being case, <XA href="https://github.com/prichey/prestonrichey.com/compare/d347d89eccf0b2c8ba288efc0cdddcfd3254697c...master">the diff</XA> is fairly gnarly. After all, I initially wrote this site not long after learning React itself, and by now I've been writing React professionally for over a year. Still, I'll call out some of the steps that might be useful for someone else getting started with `gatsby-mdx`.
+
+First, install your dependencies:
+
+```bash
+npm i gatsby-mdx @mdx-js/mdx @mdx-js/tag
+```
+
+Then, add `gatsby-mdx` to your `gatsby-config.js`:
+
+```js
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        extensions: ['.mdx'],
+        gatsbyRemarkPlugins: [
+          // more on this later
+        ]
+      }
+    }
+  ]
+};
+```
+
+Then, add a `.mdx` file to `src/pages` and you're off to the races! For this example, I'll use `ZoomImage`, like I did in my <XA href="/blog/react-in-markdown">previous post</XA>:
+
+```js
+import ZoomImage from 'components/ZoomImage';
+
+import lake from './lake.jpg';
+import lakeZoom from './lake-zoom.jpg';
+
+<ZoomImage src={lake} zoomSrc={lakeZoom} caption='Lake 22, WA' />
+```
+
+And here's what it looks like:
+
+<div class="blog-inset">
+  <ZoomImage src={lake} zoomSrc={lakeZoom} caption='Lake 22, WA' />
+</div>
+
+</section>
+
+<section class="blog-section">
+
+## Some gotchas
+
+`gatsby-mdx` 'just works' (usually).
+
+On the whole, the assumptions made by the library are sane ones. But once in a while, I found myself fighting against the library to maintain the flow of data in the standard 'Gatsby-ish' way. Here are a few examples of things that took some figuring out.
+
+### Configuring gatsby-mdx
+
+In order to include components in your `MDX` files, you'll need to tell `gatsby-mdx` where to look. All of my components are in `src/components`, so I use the following configuration in `gatsby-config.js`:
+
+```js
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    }
+  });
+};
+```
+
+Then in my `MDX`, I import like so:
+
+```js
+import Foo from 'components/Foo';
+```
+
+You'd think this would be at the top of most `gatsby-mdx` tutorials but it took me a bit of digging to figure out.
+
+### gatsbyRemarkPlugins
+
+If you already use Markdown in your Gatsby blog, it's likely that you use <XA href="https://www.gatsbyjs.org/packages/gatsby-transformer-remark/">gatsby-transformer-remark</XA>. `gatsby-mdx` is a full replacement for `gatsby-transformer-remark` (unless you opt to use them both, for reasons I'm unsure of). This means that you'll need to modify your `gatsby-config.js` to account for this.
+
+`gatsby-mdx` accepts a configuration object, which has an option for `gatsbyRemarkPlugins`. Mine looks like this:
+
+```js
+{
+  resolve: 'gatsby-mdx',
+  options: {
+    gatsbyRemarkPlugins: [
+      { resolve: 'gatsby-remark-autolink-headers' },
+      { resolve: 'gatsby-remark-prismjs' },
+      { resolve: 'gatsby-remark-smartypants' }
+    ]
+  }
+}
+```
+
+I've read that some `gatsby-remark` plugins won't work out of the box with `gatsby-mdx`, but so far I haven't run into any issues.
+
+### Programmatically rendering MDX
+
+By default, `gatsby-mdx` will render your MDX in place. As shown in the example above, you can place a `foo.mdx` file in `src/pages`, and it'll be detected and rendered at `/foo` without any further configuration. This is great for getting up and running, but this doesn't completely map to the way that I use MDX in my app. I typically want my MDX files to be wrapped in a layout component, which might display the title, date, and other metadata about the post, as well as common styling.
+
+In order to get access to your MDX files programmatically, you'll need to modify your `gatsby-node.js` to look something like this:
+
+```js
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allMdx {
+          edges {
+            node {
+              fields {
+                slug
+                type
+              }
+            }
+          }
+        }
+      }
+    `).then(result => {
+      if (result.errors) {
+        console.error(result.errors);
+        reject(result.errors);
+      }
+
+      result.data.allMdx.edges.forEach(({ node }) => {
+        createPage({
+          path: node.fields.slug,
+          component: path.resolve('./src/templates/post.js'),
+          context: {
+            // Data passed to context is available in page queries as GraphQL variables.
+            slug: node.fields.slug
+          }
+        });
+      });
+      resolve();
+    });
+  });
+};
+```
+
+Then, in `src/templates/post.js` (or wherever you specified as your `component` path above), query via the slug we passed above:
+
+```js
+import { graphql } from 'gatsby';
+
+export const query = graphql`
+  query($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        date
+      }
+      code {
+        body
+      }
+    }
+  }
+`;
+```
+
+And now your component should have access to `props.data.mdx`, with all of the fields passed above:
+
+```js
+import React from 'react';
+import { MDXRenderer } from 'gatsby-mdx
+
+import Layout from './components/Layout';
+
+const PostTemplate = ({ data }) => {
+  const { frontmatter, code } = data.mdx;
+
+  return (
+    <Layout>
+      <h1>{frontmatter.title}</h1>
+      <MDXRenderer>{code.body}</MDXRenderer>
+      <span>{frontmatter.date}</span>
+    </Layout>
+  );
+};
+```
+
+Note here that we're passing `props.data.mdx.code.body` to `MDXRenderer`, which is what renderers the compiled MDX content.
+
+Passing your data around like this is certainly more tedious than letting `gatsby-mdx` render your content in place, but I find that this approach is necessary for anything other than toy examples.
+
+### File imports
+
+I've yet to figure out a completely ergonomic approach to including relative links to files, especially when passing to components as props. There seems to be <XA href="https://gatsby-mdx.netlify.com/guides/using-gatsby-remark-images">a working example</XA> in the `gatsby-mdx` docs showing how to use `gatsby-remark-images`, but this doesn't work with the custom `ZoomImage` component I use for image embeds. Previously, I came up with a <XA href="/blog/react-in-markdown/#zoomimage">hacky approach</XA> to this that worked with my previous `rehype-react` setup, but it included a silly `Hidden` component which was required for `webpack` to update the file path from a relative one to the published `public` directory. It worked, but was certainly not ideal.
+
+The solution I landed on is to simply import any necessary files at the top of my `MDX` file, like so:
+
+```js
+import foo from './foo.jpg';
+```
+
+Then, later on, you can use it:
+
+```js
+<ZoomImage src={foo} />
+```
+
+The path to `foo` will be correctly updated to the public directory, like so:
+
+```
+/static/foo-02dc7c71ecb7ee41bfaa345303af6736.jpg
+```
+
+Ideally, I would like to be able to pass the path directly to my component, like so:
+
+```js
+<ZoomImage src="/foo.jpg" />
+```
+
+and have `webpack` do its magic, but for now, my approach works just fine.
+
+</section>
+
+<section class="blog-section">
+
+## Onward!
+
+`MDX` is young. `gatsby-mdx` even moreso.
+
+Things will continue to change (and break, probably), but I'm so happy that there's a growing community of developers working to improve the tooling and ergonomics of web development. Special thanks to <XA href="https://github.com/ChristopherBiscardi">Christopher Biscardi</XA> and the rest of the maintainers of `gatsby-mdx` for their hard work on such a useful and pleasant tool.
+
+Here are some other resources if you'd like to learn more about MDX:
+
+* `gatsby-mdx` <XA href="https://gatsby-mdx.netlify.com/">documentation</XA>
+* <XA href="https://scotch.io/tutorials/building-a-video-blog-with-gatsby-and-markdown-mdx">Building a Video Blog with Gatsby and Markdown</XA> on <XA href="https://scotch.io/">scotch.io</XA>
+* <XA href="https://www.youtube.com/watch?v=d2sQiI5NFAM">What is MDX</XA> by <XA href="https://kentcdodds.com/">Kent C. Dodds</XA>
+
+Thanks for reading!
+
+</section>
