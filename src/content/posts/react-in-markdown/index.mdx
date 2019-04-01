@@ -5,6 +5,7 @@ excerpt: "Why I'm so excited about custom components in Markdown with Gatsby.js.
 publish: true
 ---
 
+import XA from 'components/ExternalAnchor';
 import ZoomImage from 'components/ZoomImage';
 import CountUp from 'components/CountUp';
 import MarkdownRenderer from 'components/MarkdownRenderer';
@@ -14,6 +15,10 @@ import lake from './lake-22.jpg';
 import lakeZoom from './lake-22-zoom.jpg';
 
 <section class="blog-section">
+
+*Update, March 2019*: This article is out of date. You can find my article on the new approach, using `gatsby-mdx`, <XA href="/blog/react-in-mdx">here</XA>.
+
+<hr />
 
 This website is made with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a>, a static site generator for React. You can look at its source <a href="https://github.com/prichey/prestonrichey.com" target="_blank">here</a>. Gatsby packages up React components, Markdown files, and other assets, creating bundles of code that load as fast as possible. The experience developing a Gatsby site is also the best I've ever had, including a hot-reloading development server and a zero-config setup. I'm smitten.
 
@@ -123,5 +128,13 @@ Insert Xzibit meme here.
 ## .mdx?
 
 One of the exciting things about working with both React and Gatsby is how much momentum there is behind adding features and improving tooling and performance. There are many different approaches to use components in Markdown and I'm sure there will be lots of continued discussion and development of the topic. Just yesterday I came across a <a href="https://spectrum.chat/thread/1021be59-2738-4511-aceb-c66921050b9a" target="_blank">proposal</a> from Zeit's Guillermo Rauch discussing a `.mdx` file format which would marry Markdown and JSX for use cases such as this. There seems to be lots of community support around finding a solution to this common issue, so I'm excited to see what comes next.
+
+</section>
+
+<section class="blog-section">
+
+## Update, a year later
+
+In case you didn't notice the update up top: this approach using `rehype-react` is out of date. `MDX` has been released and has over 6,000 stars on GitHub! Furthermore, there's a package called <XA href="https://github.com/ChristopherBiscardi/gatsby-mdx">gatsby-mdx</XA> which facilitates using `MDX` with Gatsby. I recently updated this blog to use `gatsby-mdx`; I wrote about that process <XA href="/blog/react-in-mdx/">here</XA>.
 
 </section>
