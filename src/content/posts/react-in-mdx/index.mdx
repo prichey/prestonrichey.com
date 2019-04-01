@@ -64,6 +64,10 @@ module.exports = {
 Then, add a `.mdx` file to `src/pages` and you're off to the races! For this example, I'll use `ZoomImage`, like I did in my <XA href="/blog/react-in-markdown">previous post</XA>:
 
 ```js
+---
+title: "ZoomImage Example"
+date: "2019-03-31"
+---
 import ZoomImage from 'components/ZoomImage';
 
 import lake from './lake.jpg';
@@ -241,19 +245,13 @@ Then, later on, you can use it:
 <ZoomImage src={foo} />
 ```
 
-The path to `foo` will be correctly updated to the public directory, like so:
+The path to `foo` will be correctly updated to the public directory:
 
 ```
 /static/foo-02dc7c71ecb7ee41bfaa345303af6736.jpg
 ```
 
-Ideally, I would like to be able to pass the path directly to my component, like so:
-
-```js
-<ZoomImage src="/foo.jpg" />
-```
-
-and have `webpack` do its magic, but for now, my approach works just fine.
+Ideally, I would like to be able to pass the path directly to my component (`<ZoomImage src="foo.jpg" />`) and have `webpack` do its magic, but for now, my approach works just fine.
 
 </section>
 
