@@ -94,7 +94,7 @@ On the whole, the assumptions made by the library are sane ones. But once in a w
 
 ### Configuring gatsby-mdx
 
-In order to include components in your `MDX` files, you'll need to tell `gatsby-mdx` where to look. All of my components are in `src/components`, so I use the following configuration in `gatsby-config.js`:
+In order to include components in your `MDX` files, you'll need to tell `gatsby-mdx` where to look. All of my components are in `src/components`, so I use the following configuration in `gatsby-node.js`:
 
 ```js
 exports.onCreateWebpackConfig = ({ actions }) => {
