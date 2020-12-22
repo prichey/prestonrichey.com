@@ -1,14 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from './../components/Layout';
 import TextPostBody from './../components/TextPostBody';
 import ProjectLinks from './../components/ProjectLinks';
 
 const ProjectTemplate = ({ data }) => {
-  const { frontmatter, code } = data.mdx;
+  const { frontmatter, body } = data.mdx;
 
   return (
     <Layout>
@@ -24,9 +24,7 @@ const ProjectTemplate = ({ data }) => {
         date={frontmatter.date}
         lang={frontmatter.lang}
       />
-      <TextPostBody>
-        <MDXRenderer>{code.body}</MDXRenderer>
-      </TextPostBody>
+      <TextPostBody>{body && <MDXRenderer>{body}</MDXRenderer>}</TextPostBody>
     </Layout>
   );
 };
@@ -36,9 +34,6 @@ export default ProjectTemplate;
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
       frontmatter {
         title
         link
@@ -46,6 +41,7 @@ export const query = graphql`
         date
         lang
       }
+      body
     }
   }
 `;
