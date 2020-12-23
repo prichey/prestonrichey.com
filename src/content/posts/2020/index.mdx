@@ -1,8 +1,24 @@
 ---
 title: '</2020>'
-date: '2020-12-??'
+date: '2020-12-23'
 excerpt: '</2020>'
-publish: false
+publish: true
 ---
 
-WIP
+import XA from 'components/ExternalAnchor';
+import ZoomImage from 'components/ZoomImage';
+
+import blue from './blue.jpg';
+import blueZoom from './blue-zoom.jpg';
+
+<section class="blog-section">
+
+If you're seeing this, either you're randomly checking my blog or you got my holiday card considerably faster than I expected! In either case, please know that I'm still working on my end of the year post and will have it up shortly. Maybe check back in a day or two? 😬
+
+While you wait, here's a picture of <XA href="https://www.instagram.com/blue.the.lynxpoint/">Blue</XA>:
+
+<div class="blog-inset">
+  <ZoomImage src={blue} zoomSrc={blueZoom} />
+</div>
+
+</section>
