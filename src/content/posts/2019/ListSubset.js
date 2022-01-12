@@ -11,7 +11,7 @@ const Div = styled.div`
 `;
 
 const ListSubset = ({ length, children }) => {
-  const [contextLength, _] = useContext(ListContext);
+  const [contextLength] = useContext(ListContext);
 
   return contextLength >= lengthEnum[length] ? <Div>{children}</Div> : null;
 };
