@@ -37,8 +37,54 @@ import hollyCamZoom from './holly-cam-zoom.jpg';
 import parentsSelfie from './parents-selfie.jpg';
 import parentsSelfieZoom from './parents-selfie-zoom.jpg';
 
+const proud = [
+  { src: bikeSelf, zoomSrc: bikeSelfZoom },
+  { src: doorFlowers, zoomSrc: doorFlowersZoom },
+  { src: blueSun, zoomSrc: blueSunZoom, caption: 'FPO' }
+];
+
+const ny = [
+  { src: hudson, zoomSrc: hudsonZoom, caption: 'The Hudson from the train' },
+  { src: candleSteps, zoomSrc: candleStepsZoom }
+];
+
+const croton = [
+  {
+    src: bikeCamp,
+    zoomSrc: bikeCampZoom,
+    caption: 'Croton Point Park campsite'
+  },
+  {
+    src: jamesLamp,
+    zoomSrc: jamesLampZoom,
+    caption: 'James'
+  },
+  {
+    src: davidLamp,
+    zoomSrc: davidLampZoom,
+    caption: 'David with ramen'
+  }
+];
+
+const la = [
+  { src: hollywood, zoomSrc: hollywoodZoom },
+  {
+    src: hollyCam,
+    zoomSrc: hollyCamZoom,
+    caption: 'Holly at Santa Monica pier'
+  }
+];
+
+// ny: lamp, hudson, candle, matt, manhattan-bridge, duck?, kusama
+// croton: bike, james, david, fire
+// tx: sunset
+// los angeles: seagulls, ha couple, roller, holly-cam, hollywood
+// arizona / colorado: canyon-riverview, canyon-sunrise, frybread, selfie, rocks, chanterelles,
+// philly?
+// san miguel?
+
 const spring = [
-  { src: hudson, zoomSrc: hudsonZoom },
+  { src: hudson, zoomSrc: hudsonZoom, caption: 'The Hudson from the train' },
   { src: candleSteps, zoomSrc: candleStepsZoom },
   { src: texasSunset, zoomSrc: texasSunsetZoom }
 ];
@@ -67,6 +113,10 @@ const fall = [{ src: blueSun, zoomSrc: blueSunZoom, caption: 'FPO' }];
 const winter = [{ src: blueSun, zoomSrc: blueSunZoom, caption: 'FPO' }];
 
 export {
+  proud,
+  ny,
+  croton,
+  la,
   spring,
   summer,
   fall,
