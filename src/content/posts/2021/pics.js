@@ -37,7 +37,40 @@ import hollyCamZoom from './holly-cam-zoom.jpg';
 import parentsSelfie from './parents-selfie.jpg';
 import parentsSelfieZoom from './parents-selfie-zoom.jpg';
 
+const spring = [
+  { src: hudson, zoomSrc: hudsonZoom },
+  { src: candleSteps, zoomSrc: candleStepsZoom },
+  { src: texasSunset, zoomSrc: texasSunsetZoom }
+];
+
+const summer = [
+  {
+    src: bikeCamp,
+    zoomSrc: bikeCampZoom,
+    caption: 'Bike camping at Croton Point Park'
+  },
+  { src: jamesLamp, zoomSrc: jamesLampZoom },
+  { src: davidLamp, zoomSrc: davidLampZoom },
+  { src: canyonRiverview, zoomSrc: canyonRiverviewZoom },
+  { src: canyonSunrise, zoomSrc: canyonSunriseZoom },
+  { src: parentsSelfie, zoomSrc: parentsSelfieZoom },
+  { src: hollywood, zoomSrc: hollywoodZoom },
+  {
+    src: hollyCam,
+    zoomSrc: hollyCamZoom,
+    caption: 'Holly at Santa Monica pier'
+  }
+];
+
+const fall = [{ src: blueSun, zoomSrc: blueSunZoom, caption: 'FPO' }];
+
+const winter = [{ src: blueSun, zoomSrc: blueSunZoom, caption: 'FPO' }];
+
 export {
+  spring,
+  summer,
+  fall,
+  winter,
   bikeSelf,
   bikeSelfZoom,
   doorFlowers,
