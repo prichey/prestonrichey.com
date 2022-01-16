@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import ZoomImage from './ZoomImage';
 
@@ -11,6 +11,7 @@ const prevNextCss = css`
   height: 100%;
   display: grid;
   align-content: center;
+  transition: transform 0.1s ease-in-out;
 
   &:hover {
     color: blue;
@@ -27,7 +28,12 @@ const Prev = styled.div`
   transform: rotateY(180deg);
 
   @media (min-width: 550px) {
-    left: -1em;
+    left: -0.95em;
+
+    &:hover {
+      color: blue;
+      transform: translateX(-0.05em) rotateY(180deg);
+    }
   }
 `;
 
@@ -36,7 +42,12 @@ const Next = styled.div`
   right: -0.65em;
 
   @media (min-width: 550px) {
-    right: -1em;
+    right: -0.95em;
+
+    &:hover {
+      color: blue;
+      transform: translateX(0.05em);
+    }
   }
 `;
 
