@@ -1,6 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import ZoomImage from './ZoomImage';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const prevNextCss = css`
   position: absolute;
@@ -56,8 +57,24 @@ const Wrap = styled.div`
   user-select: none;
 `;
 
+const TapInfo = styled.p`
+  font-size: 14px;
+  margin: 0;
+  color: #999;
+  text-align: center;
+`;
+
 const ZoomCarousel = ({ items = [] }) => {
   const [index, setIndex] = useState(0);
+  const dims = useWindowDimensions();
+
+  const isMobile = useMemo(() => {
+    if (dims && dims.width && dims.width < 950) {
+      return true;
+    }
+
+    return false;
+  }, [dims]);
 
   const handleNext = useCallback(() => {
     setIndex(index >= items.length - 1 ? 0 : index + 1);
@@ -66,6 +83,16 @@ const ZoomCarousel = ({ items = [] }) => {
   const handlePrev = useCallback(() => {
     setIndex(index <= 0 ? items.length - 1 : index - 1);
   }, [items, index]);
+
+  const handleWrapClick = useCallback(
+    e => {
+      if (isMobile) {
+        handleNext();
+        e.preventDefault();
+      }
+    },
+    [isMobile, handleNext]
+  );
 
   if (!(Array.isArray(items) && items.length > 0)) {
     return null;
@@ -77,14 +104,23 @@ const ZoomCarousel = ({ items = [] }) => {
   }
 
   return (
-    <Wrap>
-      <Prev onClick={handlePrev}>
-        <span>➜</span>
-      </Prev>
-      <ZoomImage {...items[index]} />
-      <Next onClick={handleNext}>
-        <span>➜</span>
-      </Next>
+    <Wrap onPointerUp={handleWrapClick}>
+      {!isMobile && (
+        <Prev onClick={handlePrev}>
+          <span>➜</span>
+        </Prev>
+      )}
+      <ZoomImage
+        {...items[index]}
+        caption={isMobile ? undefined : items[index].caption}
+        disableZoom={isMobile}
+      />
+      {isMobile && <TapInfo>tap to advance</TapInfo>}
+      {!isMobile && (
+        <Next onClick={handleNext}>
+          <span>➜</span>
+        </Next>
+      )}
     </Wrap>
   );
 };
