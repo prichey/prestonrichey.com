@@ -101,18 +101,15 @@ const ny = [
 const croton = [
   {
     src: bikeCamp,
-    zoomSrc: bikeCampZoom,
-    caption: 'Croton Point Park campsite'
+    zoomSrc: bikeCampZoom
   },
   {
     src: jamesLamp,
-    zoomSrc: jamesLampZoom,
-    caption: 'James'
+    zoomSrc: jamesLampZoom
   },
   {
     src: davidLamp,
-    zoomSrc: davidLampZoom,
-    caption: 'David with ramen'
+    zoomSrc: davidLampZoom
   },
   {
     src: campfire,
@@ -168,7 +165,6 @@ const sma = [
 ];
 
 export {
-  // proud,
   ny,
   croton,
   la,
