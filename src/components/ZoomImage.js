@@ -10,7 +10,7 @@ const StyledFigcaption = styled.figcaption`
   color: #999;
 `;
 
-const ZoomImage = ({ src, zoomSrc, alt, caption }) => {
+const ZoomImage = ({ src, zoomSrc, alt, caption, disableZoom = false }) => {
   return (
     <figure>
       <ImageZoom
@@ -22,6 +22,7 @@ const ZoomImage = ({ src, zoomSrc, alt, caption }) => {
           src: zoomSrc || src,
           alt: alt || caption
         }}
+        shouldHandleZoom={() => disableZoom !== true}
       />
 
       {caption && <StyledFigcaption>{caption}</StyledFigcaption>}
