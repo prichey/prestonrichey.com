@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 
 // via https://stackoverflow.com/a/36862446/2777986
 const getWindowDimensions = () => {
+  if (typeof window === 'undefined') {
+    return { width: undefined, height: undefined };
+  }
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
