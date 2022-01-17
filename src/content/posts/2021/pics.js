@@ -88,12 +88,6 @@ import texasSunsetZoom from './tx/texas-sunset-zoom.jpg';
 import fallLeaves from './pa/fall-leaves.jpg';
 import fallLeavesZoom from './pa/fall-leaves-zoom.jpg';
 
-// const proud = [
-//   { src: bikeSelf, zoomSrc: bikeSelfZoom },
-//   { src: doorFlowers, zoomSrc: doorFlowersZoom },
-//   { src: blueSun, zoomSrc: blueSunZoom, caption: 'FPO' }
-// ];
-
 const ny = [
   { src: candleSteps, zoomSrc: candleStepsZoom },
   { src: leafy, zoomSrc: leafyZoom },
@@ -173,8 +167,6 @@ const sma = [
   { src: calleHuertas, zoomSrc: calleHuertasZoom, caption: 'Calle Huertas' }
 ];
 
-// const tx = [{ src: texasSunset, zoomSrc: texasSunsetZoom }];
-
 export {
   // proud,
   ny,
@@ -185,43 +177,12 @@ export {
   nyc,
   sma,
   pa,
-  // tx,
   bikeSelf,
   bikeSelfZoom,
   doorFlowers,
   doorFlowersZoom,
-  // canyonRiverview,
-  // canyonRiverviewZoom,
-  // canyonSunrise,
-  // canyonSunriseZoom,
-  // leafy,
-  // leafyZoom,
-  // jamesLamp,
-  // jamesLampZoom,
-  // davidLamp,
-  // davidLampZoom,
-  // haCouple,
-  // haCoupleZoom,
-  // chanterelles,
-  // chanterellesZoom,
-  // candleSteps,
-  // candleStepsZoom,
   blueSun,
   blueSunZoom,
-  // hudson,
-  // hudsonZoom,
-  // bikeCamp,
-  // bikeCampZoom,
-  // frybread,
-  // frybreadZoom,
-  // hollywood,
-  // hollywoodZoom,
   texasSunset,
   texasSunsetZoom
-  // roller,
-  // rollerZoom,
-  // hollyCam,
-  // hollyCamZoom,
-  // parentsSelfie,
-  // parentsSelfieZoom
 };
