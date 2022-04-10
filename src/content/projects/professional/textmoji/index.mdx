@@ -1,0 +1,87 @@
+---
+title: 'Textmoji'
+date: '2020'
+lede: 'Made :rad: custom emoji for your Slack team'
+link: 'https://textmoji.app/'
+repo: ''
+order: 8
+publish: true
+lang: 'Svelte'
+---
+
+import ZoomImage from 'components/ZoomImage';
+import XA from 'components/ExternalAnchor';
+
+import final from './final.jpg';
+import slack from './slack.jpg';
+import thx from './thx.jpg';
+import wip from './wip.jpg';
+
+<section class="blog-section">
+
+<p><XA href="https://textmoji.app/">Textmoji</XA> is a <XA href="https://postlight.com/labs">Postlight Labs</XA> project that was made in collaboration with Tina Phan, Adam Pash, and Kayli Kunkel. An adapted version of this post appears on the Postlight <XA href="https://postlight.com/insights/introducing-textmoji">blog</XA>.</p>
+
+<hr />
+
+One of the things I love most about working at Postlight is our culture of communication. Postlight employees are spread out amongst at least ten different states (and <XA href="https://postlight.com/insights/meet-postlight-lebanon">two continents</XA>!) so even prior to recent events, much of our communication happened online. Nowadays, tools like Slack are absolutely indispensable for keeping in touch, and we've developed <XA href="https://dashforslack.com/">lots</XA> <XA href="https://postlight.com/insights/remote-workers-are-power-users">of</XA> <XA href="https://postlight.com/insights/using-emoji-based-workflows-in-slack">ways</XA> to further enrich the time we spend collaborating even when we're not physically together.
+
+One of those ways is <XA href="https://postlight.com/labs/dash-for-slack">Dash</XA>, our Slack tool to timebox discussions. With a Dash channel, teams can accelerate decisions with deadlines. Whether we're planning office karaoke night or the next big product launch, Dash helps us focus and deliver to get it done.
+
+Yet as my words become increasingly digitized, I find myself reaching more and more for emoji to fill in the gaps of nuance that might otherwise be communicated nonverbally. In addition to the standard-issue emoji handed down by the Unicode Consortium on high, Postlight has a hefty catalog of 1,250 (and counting!) custom-made emoji for use in Slack. These range from the mundane (`:nice:`), to the personal (`:thanks-paula:`), to the weird (`:shrekyourselfbeforeyouwreckyourself:`; don't ask). Each was lovingly created with an image processing application, then uploaded for the team to use in discussion or as reactions to other messages.
+
+<div class="blog-inset">
+  <ZoomImage
+    src={slack}
+    caption={"Some of the mamny custom emoji we use at Postlight"}
+  />
+</div>
+
+This approach works fine if you're handy with a tool like Photoshop or Sketch, but I'm not, and every time I wanted to make an emoji I'd end up Googling “change canvas size Photoshop” or “what are some good fonts” and wanting to pull my hair out. Luckily for me, Postlight has a suggestion form where anyone can pitch project ideas for Postlight Labs, so several months ago I submitted a proposal for a simple web application that would be a one-stop-shop for making custom emoji. 
+
+After learning that my proposal had been selected as a Labs project, I started thinking through the logistics of making a text emoji on the web. Our team — Adam Pash, Tina Phan, and Kayli Kunkel — convened, and we started visualizing and discussing how to make Textmoji a reality.
+
+As the engineer on the project, I settled on <XA href="https://pixijs.com/">PixiJS</XA> to handle rendering text to a <XA href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">canvas</XA> element, which conveniently allowed me to export the canvas to a <XA href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">Blob</XA>, then save as a PNG image. After a weekend of tinkering, I had an initial proof of concept that would go on to serve as the foundation for the application.
+
+<div class="blog-inset">
+  <ZoomImage
+    src={wip}
+    caption={"Textmoji v0.1, in sore need of a product designer"}
+  />
+</div>
+
+## Introducing Textmoji 🎉
+
+Today, I'm ecstatic to introduce <XA href="https://textmoji.app/">Textmoji</XA>, a better way of making custom emoji for your Slack team.
+
+<div class="blog-inset">
+  <ZoomImage
+    src={final}
+  />
+</div>
+
+To make a text emoji, simply enter text, pick a template, then download! You can either use the preselected themes we've included, or you can make your own (and <XA href="https://textmoji.app/?paletteName=NunitoSans&text=super%20cool%21&fStyle=Bungee&fColor=07469d&bgShape=squircle&bgColor=f1e9e6&bWidth=0&bStyle=none&bColor=FF6507">share a link</XA> to your customized theme!).
+
+We also show a preview of what the emoji will look like at scale, on both a light and dark background, which hopefully means that you won't end up redoing the emoji time and time again to get the font size or colors perfect. 
+
+<div class="blog-inset">
+  <ZoomImage
+    src={thx}
+    caption={"Make sure contrast looks good for both light and dark themes"}
+  />
+</div>
+
+Each emoji is also perfectly sized for easy upload to Slack, and we even include simple instructions on how to upload for those who may not have done it before.
+
+## Test-driving Svelte
+
+Building Textmoji as a Postlight Labs project also gave me the opportunity to learn new skills in a relatively low-risk environment. I had been interested in learning more about <XA href="https://svelte.dev/">Svelte</XA>, an up-and-coming JavaScript framework that helps developers write web apps that are optimized to be as fast and small as possible, so when I was given the opportunity to decide on a framework, I knew what to choose. 
+
+Svelte turned out to be a great choice for Textmoji. My learning curve ended up being quite shallow and I found Svelte's approach to <XA href="https://svelte.dev/tutorial/text-inputs">data binding</XA> and <XA href="https://svelte.dev/tutorial/reactive-declarations">reactive declarations</XA> particularly useful for handling user interaction. I loved using Svelte for this project and would be more than happy to use what I've learned making Textmoji for client or personal projects alike.
+
+## Better team bonding
+
+Communication can be hard. Nowadays, even more so. Textmoji may just seem like a simple web application for making silly text emoji, but those emoji help us communicate and feel closer to one another. To some, that might feel trivial. But to me, it's more important than ever.
+
+We had a lot of fun making Textmoji and we hope you have just as much fun using it. Get started and make your own text emoji <XA href="https://textmoji.app/">here</XA>. `:cheers:`
+
+</section>
